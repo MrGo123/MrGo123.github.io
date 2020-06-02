@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Linux基础——笔记 - MrGo123</title>
+  
+    <meta name="keywords" content="Linux">
+  
+  
+    <meta name="description" content="部分Linux基础知识+详细记录部分指令">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/mybloghp.jpg">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            MrGo123
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/projects/
+                  
+                  
+                  
+                    id="projects"
+                  >
+                  <i class='fas fa-code-branch fa-fw'></i>项目
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/message/
+                  
+                  
+                  
+                    id="message"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search ~~" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/projects/
+                  
+                  
+                  
+                    id="projects"
+                  >
+                  <i class='fas fa-code-branch fa-fw'></i>项目
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/message/
+                  
+                  
+                  
+                    id="message"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/05/19/Linux/">
+      Linux基础——笔记
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="/about/" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg">
+    <p>Zhuangyi</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Linux/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Linux</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布：2020年5月19日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：2.5k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：9分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>部分Linux基础知识+详细记录部分指令</p>
+<a id="more"></a>
+
+
+<p><img src="https://img.vim-cn.com/4f/997ad5a19156a30ad1c9c0cecdb8f6f1e65a6e.png" alt=""></p>
+<p>Shell是一个命令行工具。Shell（也称为终端或壳）充当的 是人与内核（硬件）之间的翻译官，用户把一些命令“告诉”终端，它就会调用相应的程序服务去完成某些工作。现在许多主流Linux系统默认使用的终端是Bash（Bourne-Again SHell）解释器。<br><img src="https://img.vim-cn.com/37/8d7196d9a03975e518d1347c3aed2cbcd9ef4e.png" alt=""></p>
+<p><img src="https://img.vim-cn.com/d8/1adfe8ac8a38361bd55673d693dfdd1430b0ff.png" alt=""></p>
+<h3 id="常用系统工作命令"><a href="#常用系统工作命令" class="headerlink" title="常用系统工作命令"></a>常用系统工作命令</h3><ol>
+<li>echo<br>含义：用于在终端输出字符串或变量提取后的值.</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo hello</span><br><span class="line">hello</span><br><span class="line"></span><br><span class="line">echo $SHELL</span><br><span class="line">/bin/bash</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>date<br>date命令用于显示及设置系统的时间或日期,在强大的date命令中输入以“+”号开头的参数，即可按照指定格式来输出系统的时间或日期</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> date</span></span><br><span class="line"> Mon Aug 24 16:11:23 CST 2017 </span><br><span class="line"><span class="meta">#</span><span class="bash"> date <span class="string">"+%Y-%m-%d %H:%M:%S"</span> </span></span><br><span class="line">2017-08-24 16:29:12 </span><br><span class="line"><span class="meta">#</span><span class="bash"> date <span class="string">"+%j"</span> </span></span><br><span class="line">244 //显示今天是当年当中的第几天</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>reboot<br>reboot命令用于重启系统</p>
+</li>
+<li><p>poweroff<br>poweroﬀ命令用于关闭系统</p>
+</li>
+<li><p>wget命令<br>wget命令用于在终端中下载网络文件，格式为“wget [参数] 下载地址”。 </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> wget -r -p http://www.linuxprobe.com --2017-08-24 19:31:41-- http://www.linuxprobe.com/ Resolving www.linuxprobe.com... 106.185.25.197 Connecting to www.linuxprobe.com|106.185.25.197|:80... connected. HTTP request sent, awaiting response... 200 OK Length: unspecified [text/html] Saving to: <span class="string">'www.linuxprobe.com/index.html'</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ps<br>ps命令用于查看系统中的进程状态，格式为“ps [参数]”。</p>
+</li>
+<li><p>top命令<br>top命令用于动态地监视进程活动与系统负载等信息，其格式为top。</p>
+</li>
+<li><p>pidof命令<br>pidof命令用于查询某个指定服务进程的PID值，格式为“pidof [参数] [服务名称]”。<br>例如，可以使用如下命令来查询本机上sshd服务程序的PID：</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> pidof sshd </span></span><br><span class="line">2156</span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li><p>kill命令<br>kill命令用于终止某个指定PID的服务进程，格式为“kill [参数] [进程 PID]”。 </p>
+</li>
+<li><p>killall命令<br>killall命令用于终止某个指定名称的服务所对应的全部进程，格式 为：“killall [参数] [进程名称]”。</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> pidof httpd </span></span><br><span class="line">13581 13580 13579 13578 13577 13576 </span><br><span class="line"><span class="meta">#</span><span class="bash"> killall httpd </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> pidof httpd </span></span><br><span class="line"><span class="meta">#</span></span><br></pre></td></tr></table></figure>
+
+<p>tip:在系统终端中执行一个命令后想立即停止:Ctrl + C,如果有些命令在执行时不断地在屏幕 上输出信息，影响到后续命令的输入，则可以在执行命令时在末尾添加上一个&amp;符号，这样命令将进入 系统后台来执行。</p>
+<h3 id="系统状态监检测命令"><a href="#系统状态监检测命令" class="headerlink" title="系统状态监检测命令"></a>系统状态监检测命令</h3><p>……部分略……</p>
+<ol>
+<li><p>ifconfig<br>ifconﬁg命令用于获取网卡配置与网络状态等信息，格式为“ifconﬁg [网络设备] [参数]”。</p>
+</li>
+<li><p>history命令<br>history命令用于显示历史执行过的命令，格式为“history [-c]”。 能显示最近1000条命令记录。使用-c参数则会清空所有的命令历史记录。</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">history</span> -c</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="工作目录切换命令"><a href="#工作目录切换命令" class="headerlink" title="工作目录切换命令"></a>工作目录切换命令</h3><ol>
+<li>pwd命令<br>pwd命令用于显示用户当前所处的工作目录，格式为“pwd [选项]”。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">pwd</span> </span></span><br><span class="line">/etc</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p><strong>cd命令</strong><br>cd命令用于切换工作路径，格式为“cd [目录名称]”。<br>“cd -”：命令返回到上一次所处的目录，<br>“cd ..”：命令进入上级目录，<br>“cd ~”：命令切换到当前用户的家目录，<br>“cd ~username”：切换到其他用户的家目录。</p>
+</li>
+<li><p>ls命令<br>ls命令用于显示目录中的文件信息，格式为“ls [选项] [文件] ”。<br>使用ls命 令的“-a”参数看到全部文件（包括隐藏文件），使用“-l”参数可以查看文 件的属性、大小等详细信息。将这两个参数整合之后，再执行ls命令即可 查看当前目录中的所有文件并输出这些文件的属性信息</p>
+</li>
+</ol>
+<p>tips:</p>
+<ul>
+<li>隐藏文档一般以 “.” 开头；</li>
+<li>“.”表示当前路径；</li>
+<li>“..”表示上一级路径</li>
+<li>使用”ls -la”显示的目录：第一列表示文档类型，”d”表示文件夹，”-“表示文件。例如：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> ls -la</span></span><br><span class="line">total 2</span><br><span class="line">dr-xr-x---, #省略后面部分</span><br><span class="line">-rw-------, #省略后面部分</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="文件文本编辑命令"><a href="#文件文本编辑命令" class="headerlink" title="文件文本编辑命令"></a>文件文本编辑命令</h3><ol>
+<li>cat命令<br>cat命令用于查看纯文本文件（内容较少的），格式为“cat [选项] [文件]”。加一个-n参数显示行号</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> cat -n [文件]</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> cat -n initial-setup-ks.cfg</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>more命令<br>more命令用于查看纯文本文件（内容较多的），格式为“more [选项] [文件]”。 </li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> more initial-setup-ks.cfg</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>head命令<br>head命令用于查看纯文本文档的前N行，格式为“head [选项] [文件]”。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> head -n 20 initial-setup-ks.cfg</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>tail命令<br>tail命令用于查看纯文本文档的后N行或持续刷新内容，格式为“tail [选项] [文件]”。<br>tail命令的操作方法与head命令非常相 似，只需要执行“tail -n 20 文件名”命令就可以达到这样的效果。tail命令 最强悍的功能是可以持续刷新一个文件的内容，当想要实时查看最新日志 文件时，这特别有用，此时的命令格式为“tail -f 文件名”</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> tail -f /var/<span class="built_in">log</span>/messages</span></span><br></pre></td></tr></table></figure>
+
+
+<ol start="5">
+<li>tr命令<br>tr命令用于替换文本文件中的字符，格式为“tr [原始字符] [目标字符]”。<br>例如，把某个文本内容中的英文全部替 换为大写：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> cat anaconda-ks.cfg | tr [a-z] [A-Z]</span></span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>wc命令<br>wc命令用于统计指定文本的行数、字数、字节数，格式为“wc [参数] 文本”。</li>
+</ol>
+<p>-l 只显示行数<br>-w 只显示单词数<br>-c 只显示字节数</p>
+<ol start="7">
+<li><p>stat命令<br>stat命令用于查看文件的具体存储信息和时间等信息，格式为“stat 文件名称”。 </p>
+</li>
+<li><p>cut命令<br>cut命令用于按“列”提取文本字符，格式为“cut [参数] 文本”。 </p>
+</li>
+<li><p>diﬀ命令<br>diﬀ命令用于比较多个文本文件的差异，格式为“diﬀ [参数] 文件”。<br>使用–brief参数来确认两个文件是否不同，<br>使用-c参数来详细比较出多个文件的差异之处</p>
+</li>
+</ol>
+<h3 id="文件目录管理命令"><a href="#文件目录管理命令" class="headerlink" title="文件目录管理命令"></a>文件目录管理命令</h3><ol>
+<li><p>touch命令<br>touch命令用于创建空白文件或设置文件的时间，格式为“touch [选项] [文件]”。</p>
+</li>
+<li><p>mkdir命令<br>mkdir命令用于创建空白的目录，格式为“mkdir [选项] 目录”。<br>在Linux系统中，文件夹是最常见的文件类型之一。除了能创建单个空白目录外，mkdir命令还可以结合-p参数来递归创建出具有嵌套叠层关系的文件目录。</p>
+</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@linuxprobe ~]# mkdir linuxprobe </span><br><span class="line">[root@linuxprobe ~]# cd linuxprobe </span><br><span class="line">[root@linuxprobe linuxprobe]# mkdir -p a/b/c/d/e </span><br><span class="line">[root@linuxprobe linuxprobe]# cd a </span><br><span class="line">[root@linuxprobe a]# cd b </span><br><span class="line">[root@linuxprobe b]#</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>cp命令<br>cp命令用于复制文件或目录，格式为“cp [选项] 源文件 目标文件”。<br>在Linux系统中，复制操作具体分 为3种情况：</li>
+</ol>
+<ul>
+<li>如果目标文件是目录，则会把源文件复制到该目录中； </li>
+<li>如果目标文件也是普通文件，则会询问是否要覆盖它； </li>
+<li>如果目标文件不存在，则执行正常的复制操作。 </li>
+</ul>
+<p>4．mv命令<br>mv命令用于剪切文件或将文件重命名，格式为“mv [选项] 源文件 [目标路径|目标文件名]”。</p>
+<p>剪切操作不同于复制操作，因为它会默认把源文件删除掉，只保留剪 切后的文件。如果在同一个目录中对一个文件进行剪切操作，其实也就是 对其进行重命名：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> mv x.log linux.log </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ls </span></span><br><span class="line">install.log linux.log</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>rm命令<br>rm命令用于删除文件或目录，格式为“rm [选项] 文件”。<br>在Linux系统中删除文件时，系统会默认向您询问是否要执行删除操作，如果不想总是看到这种反复的确认信息，可在rm命令后跟上-f参数来 强制删除。另外，想要删除一个目录，需要在rm命令后面一个-r参数才可以，否则删除不掉。我们来尝试删除前面创建的install.log和linux.log文件：</li>
+</ol>
+<p>[root@linuxprobe ~]# rm install.log<br>rm: remove regular empty file ‘install.log’? y<br>[root@linuxprobe ~]# rm -f linux.log<br>[root@linuxprobe ~]# ls<br>[root@linuxprobe ~]# </p>
+<ol start="6">
+<li><p>dd命令 dd命令用于按照指定大小和个数的数据块来复制文件或转换文件，格 式为“dd [参数]”。</p>
+</li>
+<li><p>ﬁle命令<br>ﬁle命令用于查看文件的类型，格式为“ﬁle 文件名”。 </p>
+<p>在Linux系统中，由于文本、目录、设备等所有这些一切都统称为文件，而我们又不能单凭后缀就知道具体的文件类型，这时就需要使用ﬁle命 令来查看文件类型了。</p>
+</li>
+</ol>
+<p>[root@linuxprobe ~]# file anaconda-ks.cfg  anaconda-ks.cfg: ASCII text [root@linuxprobe ~]# file /dev/sda /dev/sda: block special </p>
+<h3 id="打包压缩与搜索命令"><a href="#打包压缩与搜索命令" class="headerlink" title="打包压缩与搜索命令"></a>打包压缩与搜索命令</h3><ol>
+<li>tar命令<br>tar命令用于对文件进行打包压缩或解压，格式为“tar [选项] [文件]”。-c 创建压缩文件</li>
+</ol>
+<p>-x 解开压缩文件<br>-t 查看压缩包内有哪些文件<br>-z 用Gzip压缩或解压<br>-j 用bzip2压缩或解压<br>-v 显示压缩或解压的过程<br>-f 目标文件名<br>-p 保留原始的权限与属性<br>-P 使用绝对路径来压缩<br>-C 指定解压到的目录</p>
+<h3 id="Vim编辑器"><a href="#Vim编辑器" class="headerlink" title="Vim编辑器"></a>Vim编辑器</h3><p><a href="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/java/VimKeyBoard.png" target="_blank" rel="noopener"></a></p>
+<p>sudo +操作  ：使用root权限执行操作</p>
+<p>Linux运行有7个级别0-7级。主要3——登录后进入控制台命令行模式；5——登录后进入图形模式；</p>
+<p>VM下切换图形模式与文字模式：图形下alt+shift+Ctrl+F1~F6切换至命令行模式；</p>
+<p>man——查看命令使用；<br>查看ls的使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man ls</span><br></pre></td></tr></table></figure>
+
+<p>vi撤回操作：命令行下 u 和 ctrl+r</p>
+<h3 id="Linux查询命令帮助"><a href="#Linux查询命令帮助" class="headerlink" title="Linux查询命令帮助"></a>Linux查询命令帮助</h3><blockquote>
+<p>命令是记不完的，但是需要的时候咋办？？？用查询命令查看</p>
+</blockquote>
+<p>三个命令：man、info、whatis.</p>
+<p>使用 man\info\whatis 命令</p>
+<h4 id="man"><a href="#man" class="headerlink" title="man"></a>man</h4><p>man 用来查询命令的帮助文档</p>
+<p>命令的帮助文件有9个章节：</p>
+<ol>
+<li>用户命令 </li>
+<li>系统调用 </li>
+<li>C库调用</li>
+<li>设备文件及特殊文件 </li>
+<li>配置文件格式 </li>
+<li>游戏</li>
+<li>杂项 </li>
+<li>管理类的命令</li>
+<li>Linux 内核API</li>
+</ol>
+<p>man使用</p>
+<ol>
+<li>man 命令</li>
+<li>man 章节号 命令</li>
+</ol>
+<h4 id="whatis"><a href="#whatis" class="headerlink" title="whatis"></a>whatis</h4><p>whatis 显示命令的简短描述</p>
+<p>whatis 命令</p>
+<h4 id="info"><a href="#info" class="headerlink" title="info"></a>info</h4>
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>若非特别说明，本部分内容还会更新，敬请期待</p>
+
+          
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://zy68.top/2020/05/19/Linux/>https://zy68.top/2020/05/19/Linux/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-31T20:00:04+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新：2020年5月31日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/05/19/Linux/&title=Linux基础——笔记 - MrGo123&summary=部分Linux基础知识+详细记录部分指令"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/05/19/Linux/&title=Linux基础——笔记 - MrGo123&summary=部分Linux基础知识+详细记录部分指令"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/05/19/Linux/&title=Linux基础——笔记 - MrGo123&summary=部分Linux基础知识+详细记录部分指令"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/05/19/http/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>http</p>
+                <p class='content'>基于《图解http》的阅读笔记ps：没有笔记+不用=没学
+
+
+
+Part1—— Web及网络基础3 项 WWW（简称Web） 构建技术，分别是：
+
+把 SGML（Standard General...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/04/25/Debugging-with-gdb/'>
+                <p class='title'>Debugging with gdb<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>认识gdb+学习gdb+使用gdb
+
+
+</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+        <p cst>有问题还请指出，Thanks~~~</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Linux基础——笔记',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>Zhuangyi</h2>
+        
+        
+        
+          <p><span id="jinrishici-sentence">MrGo123</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="https://www.zhihu.com/people/mry-15-56"
+              class="social fab fa-zhihu fa-lg flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=NE5NWVVdWAIMdFJbTFlVXVgaV1tZ"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/MrGo123"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/playlist?id=2896521768"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用系统工作命令"><span class="toc-text">常用系统工作命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统状态监检测命令"><span class="toc-text">系统状态监检测命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工作目录切换命令"><span class="toc-text">工作目录切换命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件文本编辑命令"><span class="toc-text">文件文本编辑命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件目录管理命令"><span class="toc-text">文件目录管理命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包压缩与搜索命令"><span class="toc-text">打包压缩与搜索命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim编辑器"><span class="toc-text">Vim编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux查询命令帮助"><span class="toc-text">Linux查询命令帮助</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#man"><span class="toc-text">man</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#whatis"><span class="toc-text">whatis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#info"><span class="toc-text">info</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/Algorithm/" href="/categories/Algorithm/"
+            id="categoriesAlgorithm"
+            ><div class='name'>Algorithm</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/C-C/" href="/categories/C-C/"
+            id="categoriesC-C"
+            ><div class='name'>C/C++</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/ComputerBasic/" href="/categories/ComputerBasic/"
+            id="categoriesComputerBasic"
+            ><div class='name'>ComputerBasic</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/DataBase/" href="/categories/DataBase/"
+            id="categoriesDataBase"
+            ><div class='name'>DataBase</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/HTML/" href="/categories/HTML/"
+            id="categoriesHTML"
+            ><div class='name'>HTML</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/HTTP/" href="/categories/HTTP/"
+            id="categoriesHTTP"
+            ><div class='name'>HTTP</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/JavaSE/" href="/categories/JavaSE/"
+            id="categoriesJavaSE"
+            ><div class='name'>JavaSE</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/JavaWeb/" href="/categories/JavaWeb/"
+            id="categoriesJavaWeb"
+            ><div class='name'>JavaWeb</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Linux/" href="/categories/Linux/"
+            id="categoriesLinux"
+            ><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Mark/" href="/categories/Mark/"
+            id="categoriesMark"
+            ><div class='name'>Mark</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Maven/" href="/categories/Maven/"
+            id="categoriesMaven"
+            ><div class='name'>Maven</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Spring/" href="/categories/Spring/"
+            id="categoriesSpring"
+            ><div class='name'>Spring</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Tool/" href="/categories/Tool/"
+            id="categoriesTool"
+            ><div class='name'>Tool</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/YAML/" href="/categories/YAML/"
+            id="categoriesYAML"
+            ><div class='name'>YAML</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/git-github/" href="/categories/git-github/"
+            id="categoriesgit-github"
+            ><div class='name'>git/github</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/markdown/" href="/categories/markdown/"
+            id="categoriesmarkdown"
+            ><div class='name'>markdown</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%9A%8F%E7%AC%94/" href="/categories/%E9%9A%8F%E7%AC%94/"
+            id="categoriesE99A8FE7AC94"
+            ><div class='name'>随笔</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>推荐阅读</span>
+    
+  </header>
+
+
+    <div class="content">
+      
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.2'
+      loop='all'
+      order='random'
+      fixed='true'
+      list-max-height='200px'
+      server='netease'
+      type='playlist'
+      id='2896521768'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="https://www.zhihu.com/people/mry-15-56"
+                class="social fab fa-zhihu fa-lg flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=NE5NWVVdWAIMdFJbTFlVXVgaV1tZ"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/MrGo123"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/playlist?id=2896521768"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://zy68.top">Copyright © 2019-2020 Zhuangyi</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/BackWallstonesea.jpg", "https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/BackWallnature.jpg", "https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/BackWallship.com.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "7k5o87qfFgd2uWkD7vPFU4Uo-gzGzoHsz",
+    appKey: "uTchb9UUIFz9YEbS8EGw7iQS",
+    placeholder: "看到这了看官不如留个印记？？~~~~",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>

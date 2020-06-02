@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>Maven - MrGo123</title>
+  
+    <meta name="keywords" content="maven,java">
+  
+  
+    <meta name="description" content="简介+下载、配置+核心概念+参考文档">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/mybloghp.jpg">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            MrGo123
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/projects/
+                  
+                  
+                  
+                    id="projects"
+                  >
+                  <i class='fas fa-code-branch fa-fw'></i>项目
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/message/
+                  
+                  
+                  
+                    id="message"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search ~~" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/projects/
+                  
+                  
+                  
+                    id="projects"
+                  >
+                  <i class='fas fa-code-branch fa-fw'></i>项目
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/message/
+                  
+                  
+                  
+                    id="message"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/01/20/Maven/">
+      Maven
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="/about/" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg">
+    <p>Zhuangyi</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Maven/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Maven</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布：2020年1月20日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：2.7k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：9分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>简介+下载、配置+核心概念+参考文档</p>
+<a id="more"></a>
+
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>  为进一步<del>学习</del>Spring等框架以及java深入，得入maven这个坑。</p>
+<hr>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><h4 id="一、简要认识Maven"><a href="#一、简要认识Maven" class="headerlink" title="一、简要认识Maven"></a>一、简要认识Maven</h4><p>简介：Maven是一个java的项目管理工具，可以对java项目进行构建、依管理。</p>
+<p>使用目的：方便添加和更新jar包、解决jar包之间的依赖关系，以及将项目拆分成多个模块。</p>
+<h4 id="二、Maven下载及配置（Windows）"><a href="#二、Maven下载及配置（Windows）" class="headerlink" title="二、Maven下载及配置（Windows）"></a>二、Maven下载及配置（Windows）</h4><ol>
+<li><a href="http://maven.apache.org/download.cgi" target="_blank" rel="noopener">官网</a>下载压缩包<br><img src="https://s2.ax1x.com/2020/01/22/1kzqLn.png" alt="1kzqLn.png"></li>
+<li>解压压缩包，自定义解压位置，路径尽可能无中文；</li>
+<li>配置环境变量<br>a. 新建系统变量命名为MAVEN_HOME;变量值为解压包的路径。eg：            <code>F:\Java\Maven\apache-maven-3.6.3</code><br>b. 编辑系统变量Path，添加变量值： <code>;%MAVEN_HOME%\bin</code></li>
+<li>保存退出后到终端运行：<code>mvn -v</code> 命令，显示版本信息则配置成功。</li>
+</ol>
+<p><img src="https://s2.ax1x.com/2020/01/22/1kxbE6.png" alt="1kxbE6.png"></p>
+<h4 id="三、了解九个核心概念"><a href="#三、了解九个核心概念" class="headerlink" title="三、了解九个核心概念"></a>三、了解九个核心概念</h4><ol>
+<li>POM</li>
+<li>坐标</li>
+<li>仓库管理</li>
+<li>目录结构</li>
+<li>生命周期</li>
+<li>依赖管理</li>
+<li>插件和目标</li>
+<li>继承</li>
+<li>聚合</li>
+</ol>
+<blockquote>
+<p>tips：maven的各个操作都由各个插件来完成</p>
+</blockquote>
+<h5 id="1-POM"><a href="#1-POM" class="headerlink" title="1.POM"></a>1.POM</h5><p><strong>Project Object Model</strong>：项目对象模型。将 Java 工程的相关 <strong>信息*</strong> 封装为<strong>对象</strong>作为便于操作和管理的<strong>模型</strong>，即包含jar包或jar包的依赖关系的信息。 Maven 工程的核心配置，即在构建过程中所有的相关设置都在这里设置。可以说学习 Maven 就是学习 pom.xml 文件中的配置。</p>
+<blockquote>
+<p>信息是指：jar包等的名称、版本等，即上述概念中的坐标等信息，用于Maven的自动获取并使其参与项目的构建。</p>
+</blockquote>
+<h5 id="2-坐标"><a href="#2-坐标" class="headerlink" title="2.坐标"></a>2.坐标</h5><p>Maven中的坐标用于确定jar包或jar包的依赖关系的身份（或位置），（如同数学几何中的坐标确定点或物）</p>
+<p>使用如下三个向量在 Maven 的仓库中唯一的确定一个jar包。<br>[1]<strong>g</strong>roupid：公司或组织的域名倒序+当前项目名称     //即项目的位置<br>[2]<strong>a</strong>rtifactId：当前项目的某一个模块的名称<br>[3]<strong>v</strong>ersion：当前模块的版本  </p>
+<p>tips：三坐标简称 “<strong>gav</strong>”</p>
+<p><strong>利用坐标定位jar包位置</strong></p>
+<p>例如，我的repository仓库下的一个插件：compile编译插件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>组合起来是：<code>&quot;org.apache.maven.plugins&quot; + &quot;maven-compiler-plugin&quot; + &quot;3.8.1&quot;</code><br>转换为文件路径：<code>org\apache\maven\plugins\maven-compiler-plugin\3.8.1</code></p>
+<blockquote>
+<p>为什么我要用编译插件，因为它花了我一个下午时间，就是编译插件版本太低导致编译出错，关键下了最新版之后还是改不动它，它依旧用的是原版本，先记个仇，后面再解决。</p>
+</blockquote>
+<blockquote>
+<p>tips：如果是我们自己的Maven工程，则需要执行安装操作才会进入本地仓库：mvn install.??????????</p>
+</blockquote>
+<h5 id="3-Maven资源-仓-库"><a href="#3-Maven资源-仓-库" class="headerlink" title="3.Maven资源(仓)库"></a>3.Maven资源(仓)库</h5><p>Maven有三个资源库（或两个：本地和远程）</p>
+<ol>
+<li><p><strong>Maven本地资源库</strong>：本地存储中项目的依赖库（下载下来的jar包和其他文件）的<strong>repository文件夹</strong>。默认为C盘用户文件夹下的.m2目录文件里，可自定义保存位置。文件内部如上述定位的例子。</p>
+</li>
+<li><p><strong>Maven中央存储库</strong>：依赖库的来源，即没有的依赖库可到中央存储库下载到本地资源库。默认的仓库是位于国外的Maven仓库，可更换为阿里云的镜像仓库，提高下载速度。中央仓库是远程仓库的特例，或者说常用、资源较多的远程仓库。</p>
+</li>
+</ol>
+<blockquote>
+<p>镜像仓库用于分担中央仓库的流量，提高用户访问和下载速度。</p>
+</blockquote>
+<ol start="3">
+<li><strong>Maven远程存储库</strong>：依赖库的来源，只要能提供所需框架或jar包，都称为远程仓库。在POM.xml文件内自定义中央仓库没有的依赖库的获取路径。</li>
+</ol>
+<p>仓库中的文件：</p>
+<ol>
+<li>Maven的插件</li>
+<li>自己开发的项目模块</li>
+<li>第三方框架或jar包。</li>
+</ol>
+<blockquote>
+<p>所有的文件按坐标生成的目录结构，以此统一查询或依赖</p>
+</blockquote>
+<p><strong>三者关系</strong>：当建立一个Maven项目，Maven会检查pom.xml文件，确定需要哪些依赖库。<strong>1.</strong> Maven首先从<strong>本地资源库</strong>寻找，如果本地没有，<strong>2.</strong> Maven自动到Maven<strong>中央存储库</strong>去下载，如果中央存储库没有所需依赖，进入第三步。<strong>3.</strong> 如果pom.xml没有指定依赖库及其获取路径，Maven报错；如果在pom.xml指定了路径，Maven按照路径去到所在的<strong>远程仓库</strong>下载。</p>
+<h5 id="4-目录结构"><a href="#4-目录结构" class="headerlink" title="4.目录结构"></a>4.目录结构</h5><p>严格的说应该是<strong>约定的目录结构</strong>，Maven工程的源文件目录，都应该按照Maven的标准设定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">项目名</span><br><span class="line">|</span><br><span class="line">|---src                    &#x2F;&#x2F;源码目录</span><br><span class="line">|---|---main               &#x2F;&#x2F;主程序目录</span><br><span class="line">|---|---|---java           &#x2F;&#x2F;主程序下的java源文件目录</span><br><span class="line">|---|---|---resources      &#x2F;&#x2F;主程序下的资源文件目录</span><br><span class="line">|---|---test               &#x2F;&#x2F;测试程序目录</span><br><span class="line">|---|---|---java           &#x2F;&#x2F;测试程序下的java源文件目录</span><br><span class="line">|---|---|---resources      &#x2F;&#x2F;测试程序下的资源文件目录</span><br><span class="line">|                   &#x2F;&#x2F;执行命令后之后会产生不同的文件*</span><br><span class="line">|---pom.xml文件            &#x2F;&#x2F;pom.xml项目配置目录文件</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>tips：上述的产生不同的文件将在介绍执行命令时解释。</p>
+</blockquote>
+<h5 id="5-Maven的生命周期"><a href="#5-Maven的生命周期" class="headerlink" title="5.Maven的生命周期"></a>5.Maven的生命周期</h5><ul>
+<li>1》生命周期之前，先了解一个maven工程<strong>构建的几个主要环节</strong>：<br>①<strong>清理</strong>：删除以前的编译结果，为重新编译做好准备。<br>②<strong>编译</strong>：将 Java 源程序编译为字节码文件。<br>③<strong>测试</strong>：针对项目中的关键点进行测试，确保项目在迭代开发过程中关键点的正确性。<br>④<strong>报告</strong>：在每一次测试后以标准的格式记录和展示测试结果。<br>⑤<strong>打包</strong>：将一个包含诸多文件的工程封装为一个压缩文件用于安装或部署。Java 工程对应 jar 包，Web 工程对应 war 包。<br>⑥<strong>安装</strong>：在 Maven 环境下特指将打包的结果——jar 包或 war 包安装到本地仓库中。<br>⑦<strong>部署</strong>：将打包的结果部署到远程仓库或将 war 包部署到服务器上运行。<br>tips：环节步步相扣，执行完前一环节才能执行下一环节。<br></li>
+<li>2》再了解自动化构建：即Maven能够自动化执行构建环节从开始到终点。否则是需要人为<strong>手动通过命令逐个实现</strong>。<br></li>
+<li>3》接下来是生命周期</li>
+</ul>
+<p>Maven生命周期：就是定义了<strong>各个构建环节</strong>的执行顺序，有了这个顺序，Maven才可以<strong>自动化执行构建命令</strong>。</p>
+<p>Maven有三套相互独立的生命周期，分别是:<br>①Clean Lifecycle ：在进行真正的构建之前进行一些清理工作。<br>②Default Lifecycle ：构建的核心部分，编译，测试，打包，安装，部署等等。<br>③Site Lifecycle ：生成项目报告，站点，发布站点。 </p>
+<p>它们是相互独立的，可以仅仅调用 clean 来清理工作目录，或者仅仅调用 site 来生成站点。当然也可以直接运行 <code>mvn clean install site</code>, 运行所有这三套生命周期。 </p>
+<p>生命周期是由一组<strong>阶段</strong>（phase）组成，我们平时在命令行输入的命令总会对应于一个特定的阶段。比 如，运行 mvn clean，这个 clean 是 Clean 生命周期的一个阶段。有 Clean 生命周期，也有 clean 阶段。 </p>
+<ol>
+<li><p>Clean 生命周期<br>Clean 生命周期一共包含了三个阶段：<br>①pre-clean 执行一些需要在 clean 之前完成的工作<br>②clean 移除所有上一次构建生成的文件<br>③post-clean 执行一些需要在 clean 之后立刻完成的工作  </p>
+</li>
+<li><p>Site 生命周期<br>①pre-site 执行一些需要在生成站点文档之前完成的工作<br>②site 生成项目的站点文档<br>③post-site 执行一些需要在生成站点文档之后完成的工作，并且为部署做准备<br>④site-deploy 将生成的站点文档部署到特定的服务器上 这里经常用到的是 site 阶段和 site-deploy 阶段，用以生成和发布 Maven 站点，这可是 Maven 相当强大 的功能，Manager 比较喜欢，文档及统计数据自动生成，很好看。 </p>
+</li>
+<li><p>Default 生命周期<br>Default 生命周期是 Maven 生命周期中最重要的一个，绝大部分工作都发生在这个生命周期中。这里， 只解释一些比较重要和常用的阶段：<br>validate<br>generate-sources<br>process-sources<br>generate-resources<br>process-resources 复制并处理资源文件，至目标目录，准备打包。<br>compile 编译项目的源代码。<br>process-classes<br>generate-test-sources<br>process-test-sources<br>generate-test-resources<br>process-test-resources 复制并处理资源文件，至目标测试目录。<br>test-compile 编译测试源代码。<br>process-test-classes<br>test 使用合适的单元测试框架运行测试。这些测试代码不会被打包或部署。 prepare-package<br>package 接受编译好的代码，打包成可发布的格式，如 JAR。 pre-integration-test<br>integration-test<br>post-integration-test<br>verify<br>install 将包安装至本地仓库，以让其它项目依赖。<br>deploy 将最终的包复制到远程的仓库，以让其它开发人员与项目共享或部署到服务器上运行。 </p>
+</li>
+</ol>
+<blockquote>
+<p>tips：学习了解即可，有maven自动化操作</p>
+</blockquote>
+<p>几个基本的Maven命令<br>mvn install    安装<br>mvn clean    清理<br>mvn compile    编译<br>mvn test    测试<br>mvn package    打包</p>
+<h5 id="6-依赖"><a href="#6-依赖" class="headerlink" title="6.依赖"></a>6.依赖</h5><p>未……………………</p>
+<h5 id="7-插件和目标"><a href="#7-插件和目标" class="headerlink" title="7.插件和目标"></a>7.插件和目标</h5><ul>
+<li>Maven的核心仅仅定义了抽象的生命周期，具体的任务都是交由插件完成的</li>
+<li>每个插件都能实现多个功能，每个功能就是一个插件目标</li>
+<li>Maven的生命周期与插件目标相互绑定，以完成某个具体的构建任务。</li>
+</ul>
+<p>eg：compile是插件maven-compiler-plugin的一个目标。</p>
+<p>未……………………</p>
+<h5 id="8-继承"><a href="#8-继承" class="headerlink" title="8.继承"></a>8.继承</h5><p>未……………………</p>
+<h5 id="9-聚合"><a href="#9-聚合" class="headerlink" title="9..聚合"></a>9..聚合</h5><p>将多个工程拆分为模块后，需要手动逐个安装到仓库后依赖才能够生效。修改源码后也需要逐个手动进 行 clean 操作。而使用了聚合之后就可以批量进行 Maven 工程的安装、清理工作。 </p>
+<p>如何配置聚合？ 在总的聚合工程中使用 modules/module 标签组合，指定模块工程的相对路径即可 </p>
+ <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">module</span>&gt;</span>../Hello<span class="tag">&lt;/<span class="name">module</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">module</span>&gt;</span>../HelloFriend<span class="tag">&lt;/<span class="name">module</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">module</span>&gt;</span>../MakeFriends<span class="tag">&lt;/<span class="name">module</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>未……………………</p>
+<p>待补：基于IDEA的Maven构建。</p>
+<h3 id="参考文档、教程"><a href="#参考文档、教程" class="headerlink" title="参考文档、教程"></a>参考文档、教程</h3><ol>
+<li><p><a href="https://www.bilibili.com/video/av36557763?p=9" target="_blank" rel="noopener">尚硅谷–Maven教程</a></p>
+<blockquote>
+<p>视频也就看文档看懵的时候来找找相关的视频，本文档主要根据其讲义总结，侵删！！</p>
+</blockquote>
+</li>
+<li><p><a href="https://www.yiibai.com/maven/maven-central-repository.html#article-start" target="_blank" rel="noopener">易百教程</a></p>
+<blockquote>
+<p>应该是来源于官方文档，但是翻译有点菜。能看，相对好。</p>
+</blockquote>
+</li>
+<li><p><a href="http://maven.apache.org/guides/getting-started/index.html" target="_blank" rel="noopener">Maven官方</a></p>
+</li>
+</ol>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>若非特别说明，本部分内容还会更新，敬请期待</p>
+
+          
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://zy68.top/2020/01/20/Maven/>https://zy68.top/2020/01/20/Maven/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-04T13:10:06+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新：2020年2月4日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/maven/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>maven</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>java</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/01/20/Maven/&title=Maven - MrGo123&summary=简介+下载、配置+核心概念+参考文档"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/01/20/Maven/&title=Maven - MrGo123&summary=简介+下载、配置+核心概念+参考文档"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/01/20/Maven/&title=Maven - MrGo123&summary=简介+下载、配置+核心概念+参考文档"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/01/20/javaSE-7-%E6%B3%9B%E5%9E%8B/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>javaSE--7.泛型</p>
+                <p class='content'>泛型程序设计意味着编写的代码可以被多中种不同类型的对象所重用。
+
+就是写一个东西，支持好多对象去使用。可简称广泛的类型。
+
+泛型类定义：一个泛型类就是具有一个或多个类型变量的类。
+例如下面代码
+...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/01/17/javaSE-4-%E7%BB%A7%E6%89%BF/'>
+                <p class='title'>javaSE-4.继承<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>继承 + 多态 + 
+
+
+
+
+继承子类 extends 父类
+父类的属性和方法子类都有，子类还可增加域、增加方法、覆盖父类的方法，但是不能删除。子类调用父类的方法属性用supper
+
+有些父类私...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+        <p cst>有问题还请指出，Thanks~~~</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Maven',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>Zhuangyi</h2>
+        
+        
+        
+          <p><span id="jinrishici-sentence">MrGo123</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="https://www.zhihu.com/people/mry-15-56"
+              class="social fab fa-zhihu fa-lg flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=NE5NWVVdWAIMdFJbTFlVXVgaV1tZ"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/MrGo123"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/playlist?id=2896521768"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正文"><span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、简要认识Maven"><span class="toc-text">一、简要认识Maven</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、Maven下载及配置（Windows）"><span class="toc-text">二、Maven下载及配置（Windows）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、了解九个核心概念"><span class="toc-text">三、了解九个核心概念</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-POM"><span class="toc-text">1.POM</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-坐标"><span class="toc-text">2.坐标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-Maven资源-仓-库"><span class="toc-text">3.Maven资源(仓)库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-目录结构"><span class="toc-text">4.目录结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-Maven的生命周期"><span class="toc-text">5.Maven的生命周期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-依赖"><span class="toc-text">6.依赖</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-插件和目标"><span class="toc-text">7.插件和目标</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-继承"><span class="toc-text">8.继承</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-聚合"><span class="toc-text">9..聚合</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档、教程"><span class="toc-text">参考文档、教程</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/Algorithm/" href="/categories/Algorithm/"
+            id="categoriesAlgorithm"
+            ><div class='name'>Algorithm</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/C-C/" href="/categories/C-C/"
+            id="categoriesC-C"
+            ><div class='name'>C/C++</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/ComputerBasic/" href="/categories/ComputerBasic/"
+            id="categoriesComputerBasic"
+            ><div class='name'>ComputerBasic</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/DataBase/" href="/categories/DataBase/"
+            id="categoriesDataBase"
+            ><div class='name'>DataBase</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/HTML/" href="/categories/HTML/"
+            id="categoriesHTML"
+            ><div class='name'>HTML</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/HTTP/" href="/categories/HTTP/"
+            id="categoriesHTTP"
+            ><div class='name'>HTTP</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/JavaSE/" href="/categories/JavaSE/"
+            id="categoriesJavaSE"
+            ><div class='name'>JavaSE</div><div class='badge'>(8)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/JavaWeb/" href="/categories/JavaWeb/"
+            id="categoriesJavaWeb"
+            ><div class='name'>JavaWeb</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Linux/" href="/categories/Linux/"
+            id="categoriesLinux"
+            ><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Mark/" href="/categories/Mark/"
+            id="categoriesMark"
+            ><div class='name'>Mark</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Maven/" href="/categories/Maven/"
+            id="categoriesMaven"
+            ><div class='name'>Maven</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Spring/" href="/categories/Spring/"
+            id="categoriesSpring"
+            ><div class='name'>Spring</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Tool/" href="/categories/Tool/"
+            id="categoriesTool"
+            ><div class='name'>Tool</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/YAML/" href="/categories/YAML/"
+            id="categoriesYAML"
+            ><div class='name'>YAML</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/git-github/" href="/categories/git-github/"
+            id="categoriesgit-github"
+            ><div class='name'>git/github</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/markdown/" href="/categories/markdown/"
+            id="categoriesmarkdown"
+            ><div class='name'>markdown</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%9A%8F%E7%AC%94/" href="/categories/%E9%9A%8F%E7%AC%94/"
+            id="categoriesE99A8FE7AC94"
+            ><div class='name'>随笔</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>推荐阅读</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\27\Springng-BeanBuilding\" title="Springng_BeanBuilding" rel="bookmark">Springng_BeanBuilding</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\20\Spring\" title="Spring" rel="bookmark">Spring</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\20\javaSE-12-部署\" title="javaSE-12.部署" rel="bookmark">javaSE-12.部署</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\12\javaSE-1.环境\" title="javaSE--1.环境" rel="bookmark">javaSE--1.环境</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.2'
+      loop='all'
+      order='random'
+      fixed='true'
+      list-max-height='200px'
+      server='netease'
+      type='playlist'
+      id='2896521768'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="https://www.zhihu.com/people/mry-15-56"
+                class="social fab fa-zhihu fa-lg flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=NE5NWVVdWAIMdFJbTFlVXVgaV1tZ"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/MrGo123"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/playlist?id=2896521768"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          次
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://zy68.top">Copyright © 2019-2020 Zhuangyi</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/BackWallstonesea.jpg", "https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/BackWallnature.jpg", "https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/BackWallship.com.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "7k5o87qfFgd2uWkD7vPFU4Uo-gzGzoHsz",
+    appKey: "uTchb9UUIFz9YEbS8EGw7iQS",
+    placeholder: "看到这了看官不如留个印记？？~~~~",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
