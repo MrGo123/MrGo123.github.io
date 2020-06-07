@@ -477,6 +477,9 @@
 <p>回退后结构：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┌────┐</span><br><span class="line">│HEAD│</span><br><span class="line">└────┘</span><br><span class="line">   │</span><br><span class="line">   └──&gt; ○ third version</span><br><span class="line">        │</span><br><span class="line">        ○ second version</span><br><span class="line">        │</span><br><span class="line">        ○ Add README.md</span><br></pre></td></tr></table></figure>
 <p>若关闭了当前的Bash窗口，<code>commit id</code>不见了怎么办，可以用 <code>git relog</code> 查看所有的版本，用显示的 <code>commit id</code>回退版本。</p>
+<h4 id="八、分支"><a href="#八、分支" class="headerlink" title="八、分支"></a>八、分支</h4><p>git branch -avv，它用来查看全部分支信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -avv</span><br><span class="line">* master                10dd6fe [origin/master] update</span><br><span class="line">  remotes/origin/HEAD   -&gt; origin/master</span><br><span class="line">  remotes/origin/master 10dd6fe update</span><br></pre></td></tr></table></figure>
+
 <h3 id="结合动态图认识一个命令"><a href="#结合动态图认识一个命令" class="headerlink" title="结合动态图认识一个命令"></a>结合动态图认识一个命令</h3><p>？？这里还没消化，先码</p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MjM5MDA2MTI1MA==&mid=2649094728&idx=1&sn=459a3671f2afd7e832ced0c581d6f46b&chksm=be5bdde5892c54f387add99731c111e8c9bfc1b98998dfa6b2ff83b0079519a7ffbc5c4c7d6b&mpshare=1&scene=23&srcid=&sharer_sharetime=1590081929387&sharer_shareid=2cc947b5ca5c4f3edc65c12deeab5c55#rd" target="_blank" rel="noopener">用动图展示 10 个 Git 命令</a></p>
 <h3 id="其他辅助内容"><a href="#其他辅助内容" class="headerlink" title="#其他辅助内容"></a>#其他辅助内容</h3><h4 id="一、commit规范"><a href="#一、commit规范" class="headerlink" title="一、commit规范"></a>一、commit规范</h4><p>@<a href="https://seven-innovation-base.github.io/Git-IN-ACTION-docs/2020/02/23/%E9%80%9A%E8%BF%87Git%E5%92%8CAngular%E7%90%86%E8%A7%A3%E8%AF%AD%E4%B9%89%E5%8C%96%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF/" target="_blank" rel="noopener">(译)通过 Git 和 Angular 了解语义化提交信息</a></p>
@@ -609,10 +612,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-22T12:20:22+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-04T22:31:31+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年5月22日</p>
+    <p>更新：2020年6月4日</p>
   </a>
 </div>
 
@@ -849,7 +852,7 @@ background：
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">#前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念简介"><span class="toc-text">概念简介</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#各部分内容"><span class="toc-text">#各部分内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、登录"><span class="toc-text">一、登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、查看配置信息"><span class="toc-text">二、查看配置信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、创建及初始化仓库"><span class="toc-text">三、创建及初始化仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、Git内部工作原理"><span class="toc-text">四、Git内部工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、协作Pr"><span class="toc-text">五、协作Pr</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、关于fork之后跟源仓的同步"><span class="toc-text">六、关于fork之后跟源仓的同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、版本控制"><span class="toc-text">七、版本控制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结合动态图认识一个命令"><span class="toc-text">结合动态图认识一个命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他辅助内容"><span class="toc-text">#其他辅助内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、commit规范"><span class="toc-text">一、commit规范</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档or推荐"><span class="toc-text">#参考文档or推荐</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">#前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念简介"><span class="toc-text">概念简介</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#各部分内容"><span class="toc-text">#各部分内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、登录"><span class="toc-text">一、登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、查看配置信息"><span class="toc-text">二、查看配置信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、创建及初始化仓库"><span class="toc-text">三、创建及初始化仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、Git内部工作原理"><span class="toc-text">四、Git内部工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、协作Pr"><span class="toc-text">五、协作Pr</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、关于fork之后跟源仓的同步"><span class="toc-text">六、关于fork之后跟源仓的同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、版本控制"><span class="toc-text">七、版本控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#八、分支"><span class="toc-text">八、分支</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结合动态图认识一个命令"><span class="toc-text">结合动态图认识一个命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他辅助内容"><span class="toc-text">#其他辅助内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、commit规范"><span class="toc-text">一、commit规范</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档or推荐"><span class="toc-text">#参考文档or推荐</span></a></li></ol>
     </div>
   </section>
 
@@ -886,7 +889,7 @@ background：
           <li><a class="flat-box"
             title="/categories/ComputerBasic/" href="/categories/ComputerBasic/"
             id="categoriesComputerBasic"
-            ><div class='name'>ComputerBasic</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>ComputerBasic</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/DataBase/" href="/categories/DataBase/"

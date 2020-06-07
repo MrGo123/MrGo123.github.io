@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>C++ - MrGo123</title>
+    <title>C++(note) - MrGo123</title>
   
     <meta name="keywords" content="C++">
   
@@ -318,7 +318,7 @@
           
   <h1 class="title">
     <a href="/2020/05/25/C++/">
-      C++
+      C++(note)
     </a>
   </h1>
 
@@ -367,13 +367,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.3k字</p>
+      <p>字数：2.2k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：4分钟</p>
+      <p>时长：8分钟</p>
     </a>
   </div>
 
@@ -449,15 +449,104 @@
 <h3 id="重载函数"><a href="#重载函数" class="headerlink" title="重载函数"></a>重载函数</h3><p>重载函数，即函数参数个数、参数类型和参数顺序三者中必须至少有一种不同，函数返回值可同可不同的同名函数。<br>例如：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">( <span class="keyword">int</span> a, <span class="keyword">int</span> b )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">( <span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">double</span> b ,<span class="keyword">float</span> c)</span></span>;</span><br></pre></td></tr></table></figure>
 
+<h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><p>指针只是一个地址，为什么要定义基类型？？eg：<code>int *p;char *p;</code><br>答：<strong>不同的数据类型在计算机系统中的存储方式和所占字节数不同</strong>，而<strong>指针只是一个地址</strong>，只是指向某个存储空间，但是读取数据的时候读取多少呢？noone knows。这时，数据类型站出来了，<del>它说它知道</del> 已经知道不同的数据类型占不同大小的空间，所以用数据类型来定义指针，在读取的时候系统就能够知道要读取多少数据。</p>
+<p><del>深入底层它不香吗？就这？？好好学微机和计组</del></p>
+<h4 id="函数指针"><a href="#函数指针" class="headerlink" title="函数指针"></a>函数指针</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span>;</span><br><span class="line"><span class="keyword">int</span> (*p)(<span class="keyword">int</span> ,<span class="keyword">int</span> );   <span class="comment">//(*p)的括号不能省略</span></span><br><span class="line">p=<span class="built_in">max</span>;</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line"><span class="keyword">int</span> a,b,m;</span><br><span class="line"><span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">m=p(a,b);</span><br></pre></td></tr></table></figure>
 
+<h4 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h4><p>指针数组：即数组每个元素都是用来存指针的。<br>定义：类型名 * 数组名[数组长度]</p>
+<p>eg：int * p[4];</p>
+<p>合理利用，是个好东西。</p>
+<p>小记：<code>p=&amp;array[i] //将数组array第i个元素的地址给p</code>.</p>
+<h4 id="指针使用小结简记"><a href="#指针使用小结简记" class="headerlink" title="指针使用小结简记"></a>指针使用小结简记</h4><table>
+<thead>
+<tr>
+<th align="center">变量定义</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">int *p[4]</td>
+<td align="center">指针数组</td>
+</tr>
+<tr>
+<td align="center">int (*p)[4]</td>
+<td align="center">一般的数组，p是数组首地址的指针变量</td>
+</tr>
+<tr>
+<td align="center">int * p()</td>
+<td align="center">p为函数名，函数返回类型为int型地址</td>
+</tr>
+<tr>
+<td align="center">int (*p)()</td>
+<td align="center">p为指向函数的指针</td>
+</tr>
+<tr>
+<td align="center">int **p</td>
+<td align="center">指针的指针</td>
+</tr>
+<tr>
+<td align="center">int const *p</td>
+<td align="center">p是常指针，其值固定不变</td>
+</tr>
+<tr>
+<td align="center">还有</td>
+<td align="center">……</td>
+</tr>
+</tbody></table>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p><strong>介绍</strong><br>c++引用，即引向一个已存在的对象。俗称“别名”，类似指针，但比指针受到的限制更多。</p>
+<p>C++ 引用 vs 指针</p>
+<ul>
+<li>不存在空引用。引用必须连接到一块合法的内存。</li>
+<li>一旦引用被初始化为一个对象，就不能被指向到另一个对象。而指针可以在任何时候指向到另一个对象。</li>
+<li>引用必须在创建时被初始化。指针可以在任何时间被初始化。</li>
+</ul>
+<p><strong>使用</strong></p>
+<p>引用只有声明，没有定义。即先定义一个变量，然后声明一个引用去指代这个变量。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> &amp; x, <span class="keyword">int</span> &amp; y )</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> temp;</span><br><span class="line">	temp=x;</span><br><span class="line">	x=y;</span><br><span class="line">	y=temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a=<span class="number">23</span>,b=<span class="number">45</span>;</span><br><span class="line">	swap(a,b);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="string">"\n"</span>&lt;&lt;b &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>引用还可作为返回值使用。</p>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义</span></span><br><span class="line"><span class="keyword">enum</span> color&#123;red,yellow,blue,black&#125;;</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line">```c++</span><br><span class="line">color co1,co2;</span><br><span class="line">co1=red;</span><br><span class="line">co2=co1(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+<p><del>使用次数=0</del></p>
 <h3 id="函数模板——template"><a href="#函数模板——template" class="headerlink" title="函数模板——template"></a>函数模板——template</h3><p>函数模板，即建立一个通用函数，其函数类型和形参类型不具体指定，通过一个虚拟的类型来代表（也可称为泛型）。使用<strong>template</strong>关键词声明模板<br>例如：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模板声明，T为类型参数。typename也可改写为 class.</span></span><br><span class="line"><span class="comment">//类型参数可以有多个 &lt;typename T1, tyname T2&gt;</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </span><br><span class="line"><span class="function">T <span class="title">max</span><span class="params">(T a, T b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b ? a : b; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>与重载函数的区别：重载函数是一个函数名多个函数，可以相对地理解为单一功能函数；函数模板是一个函数名一个模板对应多个不同参数类型功能需求的函数，是一个通用函数。</p>
 </blockquote>
+<h2 id="面向对象程序设计"><a href="#面向对象程序设计" class="headerlink" title="面向对象程序设计"></a>面向对象程序设计</h2><p>在面向对象的程序设计中，除了主函数，其他的函数几乎都是出现在类里，通过类调用函数。程序的基本构成是类，程序面向的是类和对象。面向对象设计更利于开发更大规模的程序。</p>
+<p>四个特点：抽象、封装、继承和多态性。</p>
+<blockquote>
+<p>类是对象的抽象</p>
+</blockquote>
+<h3 id="类class"><a href="#类class" class="headerlink" title="类class"></a>类class</h3><p><strong>成员函数的代码不占用对象的存储空间</strong></p>
+<ul>
+<li>类的成员函数是公用的，即无论实例化了多少个对象，这些对象使用的函数都是相同的，公用的，并没有生成新的函数。</li>
+<li>类的内存大小，取决于类中声明的变量，与函数无关。</li>
+</ul>
 <h2 id="输入输出流（I-O-Stream）"><a href="#输入输出流（I-O-Stream）" class="headerlink" title="输入输出流（I/O Stream）"></a>输入输出流（I/O Stream）</h2><p>输入输出流：指若干个字节组成的字节序列，这些字节中的数据按顺序从一个对象传送到另一个对象。</p>
 <p>包括标准I/O、文件I/O和串I/O。</p>
+<h4 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h4><table>
+<thead>
+<tr>
+<th align="center">数据类型</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ofstream</td>
+<td align="center">该数据类型表示输出文件流，用于创建文件并向文件写入信息。</td>
+</tr>
+<tr>
+<td align="center">ifstream</td>
+<td align="center">该数据类型表示输入文件流，用于从文件读取信息。</td>
+</tr>
+<tr>
+<td align="center">fstream</td>
+<td align="center">该数据类型通常表示文件流，且同时具有 ofstream 和 ifstream 两种功能，这意味着它可以创建文件，向文件写入信息，从文件读取信息。</td>
+</tr>
+</tbody></table>
+<p>头文件加<fstream>即可。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"iostream"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"fstream"</span></span></span><br><span class="line"><span class="comment">// 创建输入文件对象</span></span><br><span class="line">ifstream infile;</span><br><span class="line">ofstream outfile;</span><br><span class="line">infile.<span class="built_in">open</span>(<span class="string">"myfile1.txt"</span>);</span><br><span class="line">outfile.<span class="built_in">open</span>(<span class="string">"myfile2.txt"</span>);</span><br><span class="line"><span class="keyword">float</span> x,y;</span><br><span class="line">infile&gt;&gt;x&gt;&gt;y;</span><br><span class="line">outfile&lt;&lt;x&lt;&lt;<span class="string">'\t'</span>&lt;&lt;y&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">infile.<span class="built_in">close</span>();</span><br><span class="line">outfile.<span class="built_in">close</span>();</span><br></pre></td></tr></table></figure>
 
 
@@ -576,10 +665,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-27T15:27:53+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-07T16:25:58+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年5月27日</p>
+    <p>更新：2020年6月7日</p>
   </a>
 </div>
 
@@ -606,7 +695,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/05/25/C++/&title=C++ - MrGo123&summary=重载函数+函数模板"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/05/25/C++/&title=C++(note) - MrGo123&summary=重载函数+函数模板"
           
           >
           
@@ -618,7 +707,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/05/25/C++/&title=C++ - MrGo123&summary=重载函数+函数模板"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/05/25/C++/&title=C++(note) - MrGo123&summary=重载函数+函数模板"
           
           >
           
@@ -630,7 +719,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/05/25/C++/&title=C++ - MrGo123&summary=重载函数+函数模板"
+          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/05/25/C++/&title=C++(note) - MrGo123&summary=重载函数+函数模板"
           
           >
           
@@ -727,7 +816,7 @@ Program files以及Program ...</p>
 
   <script>
     window.subData = {
-      title: 'C++',
+      title: 'C++(note)',
       tools: true
     }
   </script>
@@ -818,7 +907,7 @@ Program files以及Program ...</p>
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-变量的存储期"><span class="toc-text">C++变量的存储期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C-变量的存储类别"><span class="toc-text">C++变量的存储类别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置函数——inline"><span class="toc-text">内置函数——inline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重载函数"><span class="toc-text">重载函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数模板——template"><span class="toc-text">函数模板——template</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输入输出流（I-O-Stream）"><span class="toc-text">输入输出流（I&#x2F;O Stream）</span></a>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#C-变量的存储期"><span class="toc-text">C++变量的存储期</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C-变量的存储类别"><span class="toc-text">C++变量的存储类别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置函数——inline"><span class="toc-text">内置函数——inline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重载函数"><span class="toc-text">重载函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指针"><span class="toc-text">指针</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数指针"><span class="toc-text">函数指针</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指针数组"><span class="toc-text">指针数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指针使用小结简记"><span class="toc-text">指针使用小结简记</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引用"><span class="toc-text">引用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#枚举"><span class="toc-text">枚举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数模板——template"><span class="toc-text">函数模板——template</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#面向对象程序设计"><span class="toc-text">面向对象程序设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类class"><span class="toc-text">类class</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输入输出流（I-O-Stream）"><span class="toc-text">输入输出流（I&#x2F;O Stream）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文件流"><span class="toc-text">文件流</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -855,7 +944,7 @@ Program files以及Program ...</p>
           <li><a class="flat-box"
             title="/categories/ComputerBasic/" href="/categories/ComputerBasic/"
             id="categoriesComputerBasic"
-            ><div class='name'>ComputerBasic</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>ComputerBasic</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/DataBase/" href="/categories/DataBase/"
