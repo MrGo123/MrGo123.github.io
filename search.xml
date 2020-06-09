@@ -17,6 +17,31 @@
     
     
     <entry>
+      <title>Linux更换下载源镜像</title>
+      <link href="/2020/06/09/Linux%E6%9B%B4%E6%8D%A2%E4%B8%8B%E8%BD%BD%E6%BA%90%E9%95%9C%E5%83%8F/"/>
+      <url>/2020/06/09/Linux%E6%9B%B4%E6%8D%A2%E4%B8%8B%E8%BD%BD%E6%BA%90%E9%95%9C%E5%83%8F/</url>
+      
+        <content type="html"><![CDATA[<p>更换Ubuntu的下载源镜像，回归正常速度！！</p><a id="more"></a><p>这里推<a href="https://developer.aliyun.com/mirror/" target="_blank" rel="noopener">阿里云的镜像</a></p><ol><li>用<code>lsb_release -a</code> 查看自己的Linux版本信息。</li><li>用<code>cp /etc/apt/sources.list /etc/apt/sources.list.back</code> 备份 sources.list 文件。<del>要是不保存也行</del></li><li>到镜像网里找到自己对应的Linux系统和版本。<del>那里有教</del>，复制对应的配置信息。</li><li>sudo权限编辑上述的文件——sources.list，把里面的内容全替换为复制下来的信息。</li><li>更新原有配置：<code>sudo apt-get update</code>，sudo依旧。</li><li>搞定。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>重装系统+环境恢复简记</title>
       <link href="/2020/06/03/A-Rebuild-Record/"/>
       <url>/2020/06/03/A-Rebuild-Record/</url>
