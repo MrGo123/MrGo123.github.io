@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>2020上半年小总结</title>
+      <link href="/2020/06/10/2020%E4%B8%8A%E5%8D%8A%E5%B9%B4%E5%B0%8F%E6%80%BB%E7%BB%93/"/>
+      <url>/2020/06/10/2020%E4%B8%8A%E5%8D%8A%E5%B9%B4%E5%B0%8F%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<a id="more"></a>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>重装系统+环境恢复简记</title>
       <link href="/2020/06/03/A-Rebuild-Record/"/>
       <url>/2020/06/03/A-Rebuild-Record/</url>
@@ -33,7 +46,7 @@
       <link href="/2020/06/03/Computer-English/"/>
       <url>/2020/06/03/Computer-English/</url>
       
-        <content type="html"><![CDATA[<p>Some computer term in English and its paraphrase.</p><p><strong>English makes you go further.</strong></p><a id="more"></a><blockquote><p>computer culture is extensive and profound, there is no gap at different aspect.Just mark down.📕📕。</p></blockquote><h2 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h2><table><thead><tr><th align="center">word</th><th align="center">编程用词</th><th align="center">有道释义</th></tr></thead><tbody><tr><td align="center">constant</td><td align="center">常量</td><td align="center">adj. 不变的；恒定的；经常的。n. [数] 常数；恒量</td></tr><tr><td align="center">variable</td><td align="center">变量</td><td align="center">adj. 变量的；可变的；易变的，多变的；变异的，[生物] 畸变的。n. [数] 变量；可变物，可变因素</td></tr><tr><td align="center">value</td><td align="center">值</td><td align="center">n. 值；价值；价格；重要性；确切涵义。vt. 评价；重视；估价</td></tr><tr><td align="center">Procedure-Based Programming</td><td align="center">基于过程的程序设计</td><td align="center">procedure——n. 程序，手续；步骤</td></tr><tr><td align="center">data structure</td><td align="center">数据结构</td><td align="center"></td></tr><tr><td align="center">pseudo code</td><td align="center">伪代码</td><td align="center">pseudo——n. 伪君子；假冒的人。adj. 冒充的，假的</td></tr></tbody></table>]]></content>
+        <content type="html"><![CDATA[<p>Some computer term in English and its paraphrase.</p><p><strong>English makes you go further.</strong></p><a id="more"></a><blockquote><p>computer culture is extensive and profound, there is no gap at different aspect.Just mark down.📕📕。</p></blockquote><h2 id="C-C-——The-C-C-Programming"><a href="#C-C-——The-C-C-Programming" class="headerlink" title="C/C++——The C/C++ Programming"></a>C/C++——The C/C++ Programming</h2><table><thead><tr><th align="center">word</th><th align="center">编程用义</th><th align="center">有道释义</th></tr></thead><tbody><tr><td align="center">constant</td><td align="center">常量</td><td align="center">adj. 不变的；恒定的；经常的。n. [数] 常数；恒量</td></tr><tr><td align="center">variable</td><td align="center">变量</td><td align="center">adj. 变量的；可变的；易变的，多变的；变异的，[生物] 畸变的。n. [数] 变量；可变物，可变因素</td></tr><tr><td align="center">value</td><td align="center">值</td><td align="center">n. 值；价值；价格；重要性；确切涵义。vt. 评价；重视；估价</td></tr><tr><td align="center">Procedure-Based Programming</td><td align="center">基于过程的程序设计</td><td align="center">procedure——n. 程序，手续；步骤</td></tr><tr><td align="center">data structure</td><td align="center">数据结构</td><td align="center"></td></tr><tr><td align="center">pseudo code</td><td align="center">伪代码</td><td align="center">pseudo——n. 伪君子；假冒的人。adj. 冒充的，假的</td></tr></tbody></table><h2 id="数据库——DataBase"><a href="#数据库——DataBase" class="headerlink" title="数据库——DataBase"></a>数据库——DataBase</h2><h2 id="计组——Principles-of-Computer-Organization"><a href="#计组——Principles-of-Computer-Organization" class="headerlink" title="计组——Principles of Computer Organization"></a>计组——Principles of Computer Organization</h2><table><thead><tr><th align="center">word (,acronym  )</th><th align="center">编程用义</th><th align="center">有道释义</th></tr></thead><tbody><tr><td align="center">Complex Instruction Set Computer,<strong>CISC</strong></td><td align="center">复杂指令系统计算机</td><td align="center"></td></tr><tr><td align="center">Reduced Instruction Set Computer,<strong>RISC</strong></td><td align="center">精简指令系统计算机</td><td align="center"></td></tr></tbody></table><h2 id="备忘录"><a href="#备忘录" class="headerlink" title="备忘录"></a>备忘录</h2><p>看一本Computer English书籍。了解一哈。</p><p><del>听老师说有这门课，但是我得培养方案没有。问题不大</del></p>]]></content>
       
       
       <categories>
@@ -81,9 +94,9 @@
     
     
     <entry>
-      <title>Springng_BeanBuilding</title>
-      <link href="/2020/05/27/Springng-BeanBuilding/"/>
-      <url>/2020/05/27/Springng-BeanBuilding/</url>
+      <title>Spring2_BeanBuilding</title>
+      <link href="/2020/05/27/Spring2-BeanBuilding/"/>
+      <url>/2020/05/27/Spring2-BeanBuilding/</url>
       
         <content type="html"><![CDATA[<p>装配Bean</p><a id="more"></a><h3 id="使用Spring容器"><a href="#使用Spring容器" class="headerlink" title="使用Spring容器"></a>使用Spring容器</h3><ol><li>maven配置；</li><li>创建Bean配置文件并定义好所需对象；</li><li>创建Spring容器并制定需要装载的Bean配置文件；</li><li>通过容器提供的方法获取容器中的对象来使用。</li></ol><h3 id="Bean"><a href="#Bean" class="headerlink" title="Bean"></a>Bean</h3><p><strong>什么是Bean？？</strong><br>Bean是一套约定或规范。具体的说Bean：<br>1、所有属性为private<br>2、提供默认构造方法<br>3、提供getter和setter<br>4、实现serializable接口</p><p>简单的说：由spring容器管理的对象都是Bean对象，也是普通的java对象。</p><blockquote><p>码两篇文章<a href="https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513115&idx=1&sn=da30cf3d3f163d478748fcdf721b6414&scene=21#wechat_redirect" target="_blank" rel="noopener">【javaBean上】</a>、<a href="https://mp.weixin.qq.com/s?__biz=MzAxOTc0NzExNg==&mid=2665513118&idx=1&sn=487fefb8fa7efd59de6f37043eb21799#rd" target="_blank" rel="noopener">【javaBean下】</a></p></blockquote><p><strong>Bean、EJB、POJO及区别</strong></p><ul><li>在java1996年发布,当年12月即发布了java bean1.00-A,有什么用呢?通过统一的规范可以设置对象的值(get,set方法),这是最初的java bean;</li><li>在实际企业开发中,需要实现事务、安全、分布式,javabean就不好用了.sun公司就开始往上面堆功能,这里java bean就复杂为EJB;</li><li>EJB功能强大,但是太重了.此时出现DI(依赖注入),AOP(面向切面)技术,通过简单的java bean也能完成EJB的事情,这里的java bean简化为POJO;</li><li>Spring诞生了.</li></ul><p>区别：先判断是否满足javabean的条件，然后如果再实现一些要求，满足EJB条件就是EJB，否则就是POJO。</p><h3 id="Spring支持三种方式配置Bean文件"><a href="#Spring支持三种方式配置Bean文件" class="headerlink" title="Spring支持三种方式配置Bean文件"></a>Spring支持三种方式配置Bean文件</h3><p>自动装配、java注解和xml配置（三种允许单独使用或混合使用）</p><h4 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h4><p>Spring从两个角度来实现自动化装配</p><ol><li>组件扫描：Spring自动发现应用上下文中所创建的Bean</li><li>自动装配：Spring自动满足Bean之间的依赖。</li></ol><h4 id="通过javaConfig显式配置"><a href="#通过javaConfig显式配置" class="headerlink" title="通过javaConfig显式配置"></a>通过javaConfig显式配置</h4><p>全程@Bean注解，通过return返回实例或进行DI配置。</p><h4 id="通过（老式、不建议使用的）XML配置Bean"><a href="#通过（老式、不建议使用的）XML配置Bean" class="headerlink" title="通过（老式、不建议使用的）XML配置Bean"></a>通过（老式、不建议使用的）XML配置Bean</h4><h3 id="实践部分"><a href="#实践部分" class="headerlink" title="实践部分"></a>实践部分</h3><h4 id="创建一个Maven-projects并导入Spring-webmvc所需jar包"><a href="#创建一个Maven-projects并导入Spring-webmvc所需jar包" class="headerlink" title="创建一个Maven projects并导入Spring-webmvc所需jar包"></a>创建一个Maven projects并导入Spring-webmvc所需jar包</h4><ol><li>在IDEA中创建好基于Maven的project。</li><li>在pom.xml中导入依赖信息：<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.17.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.17.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure></li></ol><p>注：</p><ol><li>直接导入这个包的原因是project项目可能需要的jar包特别多，且包之间还有依赖。直接导入一个集成的jar包，把依赖的包全自动下载了，能减少许多麻烦和问题。</li><li>记个坑：由于我的maven源使用的是阿里云的下载源，故有些jar包版本可能未及时更新，所以IDEA会显示 <code>Dependency &#39;org.springframework:spring-webmvc:5.2.6.RELEASE&#39; not found</code>。降低版本可能会解决。</li></ol>]]></content>
       
@@ -210,9 +223,9 @@
     
     
     <entry>
-      <title>Spring</title>
-      <link href="/2020/05/20/Spring/"/>
-      <url>/2020/05/20/Spring/</url>
+      <title>Spring1</title>
+      <link href="/2020/05/20/Spring1/"/>
+      <url>/2020/05/20/Spring1/</url>
       
         <content type="html"><![CDATA[<p>Spring概念 + IOC + AOP</p><a id="more"></a><hr><p>学技术三大问：</p><ol><li><p>为什么学？</p></li><li><p>学有什么用？</p></li><li><p>怎么学？</p></li></ol><h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><blockquote><p>基于《Spring实战》+ 网络教程</p></blockquote><h3 id="Spring容器（框架）"><a href="#Spring容器（框架）" class="headerlink" title="Spring容器（框架）"></a>Spring容器（框架）</h3><ul><li>定义：Spring是一个<strong>轻量级的、非入侵式的开源</strong>框架（容器）。</li><li>目标和使命：简化java开发，促进代码的松散耦合。</li></ul><p>spring容器的概念，容器可以放很多东西，程序启动的时候会创建spring容器，会给spring容器一个清单，清单中列出了需要创建的对象以及对象依赖关系，spring容器会创建和组装好清单中的对象，然后将这些对象存放在spring容器中，当程序中需要使用的时候，可以到容器中查找获取，然后直接使用。具有依赖注入功能的容器，负责对象的实例化、对象的初始化，对象和对象之间依赖关系配置、对象的销毁、对外提供对象的查找等操作，控制对象的整个生命周期。</p><h3 id="Spring核心"><a href="#Spring核心" class="headerlink" title="Spring核心"></a>Spring核心</h3><ol><li><p><strong>AOP（aspect-orientd programming）面向切面编程</strong>。</p></li><li><p><strong>IOC（Inversion of Control）：控制反转，是一种设计思想。IOC主要通过DI和DL来具体实现。</strong></p></li></ol><ul><li><strong>DI（Dependency Injection）：依赖注入</strong></li><li>DL（）：依赖查找</li></ul><ol start="3"><li>支持事务的处理，对框架整合的支持。</li></ol><p><strong>一句话：Spring是一个控制反转（IOC）和面向切面编程（AOP）的开源框架。</strong></p><p><a href="https://docs.spring.io/spring/docs/5.3.0-SNAPSHOT/spring-framework-reference/overview.html#overview" target="_blank" rel="noopener">Spring Framework官方文档介绍</a></p><blockquote><p>IOC和DI的区别？？<br>答：IOC是目的，DI是手段。IOC通过DI来实现（DL了解）。IOC是指让生成类的方式由传统方式（new）反过来，即程序员不调用new, 需要类的时候由框架注入（DI），是从不同层面的解读。——来自知乎高分答案</p></blockquote><p><a href="https://mp.weixin.qq.com/s/eNTIxzvXpPCDt6r5686Aiw" target="_blank" rel="noopener">IOC原理等着填:(转载)Spring IOC 知识点总结</a></p><h4 id="IOC控制反转"><a href="#IOC控制反转" class="headerlink" title="IOC控制反转"></a>IOC控制反转</h4><p>以前，程序员使用对象的时候都需要自己去创建和组装，而现在这些创建和组装都交给spring容器去给完成了，程序员只需要去spring容器中查找需要使用的对象就可以了；这个过程中对象的创建和组装过程被反转了，之前是使用者自己主动去控制的，现在交给spring容器去创建和组装了，对象的构建过程被反转了，所以叫做控制反转；</p><h4 id="DI-依赖注入"><a href="#DI-依赖注入" class="headerlink" title="DI 依赖注入"></a>DI 依赖注入</h4><p>依赖注入是spring容器中创建对象时给其设置依赖对象的方式，比如给spring一个清单，清单中列出了需要创建B对象以及其他的一些对象（可能包含了B类型中需要依赖对象），此时spring在创建B对象的时候，会看B对象需要依赖于哪些对象，然后去查找一下清单中有没有包含这些被依赖的对象，如果有就去将其创建好，然后将其传递给B对象；可能B需要依赖于很多对象，B创建之前完全不需要知道其他对象是否存在或者其他对象在哪里以及被他们是如何创建，而spring容器会将B依赖对象主动创建好并将其注入到B中去，比如spring容器创建B的时候，发现B需要依赖于A，那么spring容器在清单中找到A的定义并将其创建好之后，注入到B对象中。</p><h3 id="Spring-组成"><a href="#Spring-组成" class="headerlink" title="Spring 组成"></a>Spring 组成</h3><p><a href="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/java/SpringConsist.png" target="_blank" rel="noopener"></a></p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.itsoku.com/article/259" target="_blank" rel="noopener">路人甲java——《Spring系列第2篇：控制反转（IoC）与依赖注入（DI）》</a></p>]]></content>
       
@@ -281,6 +294,33 @@
             <tag> http </tag>
             
             <tag> 网络 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Gcc编译C语言。</title>
+      <link href="/2020/05/19/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/"/>
+      <url>/2020/05/19/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/</url>
+      
+        <content type="html"><![CDATA[<p>Gcc简介+Gcc编译流程及主要相关命令。</p><a id="more"></a><h3 id="gcc简介"><a href="#gcc简介" class="headerlink" title="gcc简介"></a>gcc简介</h3><h3 id="gcc编译流程"><a href="#gcc编译流程" class="headerlink" title="gcc编译流程"></a>gcc编译流程</h3><p>GCC 编译器在编译一个C语言程序时需要经过以下 4 步：</p><ol><li>(-E)将C语言源程序预处理，生成.i文件。</li><li>(-S)预处理后的.i文件编译成为汇编语言，生成.s文件。</li><li>(-c)将汇编语言文件经过汇编，生成目标文件.o文件。</li><li>将各个模块的.o文件链接起来生成一个可执行程序文件。</li></ol><p>注：</p><ol><li><code>.i</code>文件、<code>.s</code>文件、<code>.o</code>文件可以认为是中间文件或临时文件，如果使用 GCC 一次性完成C语言程序的编译，那么只能看到最终的可执行文件。中间文件被删除。</li><li>每一个步骤生产的文件都可以直接从.c 文件执行对应得命令后直接生成，不必按顺序。（到底还是按顺序，只是系统把它们删了）</li></ol><table><thead><tr><th align="center">gcc编译选项</th><th align="left">选项的意义</th></tr></thead><tbody><tr><td align="center">-c</td><td align="left">编译、汇编指定的源文件，但是不进行链接</td></tr><tr><td align="center">-S</td><td align="left">编译指定的源文件，但是不进行汇编</td></tr><tr><td align="center">-E</td><td align="left">预处理指定的源文件，不进行编译</td></tr><tr><td align="center">-o [file1] [file2]</td><td align="left">将文件 file2 编译成可执行文件 file1</td></tr><tr><td align="center">-I directory</td><td align="left">指定 include 包含文件的搜索目录</td></tr><tr><td align="center">-g</td><td align="left">生成调试信息，该程序可以被调试器调试</td></tr></tbody></table><p>直接编译：<code>gcc hello.c -o hello</code>，生成hello可执行文件可直接运行。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> C </tag>
             
         </tags>
       

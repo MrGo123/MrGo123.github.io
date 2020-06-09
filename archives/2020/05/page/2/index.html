@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -16,12 +18,8 @@
 
   <!-- 页面元数据 -->
   
-    <title>Spring - MrGo123</title>
+    <title>归档：2020/5 - MrGo123</title>
   
-    <meta name="keywords" content="java,Spring">
-  
-  
-    <meta name="description" content="Spring概念 + IOC + AOP">
   
 
   <!-- feed -->
@@ -74,7 +72,83 @@
 
 <body>
   
-  <div id="loading-bar-wrapper">
+  <div class="cover-wrapper">
+    
+      <cover class='cover  half'>
+        <div class='cover-body'>
+  <div class='a'>
+    
+    
+      <p class="title">Focus On Doing Something</p>
+    
+    
+      <p class="subtitle">🌹🌹🇨🇳🇨🇳🇨🇳🌹🌹</p>
+    
+  </div>
+  <div class='b'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="enjoy yourself ~~" />
+          <i class="icon fas fa-search fa-fw"></i>
+        </form>
+      </div>
+    
+    <div class='menu navigation'>
+      <ul class='cover-list-h'>
+        
+          
+            <li>
+              <a class="nav home"
+                href="/"
+                
+                
+                id="home">
+                <i class='fas fa-home fa-fw'></i>主页
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+                <i class='fas fa-history fa-fw'></i>动态
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/friends/"
+                
+                
+                id="friends">
+                <i class='fas fa-link fa-fw'></i>关注
+              </a>
+            </li>
+          
+            <li>
+              <a class="nav home"
+                href="/about/"
+                
+                
+                id="about">
+                <i class='fas fa-info-circle fa-fw'></i>关于
+              </a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+      </cover>
+    
+    <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow blur">
@@ -295,18 +369,24 @@
 
 <script>setLoadingBarProgress(40);</script>
 
+  </div>
 
 
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper'>
       
 
 <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+	
+		
+  <section class="post-list ">
+    
+    
       
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
 
 
   <section class='meta'>
@@ -316,11 +396,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h1 class="title">
-    <a href="/2020/05/20/Spring/">
-      Spring
+  <h2 class="title">
+    <a href="/2020/05/19/Linux/">
+      Linux基础——笔记
     </a>
-  </h1>
+  </h2>
 
 
         
@@ -343,9 +423,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Spring/' rel="nofollow">
+    <a href='/categories/Linux/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Spring</p>
+      <p>Linux</p>
     </a>
   </div>
 
@@ -356,7 +436,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布：2020年5月20日</p>
+    <p>发布：2020年5月19日</p>
   </a>
 </div>
 
@@ -367,13 +447,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：880字</p>
+      <p>字数：2.5k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：3分钟</p>
+      <p>时长：9分钟</p>
     </a>
   </div>
 
@@ -394,295 +474,54 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          <p>Spring概念 + IOC + AOP</p>
-<a id="more"></a>
-
-
-<hr>
-<p>学技术三大问：</p>
-<ol>
-<li><p>为什么学？</p>
-</li>
-<li><p>学有什么用？</p>
-</li>
-<li><p>怎么学？</p>
-</li>
-</ol>
-<h2 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h2><blockquote>
-<p>基于《Spring实战》+ 网络教程</p>
-</blockquote>
-<h3 id="Spring容器（框架）"><a href="#Spring容器（框架）" class="headerlink" title="Spring容器（框架）"></a>Spring容器（框架）</h3><ul>
-<li>定义：Spring是一个<strong>轻量级的、非入侵式的开源</strong>框架（容器）。</li>
-<li>目标和使命：简化java开发，促进代码的松散耦合。</li>
-</ul>
-<p>spring容器的概念，容器可以放很多东西，程序启动的时候会创建spring容器，会给spring容器一个清单，清单中列出了需要创建的对象以及对象依赖关系，spring容器会创建和组装好清单中的对象，然后将这些对象存放在spring容器中，当程序中需要使用的时候，可以到容器中查找获取，然后直接使用。具有依赖注入功能的容器，负责对象的实例化、对象的初始化，对象和对象之间依赖关系配置、对象的销毁、对外提供对象的查找等操作，控制对象的整个生命周期。</p>
-<h3 id="Spring核心"><a href="#Spring核心" class="headerlink" title="Spring核心"></a>Spring核心</h3><ol>
-<li><p><strong>AOP（aspect-orientd programming）面向切面编程</strong>。</p>
-</li>
-<li><p><strong>IOC（Inversion of Control）：控制反转，是一种设计思想。IOC主要通过DI和DL来具体实现。</strong></p>
-</li>
-</ol>
-<ul>
-<li><strong>DI（Dependency Injection）：依赖注入</strong></li>
-<li>DL（）：依赖查找</li>
-</ul>
-<ol start="3">
-<li>支持事务的处理，对框架整合的支持。</li>
-</ol>
-<p><strong>一句话：Spring是一个控制反转（IOC）和面向切面编程（AOP）的开源框架。</strong></p>
-<p><a href="https://docs.spring.io/spring/docs/5.3.0-SNAPSHOT/spring-framework-reference/overview.html#overview" target="_blank" rel="noopener">Spring Framework官方文档介绍</a></p>
-<blockquote>
-<p>IOC和DI的区别？？<br>答：IOC是目的，DI是手段。IOC通过DI来实现（DL了解）。IOC是指让生成类的方式由传统方式（new）反过来，即程序员不调用new, 需要类的时候由框架注入（DI），是从不同层面的解读。——来自知乎高分答案</p>
-</blockquote>
-<p><a href="https://mp.weixin.qq.com/s/eNTIxzvXpPCDt6r5686Aiw" target="_blank" rel="noopener">IOC原理等着填:(转载)Spring IOC 知识点总结</a></p>
-<h4 id="IOC控制反转"><a href="#IOC控制反转" class="headerlink" title="IOC控制反转"></a>IOC控制反转</h4><p>以前，程序员使用对象的时候都需要自己去创建和组装，而现在这些创建和组装都交给spring容器去给完成了，程序员只需要去spring容器中查找需要使用的对象就可以了；这个过程中对象的创建和组装过程被反转了，之前是使用者自己主动去控制的，现在交给spring容器去创建和组装了，对象的构建过程被反转了，所以叫做控制反转；</p>
-<h4 id="DI-依赖注入"><a href="#DI-依赖注入" class="headerlink" title="DI 依赖注入"></a>DI 依赖注入</h4><p>依赖注入是spring容器中创建对象时给其设置依赖对象的方式，比如给spring一个清单，清单中列出了需要创建B对象以及其他的一些对象（可能包含了B类型中需要依赖对象），此时spring在创建B对象的时候，会看B对象需要依赖于哪些对象，然后去查找一下清单中有没有包含这些被依赖的对象，如果有就去将其创建好，然后将其传递给B对象；可能B需要依赖于很多对象，B创建之前完全不需要知道其他对象是否存在或者其他对象在哪里以及被他们是如何创建，而spring容器会将B依赖对象主动创建好并将其注入到B中去，比如spring容器创建B的时候，发现B需要依赖于A，那么spring容器在清单中找到A的定义并将其创建好之后，注入到B对象中。</p>
-<h3 id="Spring-组成"><a href="#Spring-组成" class="headerlink" title="Spring 组成"></a>Spring 组成</h3><p><a href="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/java/SpringConsist.png" target="_blank" rel="noopener"></a></p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.itsoku.com/article/259" target="_blank" rel="noopener">路人甲java——《Spring系列第2篇：控制反转（IoC）与依赖注入（DI）》</a></p>
-
-          
-            <div class='article_footer'>
-              
-                
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-<section class="widget copyright  desktop mobile">
-  <div class='content'>
-    
-      <blockquote>
-        
-          
-            <p>若非特别说明，本部分内容还会更新，敬请期待</p>
-
-          
-        
-          
-            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-          
-        
-          
-            <p>本文永久链接是：<a href=https://zy68.top/2020/05/20/Spring/>https://zy68.top/2020/05/20/Spring/</a></p>
-          
-        
-      </blockquote>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode  desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
       
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
-        
-          height='64px'
-        ></div>
-      
-    
-      
-        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
-        
-          height='64px'
-        ></div>
-      
-    
-  </div>
-</section>
-
-  
-
-
-              
-            </div>
-          
-        </div>
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
-      
-        
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-30T00:44:14+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年5月30日</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Spring/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Spring</p></a></div>
-
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/05/20/Spring/&title=Spring - MrGo123&summary=Spring概念 + IOC + AOP"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
-          
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/05/20/Spring/&title=Spring - MrGo123&summary=Spring概念 + IOC + AOP"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
-          
-          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/05/20/Spring/&title=Spring - MrGo123&summary=Spring概念 + IOC + AOP"
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
+        <p>部分Linux基础知识+详细记录部分指令</p>
       
     </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2020/05/19/Linux/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
   </section>
+</article>
 
-
-        
-        
-          <div class="prev-next">
-            
-              <a class='prev' href='/2020/05/20/IDEA%E4%BD%BF%E7%94%A8/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>IDEA使用</p>
-                <p class='content'>IDEA小知识
-
-
-
-前言：为了借助工具更好的学习，以及之前mentor说的出一篇IDEA的使用博文。这里补上，就随便记一部分，慢慢更、慢慢补。
-概念解释or介绍IDEA不像Eclipse设置工...</p>
-              </a>
-            
-            
-              <a class='next' href='/2020/05/19/Tomcat/'>
-                <p class='title'>Tomcat<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>Tomcat基本信息+Tomcat配置
-
-
-
-概述Tomcat简单的说就是一个运行JAVA的网络服务器，底层是Socket的一个程序，它也是JSP和Serlvet的一个容器。
-一、Tomcat三...</p>
-              </a>
-            
           </div>
         
-      </section>
-    </article>
+      
+    
+  </section>
   
-
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box reveal comments shadow">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 评论</p>
-      
-        <p cst>有问题还请指出，Thanks~~~</p>
-      
-      
-      
-      
-      
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-          </div>
-        </section>
-      
-      
-    </section>
-  </article>
-
+    
+      <br>
+      <div class="prev-next">
+        
+          <a class="prev" rel="prev" href="/archives/2020/05/">
+            <section class="post prev white-box shadow" >
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+            </section>
+          </a>
+        
+        <p class="current">
+          2 / 2
+        </p>
+        
+      </div>
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
 
   
 
 
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: 'Spring',
-      tools: true
-    }
-  </script>
-
-
+	
 </div>
 <aside class='l_side'>
   
@@ -756,28 +595,6 @@
   
     
     
-
-
-  <section class="widget toc-wrapper shadow desktop mobile">
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring"><span class="toc-text">Spring</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring容器（框架）"><span class="toc-text">Spring容器（框架）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring核心"><span class="toc-text">Spring核心</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IOC控制反转"><span class="toc-text">IOC控制反转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DI-依赖注入"><span class="toc-text">DI 依赖注入</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-组成"><span class="toc-text">Spring 组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol></li></ol>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
   
 
   <section class="widget category shadow desktop mobile">
@@ -835,7 +652,7 @@
           <li><a class="flat-box"
             title="/categories/Linux/" href="/categories/Linux/"
             id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>Linux</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Mark/" href="/categories/Mark/"
@@ -889,20 +706,66 @@
     
   
 
-  <section class="widget related_posts shadow desktop mobile">
+  <section class="widget tagcloud shadow desktop mobile">
     
   <header>
     
-      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>推荐阅读</span>
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
     
   </header>
 
 
-    <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\27\Springng-BeanBuilding\" title="Springng_BeanBuilding" rel="bookmark">Springng_BeanBuilding</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\20\Maven\" title="Maven" rel="bookmark">Maven</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\12\javaSE-1.环境\" title="javaSE--1.环境" rel="bookmark">javaSE--1.环境</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\20\javaSE-12-部署\" title="javaSE-12.部署" rel="bookmark">javaSE-12.部署</a></h3></div></li></ul>
+    <div class='content'>
+      <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C++</a> <a href="/tags/C-C/" style="font-size: 14px; color: #999">C/C++</a> <a href="/tags/CSBasic/" style="font-size: 17.33px; color: #828282">CSBasic</a> <a href="/tags/English/" style="font-size: 14px; color: #999">English</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTML/" style="font-size: 14px; color: #999">HTML</a> <a href="/tags/Linux/" style="font-size: 17.33px; color: #828282">Linux</a> <a href="/tags/MySQL/" style="font-size: 14px; color: #999">MySQL</a> <a href="/tags/SQL/" style="font-size: 14px; color: #999">SQL</a> <a href="/tags/Spring/" style="font-size: 17.33px; color: #828282">Spring</a> <a href="/tags/algorithm/" style="font-size: 14px; color: #999">algorithm</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/c-c/" style="font-size: 14px; color: #999">c/c++</a> <a href="/tags/github/" style="font-size: 14px; color: #999">github</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/java/" style="font-size: 24px; color: #555">java</a> <a href="/tags/javaSE/" style="font-size: 20.67px; color: #6c6c6c">javaSE</a> <a href="/tags/javaWeb/" style="font-size: 14px; color: #999">javaWeb</a> <a href="/tags/markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="/tags/maven/" style="font-size: 14px; color: #999">maven</a> <a href="/tags/rebuild/" style="font-size: 14px; color: #999">rebuild</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">网络</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 14px; color: #999">随笔</a>
     </div>
   </section>
 
+
+  
+
+  
+    
+    
+
+<section class="widget list shadow desktop mobile">
+  
+  <header>
+    
+      <i class="fas fa-star fa-fw" aria-hidden="true"></i><span class='name'>SomeThing</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <ul class="list entry navigation">
+      
+        <li><a class="flat-box" title="/ReadBooks/" href="/ReadBooks/"
+          
+          
+          id="ReadBooks"
+          >
+          <div class='name'>
+            
+            📕 阅读书单
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/ABrainlessArticle/" href="/ABrainlessArticle/"
+          
+          
+          id="ABrainlessArticle"
+          >
+          <div class='name'>
+            
+            👻 ABrainlessArticle
+          </div>
+          
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
 
   
 
@@ -1001,6 +864,14 @@
   </footer>
 
 <script>setLoadingBarProgress(80);</script>
+
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
 
 
       <script>setLoadingBarProgress(60);</script>
@@ -1115,60 +986,6 @@
 
 
 
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
-
-  
-  <script>
-  var GUEST_INFO = ['nick','mail','link'];
-  var meta = 'nick,mail,link'.split(',').filter(function(item){
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var REQUIRED_FIELDS = ['nick','mail','link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function(item){
-    return REQUIRED_FIELDS.indexOf(item) > -1
-  });
-  var valine = new Valine();
-  function emoji(path, idx, ext) {
-      return path + "/" + path + "-" + idx + "." + ext;
-  }
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-  valine.init({
-    el: '#valine_container',
-    meta: meta,
-    
-    appId: "7k5o87qfFgd2uWkD7vPFU4Uo-gzGzoHsz",
-    appKey: "uTchb9UUIFz9YEbS8EGw7iQS",
-    placeholder: "看到这了看官不如留个印记？？~~~~",
-    pageSize:'10',
-    avatar:'monsterid',
-    lang:'zh-cn',
-    visitor: 'true',
-    highlight: 'true',
-    mathJax: 'false',
-    enableQQ: 'true',
-    requiredFields: requiredFields,
-    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
-    emojiMaps: emojiMaps
-  })
-  </script>
 
 
 
