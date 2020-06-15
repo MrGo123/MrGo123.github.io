@@ -367,13 +367,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：453字</p>
+      <p>字数：701字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：2分钟</p>
     </a>
   </div>
 
@@ -420,8 +420,20 @@
 <p>结束输入程序：在Windows下，输入完毕后先按Enter键，再按Ctrl＋Z键，最后再按Enter键，即可结束输入。在Linux下，输入完毕后按Ctrl＋D键即可结束输入。</p>
 <p>当嵌套的两个代码块中有同名变量时，内层的变量会屏蔽外层变量</p>
 <p>long long 型 输入输出用 <code>%lld</code>。</p>
+<p><strong><code>.c</code>文件编译后的产生的可执行文件都保存了啥？</strong></p>
+<p>编译后的文件与操作系统有关，但都有<strong>段</strong>的概念，段是指二进制文件内的区域，所有某种特定类型信息被保存在里面。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\&gt;<span class="built_in">size</span> a.exe</span><br><span class="line"><span class="built_in">text</span> data bss dec hex filename</span><br><span class="line"><span class="number">2756</span> <span class="number">740</span> <span class="number">224</span> <span class="number">3720</span> e88 a.exe</span><br></pre></td></tr></table></figure>
+
+<p>此结果表示 <code>a.exe</code>由<code>正文段</code>、<code>数据段</code>和 <code>bss</code> 段组成，总大小是3720，用十六进制表示为<br>e88，文件名为 <code>a.exe</code>。其中：</p>
+<ul>
+<li>正文段（Text Segment）：用于存储指令；</li>
+<li>数据段（Data Segment）：用于存储已初始化的全局变量；</li>
+<li>BSS段（BSS Segment）：用于存储未赋值的全局变量所需的空间。</li>
+</ul>
+<p>对于程序运行中用到的堆栈会在运行时创建，调用栈所在的段称为<code>堆栈段</code>（Stack Segment）。与其他段一样，堆栈段有自己的大小，且不能被越界访问，否则出现段错误(Segmentation Fault)。</p>
 <h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><ol>
 <li><a href="https://blog.csdn.net/dy_Learning/article/details/7740801" target="_blank" rel="noopener">C语言常用库函数</a></li>
+<li>[经典算法竞赛入门]</li>
 </ol>
 
           
@@ -515,10 +527,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-05T23:01:44+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-15T13:07:11+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年3月5日</p>
+    <p>更新：2020年6月15日</p>
   </a>
 </div>
 
@@ -817,7 +829,7 @@ java集合框架主要包括两种类型的容器：
           <li><a class="flat-box"
             title="/categories/JavaSE/" href="/categories/JavaSE/"
             id="categoriesJavaSE"
-            ><div class='name'>JavaSE</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>JavaSE</div><div class='badge'>(10)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/JavaWeb/" href="/categories/JavaWeb/"
@@ -827,7 +839,7 @@ java集合框架主要包括两种类型的容器：
           <li><a class="flat-box"
             title="/categories/Linux/" href="/categories/Linux/"
             id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>Linux</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Mark/" href="/categories/Mark/"

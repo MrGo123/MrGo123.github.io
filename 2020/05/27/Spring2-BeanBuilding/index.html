@@ -367,13 +367,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：680字</p>
+      <p>字数：1.1k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：2分钟</p>
+      <p>时长：4分钟</p>
     </a>
   </div>
 
@@ -421,13 +421,50 @@
 </ul>
 <p>区别：先判断是否满足javabean的条件，然后如果再实现一些要求，满足EJB条件就是EJB，否则就是POJO。</p>
 <h3 id="Spring支持三种方式配置Bean文件"><a href="#Spring支持三种方式配置Bean文件" class="headerlink" title="Spring支持三种方式配置Bean文件"></a>Spring支持三种方式配置Bean文件</h3><p>自动装配、java注解和xml配置（三种允许单独使用或混合使用）</p>
+<h4 id="XML中的Bean配置"><a href="#XML中的Bean配置" class="headerlink" title="XML中的Bean配置"></a>XML中的Bean配置</h4><h5 id="bean定义"><a href="#bean定义" class="headerlink" title="bean定义"></a>bean定义</h5><ol>
+<li>常见bean.xml内容</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">import</span> <span class="attr">resource</span>=<span class="string">"引入其他bean xml配置文件"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"bean标识"</span> <span class="attr">class</span>=<span class="string">"玩转类型名称"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">alias</span> <span class="attr">name</span>=<span class="string">"bean标识"</span> <span class="attr">alias</span>=<span class="string">"别名"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>bean命名</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"bean的唯一标识"</span> <span class="attr">name</span>=<span class="string">"bean的名称"</span> <span class="attr">class</span>=<span class="string">"完整类型名称"</span> <span class="attr">factory-bean</span>=<span class="string">"工厂bean名称"</span> <span class="attr">factory-method</span>=<span class="string">"工厂方法"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>bean名称别名定义规则<br>名称和别名可以通过bean元素中的id和name来定义，具体定义规则如下：：</p>
+<ol>
+<li>当id存在的时候，不管name有没有，取id为bean的名称；</li>
+<li>当id不存在，此时需要看name，name的值可以通过<code>,;</code>或者<code>空格</code>分割，最后会按照分隔符得到一个String数组，数组的第一个元素作为bean的名称，其他的作为bean的别名；</li>
+<li>当id和name都存在的时候，id为bean名称，name用来定义多个别名；</li>
+<li>当id和name都不指定的时候，bean名称自动生成，生成为“完整类名 +#+编号。”eg:<code>com.hello#0</code>；</li>
+</ol>
+<p>alias元素也可以用来给某个bean定义别名，语法：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">alias</span> <span class="attr">name</span>=<span class="string">"需要定义别名的bean"</span> <span class="attr">alias</span>=<span class="string">"别名"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>import——bean汇总</li>
+</ol>
+<p>在一个总的bean xml中对其他bean xml进行汇总，相当于把多个bean xml的内容合并到一个里，可以通过import元素引入其他bean配置文件。</p>
+<p>在要汇总的bean.xml下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">import</span> <span class="attr">resource</span>=<span class="string">"其他配置文件的位置"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="容器创建bean实例"><a href="#容器创建bean实例" class="headerlink" title="容器创建bean实例"></a>容器创建bean实例</h5><ol>
+<li>通过反射调用构造方法创建bean对象</li>
+</ol>
+<ol start="2">
+<li><p>通过静态工厂方法创建bean对象</p>
+</li>
+<li><p>通过实例工厂方法创建bean对象</p>
+</li>
+</ol>
+<ol start="4">
+<li>通过FactoryBean创建bean对象</li>
+</ol>
 <h4 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h4><p>Spring从两个角度来实现自动化装配</p>
 <ol>
 <li>组件扫描：Spring自动发现应用上下文中所创建的Bean</li>
 <li>自动装配：Spring自动满足Bean之间的依赖。</li>
 </ol>
 <h4 id="通过javaConfig显式配置"><a href="#通过javaConfig显式配置" class="headerlink" title="通过javaConfig显式配置"></a>通过javaConfig显式配置</h4><p>全程@Bean注解，通过return返回实例或进行DI配置。</p>
-<h4 id="通过（老式、不建议使用的）XML配置Bean"><a href="#通过（老式、不建议使用的）XML配置Bean" class="headerlink" title="通过（老式、不建议使用的）XML配置Bean"></a>通过（老式、不建议使用的）XML配置Bean</h4><h3 id="实践部分"><a href="#实践部分" class="headerlink" title="实践部分"></a>实践部分</h3><h4 id="创建一个Maven-projects并导入Spring-webmvc所需jar包"><a href="#创建一个Maven-projects并导入Spring-webmvc所需jar包" class="headerlink" title="创建一个Maven projects并导入Spring-webmvc所需jar包"></a>创建一个Maven projects并导入Spring-webmvc所需jar包</h4><ol>
+<h3 id="实践部分"><a href="#实践部分" class="headerlink" title="实践部分"></a>实践部分</h3><h4 id="创建一个Maven-projects并导入Spring-webmvc所需jar包"><a href="#创建一个Maven-projects并导入Spring-webmvc所需jar包" class="headerlink" title="创建一个Maven projects并导入Spring-webmvc所需jar包"></a>创建一个Maven projects并导入Spring-webmvc所需jar包</h4><ol>
 <li>在IDEA中创建好基于Maven的project。</li>
 <li>在pom.xml中导入依赖信息：<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.17.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.17.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -437,6 +474,9 @@
 <ol>
 <li>直接导入这个包的原因是project项目可能需要的jar包特别多，且包之间还有依赖。直接导入一个集成的jar包，把依赖的包全自动下载了，能减少许多麻烦和问题。</li>
 <li>记个坑：由于我的maven源使用的是阿里云的下载源，故有些jar包版本可能未及时更新，所以IDEA会显示 <code>Dependency &#39;org.springframework:spring-webmvc:5.2.6.RELEASE&#39; not found</code>。降低版本可能会解决。</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><a href="http://www.itsoku.com/article/261" target="_blank" rel="noopener">Java干货铺子</a></li>
 </ol>
 
           
@@ -530,10 +570,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-08T10:43:38+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-14T13:06:11+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年6月8日</p>
+    <p>更新：2020年6月14日</p>
   </a>
 </div>
 
@@ -628,8 +668,17 @@ SQL概述SQL（Structured Query Language，SQL） 结构化英语查询语言，
 
 
 
-C++变量的存储期存储期，即变量在内存中的存储周期。其又可分为静态存储期和动态存储期。
-静态存储方式：在程序运行中分配固定的空间，程序结束后释放。(static)动态...</p>
+目录
+
+一、C++变量的存储期
+二、内置函数
+三、重载函数
+四、指针和引用
+五、枚举
+六、函数模板
+七、文件输入输出流
+
+一、C++变量的存储期存储期，即变量在内存中...</p>
               </a>
             
           </div>
@@ -767,7 +816,7 @@ C++变量的存储期存储期，即变量在内存中的存储周期。其又�
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Spring容器"><span class="toc-text">使用Spring容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bean"><span class="toc-text">Bean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring支持三种方式配置Bean文件"><span class="toc-text">Spring支持三种方式配置Bean文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自动装配"><span class="toc-text">自动装配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过javaConfig显式配置"><span class="toc-text">通过javaConfig显式配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过（老式、不建议使用的）XML配置Bean"><span class="toc-text">通过（老式、不建议使用的）XML配置Bean</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实践部分"><span class="toc-text">实践部分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一个Maven-projects并导入Spring-webmvc所需jar包"><span class="toc-text">创建一个Maven projects并导入Spring-webmvc所需jar包</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Spring容器"><span class="toc-text">使用Spring容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bean"><span class="toc-text">Bean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring支持三种方式配置Bean文件"><span class="toc-text">Spring支持三种方式配置Bean文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#XML中的Bean配置"><span class="toc-text">XML中的Bean配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#bean定义"><span class="toc-text">bean定义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#容器创建bean实例"><span class="toc-text">容器创建bean实例</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自动装配"><span class="toc-text">自动装配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#通过javaConfig显式配置"><span class="toc-text">通过javaConfig显式配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实践部分"><span class="toc-text">实践部分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建一个Maven-projects并导入Spring-webmvc所需jar包"><span class="toc-text">创建一个Maven projects并导入Spring-webmvc所需jar包</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
     </div>
   </section>
 
@@ -824,7 +873,7 @@ C++变量的存储期存储期，即变量在内存中的存储周期。其又�
           <li><a class="flat-box"
             title="/categories/JavaSE/" href="/categories/JavaSE/"
             id="categoriesJavaSE"
-            ><div class='name'>JavaSE</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>JavaSE</div><div class='badge'>(10)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/JavaWeb/" href="/categories/JavaWeb/"
@@ -834,7 +883,7 @@ C++变量的存储期存储期，即变量在内存中的存储周期。其又�
           <li><a class="flat-box"
             title="/categories/Linux/" href="/categories/Linux/"
             id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>Linux</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Mark/" href="/categories/Mark/"

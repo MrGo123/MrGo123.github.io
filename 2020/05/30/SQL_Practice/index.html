@@ -367,13 +367,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：470字</p>
+      <p>字数：782字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：2分钟</p>
     </a>
   </div>
 
@@ -459,6 +459,72 @@
 <li>len(属性名)取属性值的字符串长度</li>
 </ol>
 <hr>
+<p>order by </p>
+<ol>
+<li>要使用在句末，否则报错；</li>
+<li>多行排序时，要求按多个属性排序，则先按第一个属性排序，再在此基础上按第二个属性，以此类推。eg: <code>order by pro_price,pro_name</code> 先按商品价格排序，价格相同则按商品名称排序。</li>
+<li>升降序：<code>DESC</code>(descending)降序、<code>ASC</code>(ascending)升序。默认升序。</li>
+</ol>
+<p>where</p>
+<p>where子句操作符</p>
+<table>
+<thead>
+<tr>
+<th align="center">操作符说</th>
+<th align="center">明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">=</td>
+<td align="center">等于</td>
+</tr>
+<tr>
+<td align="center">!= 或 &lt; &gt;</td>
+<td align="center">不等于</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center">小于</td>
+</tr>
+<tr>
+<td align="center">&lt;= 或   !&gt;</td>
+<td align="center">小于等于</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">大于</td>
+</tr>
+<tr>
+<td align="center">&gt;=  或 !&lt;</td>
+<td align="center">大于等于</td>
+</tr>
+<tr>
+<td align="center">BETWEEN</td>
+<td align="center">在指定的两个值之间</td>
+</tr>
+<tr>
+<td align="center">IS NULL</td>
+<td align="center">为NULL值</td>
+</tr>
+</tbody></table>
+<p>通配符</p>
+<ol>
+<li>like<ol>
+<li>%通配符<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> prod_name</span><br><span class="line"><span class="keyword">FROM</span> Products</span><br><span class="line"><span class="keyword">WHERE</span> prod_name <span class="keyword">LIKE</span> <span class="string">'F%y'</span>;</span><br></pre></td></tr></table></figure></li>
+<li>下划线(_)通配符</li>
+<li>方括号([])——仅 <code>Access</code> 和 <code>SQL Server</code> 支持</li>
+</ol>
+</li>
+</ol>
+<blockquote>
+<p>%匹配一个字符及以上;而下划线只能匹配一个字符。</p>
+</blockquote>
+<p>使用通配符技巧</p>
+<ul>
+<li>不要过度使用通配符。如果其他操作符能达到相同的目的，应该使用<br>其他操作符。</li>
+<li>在确实需要使用通配符时，也尽量不要把它们用在搜索模式的开始<br>处。把通配符置于开始处，搜索起来是最慢的。</li>
+<li>仔细注意通配符的位置。如果放错地方，可能不会返回想要的数据。</li>
+</ul>
 
           
             <div class='article_footer'>
@@ -551,10 +617,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-30T11:37:47+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-14T13:06:10+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年5月30日</p>
+    <p>更新：2020年6月14日</p>
   </a>
 </div>
 
@@ -845,7 +911,7 @@ maven配置；
           <li><a class="flat-box"
             title="/categories/JavaSE/" href="/categories/JavaSE/"
             id="categoriesJavaSE"
-            ><div class='name'>JavaSE</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>JavaSE</div><div class='badge'>(10)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/JavaWeb/" href="/categories/JavaWeb/"
@@ -855,7 +921,7 @@ maven配置；
           <li><a class="flat-box"
             title="/categories/Linux/" href="/categories/Linux/"
             id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>Linux</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Mark/" href="/categories/Mark/"

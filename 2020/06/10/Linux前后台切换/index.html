@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,8 +16,12 @@
 
   <!-- 页面元数据 -->
   
-    <title>归档：2020/5 - MrGo123</title>
+    <title>Linux前后台切换 - MrGo123</title>
   
+    <meta name="keywords" content="Linux">
+  
+  
+    <meta name="description" content="切换前后台 + 进程管理">
   
 
   <!-- feed -->
@@ -72,83 +74,7 @@
 
 <body>
   
-  <div class="cover-wrapper">
-    
-      <cover class='cover  half'>
-        <div class='cover-body'>
-  <div class='a'>
-    
-    
-      <p class="title">Focus On Doing Something</p>
-    
-    
-      <p class="subtitle">🌹🌹🇨🇳🇨🇳🇨🇳🌹🌹</p>
-    
-  </div>
-  <div class='b'>
-    
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="enjoy yourself ~~" />
-          <i class="icon fas fa-search fa-fw"></i>
-        </form>
-      </div>
-    
-    <div class='menu navigation'>
-      <ul class='cover-list-h'>
-        
-          
-            <li>
-              <a class="nav home"
-                href="/"
-                
-                
-                id="home">
-                <i class='fas fa-home fa-fw'></i>主页
-              </a>
-            </li>
-          
-            <li>
-              <a class="nav home"
-                href="/archives/"
-                
-                  rel="nofollow"
-                
-                
-                id="archives">
-                <i class='fas fa-history fa-fw'></i>动态
-              </a>
-            </li>
-          
-            <li>
-              <a class="nav home"
-                href="/friends/"
-                
-                
-                id="friends">
-                <i class='fas fa-link fa-fw'></i>关注
-              </a>
-            </li>
-          
-            <li>
-              <a class="nav home"
-                href="/about/"
-                
-                
-                id="about">
-                <i class='fas fa-info-circle fa-fw'></i>关于
-              </a>
-            </li>
-          
-        
-      </ul>
-    </div>
-  </div>
-</div>
-
-      </cover>
-    
-    <div id="loading-bar-wrapper">
+  <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
 <header class="l_header shadow blur">
@@ -369,24 +295,18 @@
 
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper'>
       
 
 <div class='l_main'>
-	
-		
-  <section class="post-list ">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
   
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -396,11 +316,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/05/19/Linux/">
-      Linux基础——笔记
+  <h1 class="title">
+    <a href="/2020/06/10/Linux%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/">
+      Linux前后台切换
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -436,7 +356,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布：2020年5月19日</p>
+    <p>发布：2020年6月10日</p>
   </a>
 </div>
 
@@ -447,13 +367,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.5k字</p>
+      <p>字数：432字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：9分钟</p>
+      <p>时长：1分钟</p>
     </a>
   </div>
 
@@ -474,54 +394,283 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>切换前后台 + 进程管理</p>
+<a id="more"></a>
+
+
+<p>Background：在wsl上正常的下载着gdb调试器，一不小心，ctrl+z。？？？(⊙ˍ⊙)？怎么不下了？？原来是被扔到了后台，并且暂停了。这不是给我机会学（hua）习（shui）嘛？？💪💪</p>
+<p>在基础篇 <a href="Linux.md">Linux</a>中有说到进程的一点命令：ps、top、kill等，但是跟这次的前后台有点不一样，可以操作学习一下。</p>
+<h3 id="认识Linux前后台进程"><a href="#认识Linux前后台进程" class="headerlink" title="认识Linux前后台进程"></a>认识Linux前后台进程</h3><p>前后台，顾名思义。<br>前台进程：运行在终端（跑在脸上）的，可以直接操控，终端关闭，进程也停止。<br>后台进程：也叫守护进程（Daemon），是运行在后台的一种特殊进程，不受终端控制，它不需要终端的交互。进程的主要战场。</p>
+<h3 id="场景实战"><a href="#场景实战" class="headerlink" title="场景实战"></a>场景实战</h3><ol>
+<li>下载东西，执行命令后那进度条在脸上哗哗的过，但是还要用终端啊。那咋办？</li>
+</ol>
+<p>答：在敲下载命令后，在尾部加 <code>&amp;</code> 符号，eg：<code>sudo apt install gdb &amp;</code>，这一下载进程就会切换到后台进程下载。</p>
+<ol start="2">
+<li>如果执行了呢？</li>
+</ol>
+<p>答： 使用 <code>jobs</code> 查看后台有哪些进程以及它的<code>jobsnum</code>，如下一个停止了的进程，[1]的1就是jobsnum，使用 <code>fg 1</code>将其调到前台。若只有一个进程，直接fg即可。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jobs</span><br><span class="line">      [1]+  Stopped                 sudo apt install gdb</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>如果想结束进程呢？</li>
+</ol>
+<p>答：<code>jobs -l</code> 查看进程pid，得到pid编号，然后 <code>kill 编号</code>，done。</p>
+<ol start="4">
+<li>其他</li>
+</ol>
+<p>ctrl+z：把在前台的进程放到后台并暂停。<br>bg+jobsnum：启动jobsnum进程。<br>ctrl+c：在前台使用此命令，取消掉当前进程。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://blog.csdn.net/QQ1910084514/article/details/80390671" target="_blank" rel="noopener">LINUX 杀死、暂停、继续、后台运行进程</a></li>
+<li><a href="https://blog.csdn.net/qq_36237569/article/details/82760808" target="_blank" rel="noopener">Linux进程前后台切换</a></li>
+<li><a href="https://www.cnblogs.com/diantong/p/10395312.html" target="_blank" rel="noopener">Linux前后台进程切换</a></li>
+</ul>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>若非特别说明，本部分内容还会更新，敬请期待</p>
+
+          
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://zy68.top/2020/06/10/Linux%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/>https://zy68.top/2020/06/10/Linux%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
       
-        <p>部分Linux基础知识+详细记录部分指令</p>
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-12T14:26:35+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新：2020年6月12日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/06/10/Linux%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/&title=Linux前后台切换 - MrGo123&summary=切换前后台 + 进程管理"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/06/10/Linux%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/&title=Linux前后台切换 - MrGo123&summary=切换前后台 + 进程管理"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/06/10/Linux%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/&title=Linux前后台切换 - MrGo123&summary=切换前后台 + 进程管理"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/05/19/Linux/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
   </section>
-</article>
 
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/06/10/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Gcc编译C语言。</p>
+                <p class='content'>Gcc简介+Gcc编译流程及主要相关命令。
+
+
+gcc简介gcc编译流程GCC 编译器在编译一个C语言程序时需要经过以下 4 步：
+
+(-E)将C语言源程序预处理，生成.i文件。
+(-S)预处理...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/06/09/Linux%E6%9B%B4%E6%8D%A2%E4%B8%8B%E8%BD%BD%E6%BA%90%E9%95%9C%E5%83%8F/'>
+                <p class='title'>Linux更换下载源镜像<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>更换Ubuntu的下载源镜像，回归正常速度！！
+
+
+
+这里推阿里云的镜像
+
+用lsb_release -a 查看自己的Linux版本信息。
+用cp /etc/apt/sources.list /...</p>
+              </a>
+            
           </div>
         
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
       
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/05/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 2
-        </p>
-        
-      </div>
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+        <p cst>有问题还请指出，Thanks~~~</p>
+      
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+          </div>
+        </section>
+      
+      
+    </section>
+  </article>
+
 
   
 
 
-	
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Linux前后台切换',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class='l_side'>
   
@@ -595,6 +744,28 @@
   
     
     
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#认识Linux前后台进程"><span class="toc-text">认识Linux前后台进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景实战"><span class="toc-text">场景实战</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
   
 
   <section class="widget category shadow desktop mobile">
@@ -642,7 +813,7 @@
           <li><a class="flat-box"
             title="/categories/JavaSE/" href="/categories/JavaSE/"
             id="categoriesJavaSE"
-            ><div class='name'>JavaSE</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>JavaSE</div><div class='badge'>(10)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/JavaWeb/" href="/categories/JavaWeb/"
@@ -652,7 +823,7 @@
           <li><a class="flat-box"
             title="/categories/Linux/" href="/categories/Linux/"
             id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>Linux</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Mark/" href="/categories/Mark/"
@@ -706,66 +877,20 @@
     
   
 
-  <section class="widget tagcloud shadow desktop mobile">
+  <section class="widget related_posts shadow desktop mobile">
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>推荐阅读</span>
     
   </header>
 
 
-    <div class='content'>
-      <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C++</a> <a href="/tags/C-C/" style="font-size: 14px; color: #999">C/C++</a> <a href="/tags/CSBasic/" style="font-size: 16.5px; color: #888">CSBasic</a> <a href="/tags/English/" style="font-size: 14px; color: #999">English</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTML/" style="font-size: 14px; color: #999">HTML</a> <a href="/tags/Linux/" style="font-size: 19px; color: #777">Linux</a> <a href="/tags/MySQL/" style="font-size: 14px; color: #999">MySQL</a> <a href="/tags/SQL/" style="font-size: 14px; color: #999">SQL</a> <a href="/tags/Spring/" style="font-size: 16.5px; color: #888">Spring</a> <a href="/tags/algorithm/" style="font-size: 14px; color: #999">algorithm</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/c-c/" style="font-size: 14px; color: #999">c/c++</a> <a href="/tags/github/" style="font-size: 14px; color: #999">github</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/java/" style="font-size: 24px; color: #555">java</a> <a href="/tags/javaSE/" style="font-size: 21.5px; color: #666">javaSE</a> <a href="/tags/javaWeb/" style="font-size: 14px; color: #999">javaWeb</a> <a href="/tags/markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="/tags/maven/" style="font-size: 14px; color: #999">maven</a> <a href="/tags/rebuild/" style="font-size: 14px; color: #999">rebuild</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">网络</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 14px; color: #999">随笔</a>
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\10\Gcc编译C语言\" title="Gcc编译C语言。" rel="bookmark">Gcc编译C语言。</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\19\Linux\" title="Linux基础——笔记" rel="bookmark">Linux基础——笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\09\Linux更换下载源镜像\" title="Linux更换下载源镜像" rel="bookmark">Linux更换下载源镜像</a></h3></div></li></ul>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-
-<section class="widget list shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-star fa-fw" aria-hidden="true"></i><span class='name'>SomeThing</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <ul class="list entry navigation">
-      
-        <li><a class="flat-box" title="/ReadBooks/" href="/ReadBooks/"
-          
-          
-          id="ReadBooks"
-          >
-          <div class='name'>
-            
-            📕 阅读书单
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="/ABrainlessArticle/" href="/ABrainlessArticle/"
-          
-          
-          id="ABrainlessArticle"
-          >
-          <div class='name'>
-            
-            👻 ABrainlessArticle
-          </div>
-          
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
 
   
 
@@ -864,14 +989,6 @@
   </footer>
 
 <script>setLoadingBarProgress(80);</script>
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
       <script>setLoadingBarProgress(60);</script>
@@ -986,6 +1103,60 @@
 
 
 
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var meta = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick','mail','link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function(item){
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+  var valine = new Valine();
+  function emoji(path, idx, ext) {
+      return path + "/" + path + "-" + idx + "." + ext;
+  }
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+  valine.init({
+    el: '#valine_container',
+    meta: meta,
+    
+    appId: "7k5o87qfFgd2uWkD7vPFU4Uo-gzGzoHsz",
+    appKey: "uTchb9UUIFz9YEbS8EGw7iQS",
+    placeholder: "看到这了看官不如留个印记？？~~~~",
+    pageSize:'10',
+    avatar:'monsterid',
+    lang:'zh-cn',
+    visitor: 'true',
+    highlight: 'true',
+    mathJax: 'false',
+    enableQQ: 'true',
+    requiredFields: requiredFields,
+    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
+    emojiMaps: emojiMaps
+  })
+  </script>
 
 
 

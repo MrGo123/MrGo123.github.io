@@ -16,12 +16,10 @@
 
   <!-- 页面元数据 -->
   
-    <title>Gcc编译C语言。 - MrGo123</title>
+    <title>javaSE-注解 - MrGo123</title>
   
-    <meta name="keywords" content="Linux,C">
+    <meta name="keywords" content="java,javaSE">
   
-  
-    <meta name="description" content="Gcc简介+Gcc编译流程及主要相关命令。">
   
 
   <!-- feed -->
@@ -317,8 +315,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/05/19/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/">
-      Gcc编译C语言。
+    <a href="/2020/06/13/javaSE-%E6%B3%A8%E8%A7%A3/">
+      javaSE-注解
     </a>
   </h1>
 
@@ -343,9 +341,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Linux/' rel="nofollow">
+    <a href='/categories/JavaSE/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Linux</p>
+      <p>JavaSE</p>
     </a>
   </div>
 
@@ -356,7 +354,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布：2020年5月19日</p>
+    <p>发布：2020年6月13日</p>
   </a>
 </div>
 
@@ -367,7 +365,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：371字</p>
+      <p>字数：224字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -397,55 +395,25 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <p>Gcc简介+Gcc编译流程及主要相关命令。</p>
-<a id="more"></a>
+          <!--  -->
 
-<h3 id="gcc简介"><a href="#gcc简介" class="headerlink" title="gcc简介"></a>gcc简介</h3><h3 id="gcc编译流程"><a href="#gcc编译流程" class="headerlink" title="gcc编译流程"></a>gcc编译流程</h3><p>GCC 编译器在编译一个C语言程序时需要经过以下 4 步：</p>
-<ol>
-<li>(-E)将C语言源程序预处理，生成.i文件。</li>
-<li>(-S)预处理后的.i文件编译成为汇编语言，生成.s文件。</li>
-<li>(-c)将汇编语言文件经过汇编，生成目标文件.o文件。</li>
-<li>将各个模块的.o文件链接起来生成一个可执行程序文件。</li>
-</ol>
-<p>注：</p>
-<ol>
-<li><code>.i</code>文件、<code>.s</code>文件、<code>.o</code>文件可以认为是中间文件或临时文件，如果使用 GCC 一次性完成C语言程序的编译，那么只能看到最终的可执行文件。中间文件被删除。</li>
-<li>每一个步骤生产的文件都可以直接从.c 文件执行对应得命令后直接生成，不必按顺序。（到底还是按顺序，只是系统把它们删了）</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="center">gcc编译选项</th>
-<th align="left">选项的意义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-c</td>
-<td align="left">编译、汇编指定的源文件，但是不进行链接</td>
-</tr>
-<tr>
-<td align="center">-S</td>
-<td align="left">编译指定的源文件，但是不进行汇编</td>
-</tr>
-<tr>
-<td align="center">-E</td>
-<td align="left">预处理指定的源文件，不进行编译</td>
-</tr>
-<tr>
-<td align="center">-o [file1] [file2]</td>
-<td align="left">将文件 file2 编译成可执行文件 file1</td>
-</tr>
-<tr>
-<td align="center">-I directory</td>
-<td align="left">指定 include 包含文件的搜索目录</td>
-</tr>
-<tr>
-<td align="center">-g</td>
-<td align="left">生成调试信息，该程序可以被调试器调试</td>
-</tr>
-</tbody></table>
-<p>直接编译：<code>gcc hello.c -o hello</code>，生成hello可执行文件可直接运行。</p>
 
+
+<h3 id="认识注解"><a href="#认识注解" class="headerlink" title="认识注解"></a>认识注解</h3><p>注解是放在Java源码的类、方法、字段、参数前的一种特殊“注释”。</p>
+<p>注释会被编译器直接忽略，注解则可以被编译器打包进入class文件，因此，注解是一种用作标注的“元数据”。</p>
+<p>注解的三个分类：</p>
+<ol>
+<li>第一类——编译器使用的注解，例如</li>
+</ol>
+<p><code>@Override</code>：让编译器检查该方法是否正确地实现了覆写；</p>
+<p><code>@SuppressWarnings</code>：告诉编译器忽略此处代码产生的警告。</p>
+<p>这类注解不会被编译进入.class文件，它们在编译后就被编译器扔掉了。</p>
+<ol start="2">
+<li>第二类——由工具处理.class文件使用的注解.</li>
+<li>第三类——在程序运行期能够读取的注解。在加载后一直存在于JVM中，是最常用的注解。</li>
+</ol>
+<p>定义一个注解时，可以定义配置参数。</p>
+<h3 id="定义注解"><a href="#定义注解" class="headerlink" title="定义注解"></a>定义注解</h3>
           
             <div class='article_footer'>
               
@@ -486,7 +454,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://zy68.top/2020/05/19/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/>https://zy68.top/2020/05/19/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/</a></p>
+            <p>本文永久链接是：<a href=https://zy68.top/2020/06/13/javaSE-%E6%B3%A8%E8%A7%A3/>https://zy68.top/2020/06/13/javaSE-%E6%B3%A8%E8%A7%A3/</a></p>
           
         
       </blockquote>
@@ -537,10 +505,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-10T01:37:30+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-15T13:02:51+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年6月10日</p>
+    <p>更新：2020年6月15日</p>
   </a>
 </div>
 
@@ -549,7 +517,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/javaSE/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>javaSE</p></a></div>
 
 
         
@@ -567,7 +535,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/05/19/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/&title=Gcc编译C语言。 - MrGo123&summary=Gcc简介+Gcc编译流程及主要相关命令。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/06/13/javaSE-%E6%B3%A8%E8%A7%A3/&title=javaSE-注解 - MrGo123&summary="
           
           >
           
@@ -579,7 +547,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/05/19/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/&title=Gcc编译C语言。 - MrGo123&summary=Gcc简介+Gcc编译流程及主要相关命令。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/06/13/javaSE-%E6%B3%A8%E8%A7%A3/&title=javaSE-注解 - MrGo123&summary="
           
           >
           
@@ -591,7 +559,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/05/19/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/&title=Gcc编译C语言。 - MrGo123&summary=Gcc简介+Gcc编译流程及主要相关命令。"
+          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/06/13/javaSE-%E6%B3%A8%E8%A7%A3/&title=javaSE-注解 - MrGo123&summary="
           
           >
           
@@ -615,26 +583,19 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/05/19/http/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>http</p>
-                <p class='content'>基于《图解http》的阅读笔记ps：没有笔记+不用=没学
-
-
-
-Part1—— Web及网络基础3 项 WWW（简称Web） 构建技术，分别是：
-
-把 SGML（Standard General...</p>
-              </a>
             
-            
-              <a class='next' href='/2020/05/19/Linux/'>
-                <p class='title'>Linux基础——笔记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>部分Linux基础知识+详细记录部分指令
+              <a class='next' href='/2020/06/12/javaSE-%E5%8F%8D%E5%B0%84/'>
+                <p class='title'>javaSE-反射<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>认识反射和Class类 + 访问对象的字段 + 调用对象的方法 + 调用构造函数 + 获取继承关系 + 动态代理
 
 
 
 
-Shell是一个命令行工具。Shell（也称为终端或壳）充当的 是人与内核（硬件）之间的翻译官，用户把一些命令“告诉”终端，它就会调用相应的程序...</p>
+
+
+
+
+认识反射和Class类反射（Reflection），Java的反...</p>
               </a>
             
           </div>
@@ -681,7 +642,7 @@ Shell是一个命令行工具。Shell（也称为终端或壳）充当的 是人
 
   <script>
     window.subData = {
-      title: 'Gcc编译C语言。',
+      title: 'javaSE-注解',
       tools: true
     }
   </script>
@@ -772,7 +733,7 @@ Shell是一个命令行工具。Shell（也称为终端或壳）充当的 是人
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#gcc简介"><span class="toc-text">gcc简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gcc编译流程"><span class="toc-text">gcc编译流程</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#认识注解"><span class="toc-text">认识注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义注解"><span class="toc-text">定义注解</span></a></li></ol>
     </div>
   </section>
 
@@ -829,7 +790,7 @@ Shell是一个命令行工具。Shell（也称为终端或壳）充当的 是人
           <li><a class="flat-box"
             title="/categories/JavaSE/" href="/categories/JavaSE/"
             id="categoriesJavaSE"
-            ><div class='name'>JavaSE</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>JavaSE</div><div class='badge'>(10)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/JavaWeb/" href="/categories/JavaWeb/"
@@ -839,7 +800,7 @@ Shell是一个命令行工具。Shell（也称为终端或壳）充当的 是人
           <li><a class="flat-box"
             title="/categories/Linux/" href="/categories/Linux/"
             id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>Linux</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Mark/" href="/categories/Mark/"
@@ -903,7 +864,7 @@ Shell是一个命令行工具。Shell（也称为终端或壳）充当的 是人
 
 
     <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\19\Linux\" title="Linux基础——笔记" rel="bookmark">Linux基础——笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\09\Linux更换下载源镜像\" title="Linux更换下载源镜像" rel="bookmark">Linux更换下载源镜像</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\12\javaSE-1.环境\" title="javaSE--1.环境" rel="bookmark">javaSE--1.环境</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\20\javaSE-12-部署\" title="javaSE-12.部署" rel="bookmark">javaSE-12.部署</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\17\javaSE-4-继承\" title="javaSE-4.继承" rel="bookmark">javaSE-4.继承</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\14\javaSE-2.程序结构\" title="javaSE--2.程序结构" rel="bookmark">javaSE--2.程序结构</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\16\javaSE-3.面向对象\" title="javaSE--3.面向对象" rel="bookmark">javaSE--3.面向对象</a></h3></div></li></ul>
     </div>
   </section>
 
