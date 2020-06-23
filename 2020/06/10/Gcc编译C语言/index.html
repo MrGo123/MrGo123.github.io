@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-    <title>Gcc编译C语言。 - MrGo123</title>
+    <title>Gcc编译和Gdb调试 - MrGo123</title>
   
     <meta name="keywords" content="Linux,C">
   
@@ -318,7 +318,7 @@
           
   <h1 class="title">
     <a href="/2020/06/10/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/">
-      Gcc编译C语言。
+      Gcc编译和Gdb调试
     </a>
   </h1>
 
@@ -367,13 +367,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：371字</p>
+      <p>字数：725字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：1分钟</p>
+      <p>时长：2分钟</p>
     </a>
   </div>
 
@@ -400,7 +400,8 @@
           <p>Gcc简介+Gcc编译流程及主要相关命令。</p>
 <a id="more"></a>
 
-<h3 id="gcc简介"><a href="#gcc简介" class="headerlink" title="gcc简介"></a>gcc简介</h3><h3 id="gcc编译流程"><a href="#gcc编译流程" class="headerlink" title="gcc编译流程"></a>gcc编译流程</h3><p>GCC 编译器在编译一个C语言程序时需要经过以下 4 步：</p>
+
+<h2 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h2><h3 id="gcc简介"><a href="#gcc简介" class="headerlink" title="gcc简介"></a>gcc简介</h3><h3 id="gcc编译流程"><a href="#gcc编译流程" class="headerlink" title="gcc编译流程"></a>gcc编译流程</h3><p>GCC 编译器在编译一个C语言程序时需要经过以下 4 步：</p>
 <ol>
 <li>(-E)将C语言源程序预处理，生成.i文件。</li>
 <li>(-S)预处理后的.i文件编译成为汇编语言，生成.s文件。</li>
@@ -445,6 +446,14 @@
 </tr>
 </tbody></table>
 <p>直接编译：<code>gcc hello.c -o hello</code>，生成hello可执行文件可直接运行。</p>
+<h2 id="gdb"><a href="#gdb" class="headerlink" title="gdb"></a>gdb</h2><p>在编译时要加上-g选项，生成的可执行文件才能用gdb进行源码级调试</p>
+<h3 id="单步执行和跟踪"><a href="#单步执行和跟踪" class="headerlink" title="单步执行和跟踪"></a>单步执行和跟踪</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -g main.c -o main</span><br><span class="line">$ gdb main  </span><br><span class="line"><span class="comment"># 进入gdb调试</span></span><br><span class="line">$ (gdb) list 1 <span class="comment"># list命令从第一行开始列出源代码，单纯list或l列出10行</span></span><br><span class="line">$ (gdb) next   <span class="comment"># next或n——单条执行指令。next 3 运行到当前位置的后三行</span></span><br><span class="line">$ (gdb) start <span class="comment">#程序再次启动调试</span></span><br><span class="line">$ (gdb) step <span class="comment">#step或s——进入函数内部跟踪执行</span></span><br><span class="line">$ (gdb) backtrace <span class="comment">#backtrace或bt查看函数调用的栈帧</span></span><br><span class="line">$ (gdb) frame 1 <span class="comment"># 选择1号栈帧</span></span><br><span class="line">$ (gdb) info locals <span class="comment"># info或i查看当前栈帧中变量的值</span></span><br><span class="line">$ (gdb) <span class="built_in">print</span> value <span class="comment"># print或p——打印变量value的值，变量也可以是表达式</span></span><br><span class="line">$ (gdb) finish <span class="comment"># 让当前程序一直运行到当前函数返回为止</span></span><br><span class="line">$ (gdb) <span class="built_in">set</span> var sum=0 <span class="comment"># 在gdb中给变量sum设值</span></span><br><span class="line">$ (gdb) run <span class="comment"># run或r——直接运行程序</span></span><br><span class="line">$ (gdb) quit <span class="comment"># quit或q退出gdb</span></span><br></pre></td></tr></table></figure>
+
+<p>-g选项的作用是在可执行文件中加入源代码的信息，比如可执行文件中第几条机器指令对应源代码的第几行，但并不是把整个源文件嵌入到可执行文件中，所以在调试时必须保证gdb能找到源文件。</p>
+<p>gdb提供了一个很方便的功能，在提示符下直接敲回车表示重复上一条命令。</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
+<li><a href="http://c.biancheng.net/view/2382.html" target="_blank" rel="noopener">C语言中文网-GCC</a></li>
+</ul>
 
           
             <div class='article_footer'>
@@ -537,10 +546,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-10T16:48:15+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-23T18:24:14+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年6月10日</p>
+    <p>更新：2020年6月23日</p>
   </a>
 </div>
 
@@ -567,7 +576,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/06/10/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/&title=Gcc编译C语言。 - MrGo123&summary=Gcc简介+Gcc编译流程及主要相关命令。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/06/10/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/&title=Gcc编译和Gdb调试 - MrGo123&summary=Gcc简介+Gcc编译流程及主要相关命令。"
           
           >
           
@@ -579,7 +588,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/06/10/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/&title=Gcc编译C语言。 - MrGo123&summary=Gcc简介+Gcc编译流程及主要相关命令。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/06/10/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/&title=Gcc编译和Gdb调试 - MrGo123&summary=Gcc简介+Gcc编译流程及主要相关命令。"
           
           >
           
@@ -591,7 +600,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/06/10/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/&title=Gcc编译C语言。 - MrGo123&summary=Gcc简介+Gcc编译流程及主要相关命令。"
+          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/06/10/Gcc%E7%BC%96%E8%AF%91C%E8%AF%AD%E8%A8%80/&title=Gcc编译和Gdb调试 - MrGo123&summary=Gcc简介+Gcc编译流程及主要相关命令。"
           
           >
           
@@ -631,7 +640,7 @@
             
             
               <a class='next' href='/2020/06/10/Linux%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/'>
-                <p class='title'>Linux前后台切换<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='title'>Linux进程前后台切换<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
                 <p class='content'>切换前后台 + 进程管理
 
 
@@ -683,7 +692,7 @@ Background：在wsl上正常的下载着gdb调试器，一不小心，ctrl+z。�
 
   <script>
     window.subData = {
-      title: 'Gcc编译C语言。',
+      title: 'Gcc编译和Gdb调试',
       tools: true
     }
   </script>
@@ -774,7 +783,7 @@ Background：在wsl上正常的下载着gdb调试器，一不小心，ctrl+z。�
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#gcc简介"><span class="toc-text">gcc简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gcc编译流程"><span class="toc-text">gcc编译流程</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gcc"><span class="toc-text">gcc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gcc简介"><span class="toc-text">gcc简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gcc编译流程"><span class="toc-text">gcc编译流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gdb"><span class="toc-text">gdb</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单步执行和跟踪"><span class="toc-text">单步执行和跟踪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文献"><span class="toc-text">参考文献</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -841,7 +850,12 @@ Background：在wsl上正常的下载着gdb调试器，一不小心，ctrl+z。�
           <li><a class="flat-box"
             title="/categories/Linux/" href="/categories/Linux/"
             id="categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>Linux</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/Linux/C-C/" href="/categories/Linux/C-C/"
+            id="categoriesLinuxC-C"
+            ><div class='name'>C/C++</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Mark/" href="/categories/Mark/"
@@ -905,7 +919,7 @@ Background：在wsl上正常的下载着gdb调试器，一不小心，ctrl+z。�
 
 
     <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\10\Linux前后台切换\" title="Linux前后台切换" rel="bookmark">Linux前后台切换</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\19\Linux\" title="Linux基础——笔记" rel="bookmark">Linux基础——笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\09\Linux更换下载源镜像\" title="Linux更换下载源镜像" rel="bookmark">Linux更换下载源镜像</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\23\Linux C编程一站式学习\" title="(码)Linux C编程一站式学习" rel="bookmark">(码)Linux C编程一站式学习</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\19\Linux\" title="Linux基础——笔记" rel="bookmark">Linux基础——笔记</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\10\Linux前后台切换\" title="Linux进程前后台切换" rel="bookmark">Linux进程前后台切换</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\09\Linux更换下载源镜像\" title="Linux更换下载源镜像" rel="bookmark">Linux更换下载源镜像</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\17\Shell\" title="Shell" rel="bookmark">Shell</a></h3></div></li></ul>
     </div>
   </section>
 
