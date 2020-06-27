@@ -1347,7 +1347,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：368字</p>
+      <p>字数：374字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -1377,31 +1377,16 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>泛型程序设计意味着编写的代码可以被多中种不同类型的对象所重用。</p>
-<blockquote>
-<p>就是写一个东西，支持好多对象去使用。可简称广泛的类型。</p>
-</blockquote>
-<h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><p>定义：一个泛型类就是具有一个或多个类型变量的类。</p>
-<p>例如下面代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Pair</span>&lt;<span class="title">T</span>,<span class="title">U</span>&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">private</span> T first;</span><br><span class="line">  <span class="keyword">private</span> U second;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">()</span></span>&#123;</span><br><span class="line">    first=<span class="keyword">null</span>;</span><br><span class="line">    second= <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">Pair</span><span class="params">(T first, U second)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.first=first;</span><br><span class="line">    <span class="keyword">this</span>.second=second;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> T <span class="title">getFirst</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> first;&#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> U <span class="title">getSecond</span><span class="params">()</span></span>&#123;<span class="keyword">return</span> second;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Pair类引入了两个类型变量T和U，用尖括号&lt;&gt;括起来，并放在类名后面。泛型类可以有一个或多个类型变量。类型变量名常用短大写形式。</p>
-</blockquote>
-<p>实例化泛型类型：用具体的类型替换类型变量。如上述类：<code>Pair(String,int)</code> ,则所有的T转换为<code>String</code>类型、所有的U转换为<code>int</code>类型。</p>
-<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArrayAlg</span></span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">getMiddle</span><span class="params">(T …a)</span></span>&#123;<span class="comment">//注意类型变量所在的位置</span></span><br><span class="line">    <span class="keyword">return</span> a[a.length/<span class="number">2</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>泛型方法可以定义在泛型类中也可以定义在普通类中。调用时在方法名的尖括号内放入具体的类型。也可以不放，编译器自己能够推断出所调用的方法。eg: <code>String middle = ArrayAlg.&lt;String&gt;getMiddle(&quot;~&quot;,……,&quot;~&quot;)</code></p>
-<h3 id="类型变量的限定"><a href="#类型变量的限定" class="headerlink" title="类型变量的限定"></a>类型变量的限定</h3><p>…………</p>
-<hr>
-<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><ol>
-<li><a href="">java核心技术 卷1</a></li>
-<li><a href="">菜鸟教程</a></li>
-</ol>
-
+        <p>简单认识泛型</p>
       
     </div>
     
+      
+        <div class="button readmore">
+          <a href="/2020/01/20/javaSE-7-%E6%B3%9B%E5%9E%8B/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
       
     
   </section>
@@ -1575,11 +1560,6 @@
             id="categoriesLinux"
             ><div class='name'>Linux</div><div class='badge'>(7)</div></a></li>
         
-          <li><a class="flat-box child"
-            title="/categories/Linux/C-C/" href="/categories/Linux/C-C/"
-            id="categoriesLinuxC-C"
-            ><div class='name'>C/C++</div><div class='badge'>(1)</div></a></li>
-        
           <li><a class="flat-box"
             title="/categories/Mark/" href="/categories/Mark/"
             id="categoriesMark"
@@ -1685,6 +1665,18 @@
           <div class='name'>
             
             👻 ABrainlessArticle
+          </div>
+          
+        </a></li>
+      
+        <li><a class="flat-box" title="/Awesome%20Collection/" href="/Awesome%20Collection/"
+          
+          
+          id="Awesome20Collection"
+          >
+          <div class='name'>
+            
+            ⭐ Awesome Collection
           </div>
           
         </a></li>
@@ -2044,5 +2036,8 @@
 
 
   <script>setLoadingBarProgress(100);</script>
+  <!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
 </body>
 </html>

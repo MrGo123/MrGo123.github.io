@@ -367,7 +367,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3.5k字</p>
+      <p>字数：3.6k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -531,7 +531,7 @@
 <p>引用还可作为返回值使用。</p>
 <h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><pre><code><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义</span></span><br><span class="line"><span class="keyword">enum</span> color&#123;red,yellow,blue,black&#125;;</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line">```c++</span><br><span class="line">color co1,co2;</span><br><span class="line">co1=red;</span><br><span class="line">co2=co1(<span class="number">2</span>);</span><br></pre></td></tr></table></figure></code></pre><p><del>使用次数=0</del></p>
 <h3 id="函数模板——template"><a href="#函数模板——template" class="headerlink" title="函数模板——template"></a>函数模板——template</h3><p>函数模板，即建立一个通用函数，其函数类型和形参类型不具体指定，通过一个虚拟的类型来代表（也可称为泛型）。使用<strong>template</strong>关键词声明模板<br>例如：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模板声明，T为类型参数。typename也可改写为 class.</span></span><br><span class="line"><span class="comment">//类型参数可以有多个 &lt;typename T1, tyname T2&gt;</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </span><br><span class="line"><span class="function">T <span class="title">max</span><span class="params">(T a, T b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b ? a : b; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//模板声明，T为类型参数。typename也可改写为 class.</span></span><br><span class="line"><span class="comment">//类型参数可以有多个 &lt;typename T1, typename T2&gt;</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </span><br><span class="line"><span class="function">T <span class="title">max</span><span class="params">(T a, T b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b ? a : b; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>与重载函数的区别：重载函数是一个函数名多个函数，可以相对地理解为单一功能函数；函数模板是一个函数名一个模板对应多个不同参数类型功能需求的函数，是一个通用函数。</p>
@@ -544,7 +544,7 @@
 <p><strong>成员函数的代码不占用对象的存储空间</strong></p>
 <ul>
 <li>类的成员函数是公用的，即无论实例化了多少个对象，这些对象使用的函数都是相同的，公用的，并没有生成新的函数。</li>
-<li>类的内存大小，取决于类中声明的变量，与函数无关。</li>
+<li>类的内存大小，取决于类中声明的成员变量，与成员函数无关。</li>
 </ul>
 <h4 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h4><ol>
 <li><p>同定义的一个类额多个对象之间可以相互赋值。如： <code>Time t1; Time t2=t1;</code></p>
@@ -597,7 +597,7 @@
 <td align="center">可以引用但不可以改变值</td>
 </tr>
 </tbody></table>
-<h4 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h4><p>静态成员是类层面的一部分。供类的其他函数使用，是“公共”的。</p>
+<h4 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h4><p>被static修饰的成员。<br>静态成员是类层面的一部分。供类的其他函数和类的其他对象使用，是“公共”的。</p>
 <p><strong>静态数据成员</strong></p>
 <ol>
 <li>静态数据成员可以初始化，但只能在类体外初始化，且不能用参数初始化表。</li>
@@ -628,7 +628,23 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Time</span>&#123;</span>……&#125;;</span><br><span class="line"><span class="keyword">void</span> Time::getTime()&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">void</span>(Time:: *p)(); <span class="comment">//定义指向Time类的成员函数的指针变量p</span></span><br><span class="line">    p=&amp;Time::getTime;<span class="comment">//使p指向Time的函数getTime()</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><del>这部分有点sao，pay attention。</del></p>
-<h3 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h3><hr>
+<h3 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h3><p>运算符重载实质上是<strong>函数重载</strong>。其函数名就是 <code>operator 运算符</code>。其他与一般的函数一致。</p>
+<p>大部分的运算符都能重载，除了这5个：<code>.</code> ， <code>*</code> ，<code>::</code> ，<code>sizeof</code>，<code>?:</code> 。</p>
+<ol>
+<li>运算符重载函数作为类的成员函数：</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Complex</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">        <span class="comment">//简写</span></span><br><span class="line">		Complex <span class="keyword">operator</span> + (Complex &amp;c2);</span><br><span class="line">		Complex(<span class="keyword">int</span> a, <span class="keyword">int</span> b):real(a),imag(b)&#123;</span><br><span class="line">		&#125;;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="keyword">int</span> real;</span><br><span class="line">		<span class="keyword">int</span> imag; </span><br><span class="line">&#125;;</span><br><span class="line">Complex Complex::<span class="keyword">operator</span> +(Complex &amp;c2)&#123;</span><br><span class="line">	<span class="keyword">return</span> Complex(real+c2.real,imag+c2.imag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>作为友元函数</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Complex</span>&#123;</span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">        <span class="comment">//简写</span></span><br><span class="line">		<span class="keyword">friend</span> Complex <span class="keyword">operator</span> + (Complex &amp;c2);</span><br><span class="line">		Complex(<span class="keyword">int</span> a, <span class="keyword">int</span> b):real(a),imag(b)&#123;</span><br><span class="line">		&#125;;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="keyword">int</span> real;</span><br><span class="line">		<span class="keyword">int</span> imag; </span><br><span class="line">&#125;;</span><br><span class="line">Complex <span class="keyword">operator</span> +(Complex &amp;c1, Complex &amp;c2)&#123;</span><br><span class="line">	<span class="keyword">return</span> Complex(c1.real+c2.real,c1.imag+c2.imag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<hr>
 <h2 id="输入输出流（I-O-Stream）"><a href="#输入输出流（I-O-Stream）" class="headerlink" title="输入输出流（I/O Stream）"></a>输入输出流（I/O Stream）</h2><p>输入输出流：指若干个字节组成的字节序列，这些字节中的数据按顺序从一个对象传送到另一个对象。</p>
 <p>包括标准I/O、文件I/O和串I/O。</p>
 <h4 id="文件流"><a href="#文件流" class="headerlink" title="文件流"></a>文件流</h4><table>
@@ -754,10 +770,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-13T16:22:07+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-26T21:49:24+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年6月13日</p>
+    <p>更新：2020年6月26日</p>
   </a>
 </div>
 
@@ -1065,11 +1081,6 @@ Program files以及Program ...</p>
             id="categoriesLinux"
             ><div class='name'>Linux</div><div class='badge'>(7)</div></a></li>
         
-          <li><a class="flat-box child"
-            title="/categories/Linux/C-C/" href="/categories/Linux/C-C/"
-            id="categoriesLinuxC-C"
-            ><div class='name'>C/C++</div><div class='badge'>(1)</div></a></li>
-        
           <li><a class="flat-box"
             title="/categories/Mark/" href="/categories/Mark/"
             id="categoriesMark"
@@ -1132,7 +1143,7 @@ Program files以及Program ...</p>
 
 
     <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\23\Linux C编程一站式学习\" title="(码)Linux C编程一站式学习" rel="bookmark">(码)Linux C编程一站式学习</a></h3></div></li></ul>
+      
     </div>
   </section>
 
@@ -1534,5 +1545,8 @@ Program files以及Program ...</p>
 
 
   <script>setLoadingBarProgress(100);</script>
+  <!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+
 </body>
 </html>
