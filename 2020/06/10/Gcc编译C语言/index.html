@@ -367,13 +367,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：725字</p>
+      <p>字数：931字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：2分钟</p>
+      <p>时长：3分钟</p>
     </a>
   </div>
 
@@ -401,7 +401,8 @@
 <a id="more"></a>
 
 
-<h2 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h2><h3 id="gcc简介"><a href="#gcc简介" class="headerlink" title="gcc简介"></a>gcc简介</h3><h3 id="gcc编译流程"><a href="#gcc编译流程" class="headerlink" title="gcc编译流程"></a>gcc编译流程</h3><p>GCC 编译器在编译一个C语言程序时需要经过以下 4 步：</p>
+<h2 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h2><h3 id="gcc简介"><a href="#gcc简介" class="headerlink" title="gcc简介"></a>gcc简介</h3><p>GNU编译器套装（英语：GNU Compiler Collection，缩写为GCC），指一套编程语言编译器，以GPL及LGPL许可证所发行的自由软件，也是GNU计划的关键部分，也是GNU工具链的主要组成部分之一。GCC（特别是其中的C语言编译器）也常被认为是跨平台编译器的事实标准。可处理C、C++、Fortran、Pascal、Objective-C、Java、Ada，Go等其他语言。——Wiki</p>
+<h3 id="gcc编译流程"><a href="#gcc编译流程" class="headerlink" title="gcc编译流程"></a>gcc编译流程</h3><p>GCC 编译器在编译一个C语言程序时需要经过以下 4 步：</p>
 <ol>
 <li>(-E)将C语言源程序预处理，生成.i文件。</li>
 <li>(-S)预处理后的.i文件编译成为汇编语言，生成.s文件。</li>
@@ -446,8 +447,9 @@
 </tr>
 </tbody></table>
 <p>直接编译：<code>gcc hello.c -o hello</code>，生成hello可执行文件可直接运行。</p>
-<h2 id="gdb"><a href="#gdb" class="headerlink" title="gdb"></a>gdb</h2><p>在编译时要加上-g选项，生成的可执行文件才能用gdb进行源码级调试</p>
-<h3 id="单步执行和跟踪"><a href="#单步执行和跟踪" class="headerlink" title="单步执行和跟踪"></a>单步执行和跟踪</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -g main.c -o main</span><br><span class="line">$ gdb main  </span><br><span class="line"><span class="comment"># 进入gdb调试</span></span><br><span class="line">$ (gdb) list 1 <span class="comment"># list命令从第一行开始列出源代码，单纯list或l列出10行</span></span><br><span class="line">$ (gdb) next   <span class="comment"># next或n——单条执行指令。next 3 运行到当前位置的后三行</span></span><br><span class="line">$ (gdb) start <span class="comment">#程序再次启动调试</span></span><br><span class="line">$ (gdb) step <span class="comment">#step或s——进入函数内部跟踪执行</span></span><br><span class="line">$ (gdb) backtrace <span class="comment">#backtrace或bt查看函数调用的栈帧</span></span><br><span class="line">$ (gdb) frame 1 <span class="comment"># 选择1号栈帧</span></span><br><span class="line">$ (gdb) info locals <span class="comment"># info或i查看当前栈帧中变量的值</span></span><br><span class="line">$ (gdb) <span class="built_in">print</span> value <span class="comment"># print或p——打印变量value的值，变量也可以是表达式</span></span><br><span class="line">$ (gdb) finish <span class="comment"># 让当前程序一直运行到当前函数返回为止</span></span><br><span class="line">$ (gdb) <span class="built_in">set</span> var sum=0 <span class="comment"># 在gdb中给变量sum设值</span></span><br><span class="line">$ (gdb) run <span class="comment"># run或r——直接运行程序</span></span><br><span class="line">$ (gdb) quit <span class="comment"># quit或q退出gdb</span></span><br></pre></td></tr></table></figure>
+<h2 id="gdb"><a href="#gdb" class="headerlink" title="gdb"></a>gdb</h2><h3 id="gdb简介"><a href="#gdb简介" class="headerlink" title="gdb简介"></a>gdb简介</h3><p>GNU调试器（英语：GNU Debugger，缩写：GDB），是GNU软件系统中的标准调试器，此外GDB也是个具有移携性的调试器，经过移携需求的调修与重新编译，如今许多的类UNIX操作系统上都可以使用GDB，而现有GDB所能支持调试的编程语言有C、C++、Pascal以及FORTRAN。——Wiki</p>
+<p>在用gcc编译时要加上-g选项，生成的可执行文件才能用gdb进行源码级调试</p>
+<h3 id="单步执行和跟踪"><a href="#单步执行和跟踪" class="headerlink" title="单步执行和跟踪"></a>单步执行和跟踪</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ gcc -g main.c -o main</span><br><span class="line">$ gdb main  </span><br><span class="line"><span class="comment"># 进入gdb调试</span></span><br><span class="line">$ (gdb) list 1 <span class="comment"># list命令从第一行开始列出源代码，单纯list或l列出10行</span></span><br><span class="line">$ (gdb) next   <span class="comment"># next或n——单条执行指令。next 3 运行到当前位置的后三行</span></span><br><span class="line">$ (gdb) start <span class="comment">#程序再次启动调试</span></span><br><span class="line">$ (gdb) step <span class="comment">#step或s——进入函数内部跟踪执行</span></span><br><span class="line"></span><br><span class="line">$ (gdb) backtrace <span class="comment">#backtrace或bt查看函数调用的栈帧</span></span><br><span class="line">$ (gdb) frame 1 <span class="comment"># 选择1号栈帧</span></span><br><span class="line">$ (gdb) info locals <span class="comment"># info或i查看当前栈帧中变量的值</span></span><br><span class="line"></span><br><span class="line">$ (gdb) <span class="built_in">print</span> value <span class="comment"># print或p——打印变量value的值，变量也可以是表达式</span></span><br><span class="line">$ (gdb) finish <span class="comment"># 让当前程序一直运行到当前函数返回为止</span></span><br><span class="line">$ (gdb) <span class="built_in">set</span> var sum=0 <span class="comment"># 在gdb中给变量sum设值</span></span><br><span class="line">$ (gdb) run <span class="comment"># run或r——直接运行程序</span></span><br><span class="line">$ (gdb) quit <span class="comment"># quit或q退出gdb</span></span><br></pre></td></tr></table></figure>
 
 <p>-g选项的作用是在可执行文件中加入源代码的信息，比如可执行文件中第几条机器指令对应源代码的第几行，但并不是把整个源文件嵌入到可执行文件中，所以在调试时必须保证gdb能找到源文件。</p>
 <p>gdb提供了一个很方便的功能，在提示符下直接敲回车表示重复上一条命令。</p>
@@ -546,10 +548,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-23T18:24:14+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-29T11:35:55+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年6月23日</p>
+    <p>更新：2020年6月29日</p>
   </a>
 </div>
 
@@ -783,7 +785,7 @@ Background：在wsl上正常的下载着gdb调试器，一不小心，ctrl+z。�
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gcc"><span class="toc-text">gcc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gcc简介"><span class="toc-text">gcc简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gcc编译流程"><span class="toc-text">gcc编译流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gdb"><span class="toc-text">gdb</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#单步执行和跟踪"><span class="toc-text">单步执行和跟踪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文献"><span class="toc-text">参考文献</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#gcc"><span class="toc-text">gcc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gcc简介"><span class="toc-text">gcc简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gcc编译流程"><span class="toc-text">gcc编译流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gdb"><span class="toc-text">gdb</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gdb简介"><span class="toc-text">gdb简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单步执行和跟踪"><span class="toc-text">单步执行和跟踪</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文献"><span class="toc-text">参考文献</span></a></li></ol></li></ol>
     </div>
   </section>
 

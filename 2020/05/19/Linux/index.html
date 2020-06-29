@@ -368,13 +368,13 @@ Linux c 一站式学习">
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.5k字</p>
+      <p>字数：3.1k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：9分钟</p>
+      <p>时长：11分钟</p>
     </a>
   </div>
 
@@ -577,7 +577,74 @@ Linux c 一站式学习">
 </ol>
 <h4 id="whatis"><a href="#whatis" class="headerlink" title="whatis"></a>whatis</h4><p>whatis 显示命令的简短描述</p>
 <p>whatis 命令</p>
-<h4 id="info"><a href="#info" class="headerlink" title="info"></a>info</h4>
+<h4 id="info"><a href="#info" class="headerlink" title="info"></a>info</h4><h2 id="Linux软件包管理"><a href="#Linux软件包管理" class="headerlink" title="Linux软件包管理"></a>Linux软件包管理</h2><p>软件包分为源码包和二进制包（rpm包、系统默认包）</p>
+<p><strong>源码包</strong>：需经过编译转换为机器语言后系统才能识别和运行。<br><strong>优点</strong>：1. 开源；2. 自由选择功能；3. 软件是编译安装的，更适合自己的系统，稳定性和效率更高；4. 卸载方便：直接删除源文件即删除干净，而windows不行。<br><strong>缺点</strong>：1. 安装步骤多，容易出错；2. 编译时间长；3. 安装过程报错难以解决。</p>
+<p><strong>二进制包</strong>：经过了编译的机器语言包，系统能够直接识别和运行——不能看源码、打开是乱码<br><strong>优点</strong>：1. 安装包管理简单；2. 安装迅速<br><strong>缺点</strong>：1. 不可以看源代码；2. 功能选择不自由；3. 依赖性（装某个应用前提需要另一个应用）</p>
+<h3 id="RPM包"><a href="#RPM包" class="headerlink" title="RPM包"></a>RPM包</h3><h4 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h4><p><code>apt</code>，全称<code>Advanced Packaging Tool</code>，Linux下的一款安装包管理工具，可以在终端方便的进行<strong>安装、卸载和更新</strong>。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1.安装软件</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install 软件包</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.卸载软件</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt remove</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3.更新软件</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt upgrade</span></span><br></pre></td></tr></table></figure>
+<p><code>sudo</code>权限使得所有用户都可以使用这个软件。</p>
+<h3 id="YUM软件仓库"><a href="#YUM软件仓库" class="headerlink" title="YUM软件仓库"></a>YUM软件仓库</h3><p>Yum软件仓库便是为了进一步降低软<br>件安装难度和复杂度而设计的技术。Yum软件仓库可以根据用户的要求分<br>析出所需软件包及其相关的依赖关系，然后自动从服务器下载软件包并安<br>装到系统。</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">yum repolist all</td>
+<td align="center">列出所有仓库</td>
+</tr>
+<tr>
+<td align="center">yum list all</td>
+<td align="center">列出仓库中所有软件包</td>
+</tr>
+<tr>
+<td align="center">yum info</td>
+<td align="center">软件包名称查看软件包信息</td>
+</tr>
+<tr>
+<td align="center">yum install</td>
+<td align="center">软件包名称安装软件包</td>
+</tr>
+<tr>
+<td align="center">yum reinstall</td>
+<td align="center">软件包名称重新安装软件包</td>
+</tr>
+<tr>
+<td align="center">yum update</td>
+<td align="center">软件包名称升级软件包</td>
+</tr>
+<tr>
+<td align="center">yum remove</td>
+<td align="center">软件包移除软件包</td>
+</tr>
+<tr>
+<td align="center">yum clean all</td>
+<td align="center">清除所有仓库缓存</td>
+</tr>
+<tr>
+<td align="center">yum check-update</td>
+<td align="center">检查可更新的软件包</td>
+</tr>
+<tr>
+<td align="center">yum grouplist</td>
+<td align="center">查看系统中已经安装的软件包组</td>
+</tr>
+<tr>
+<td align="center">yum groupinstall</td>
+<td align="center">软件包组安装指定的软件包组</td>
+</tr>
+<tr>
+<td align="center">yum groupremove</td>
+<td align="center">软件包组移除指定的软件包组</td>
+</tr>
+<tr>
+<td align="center">yum groupinfo</td>
+<td align="center">软件包组查询指定的软件包组信息</td>
+</tr>
+</tbody></table>
+
           
             <div class='article_footer'>
               
@@ -669,10 +736,10 @@ Linux c 一站式学习">
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-23T16:49:15+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-29T10:55:46+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年6月23日</p>
+    <p>更新：2020年6月29日</p>
   </a>
 </div>
 
@@ -908,7 +975,7 @@ Shell 是带有命令提示符(prompt)的用于输入、输出的界面。准确
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用系统工作命令"><span class="toc-text">常用系统工作命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统状态监检测命令"><span class="toc-text">系统状态监检测命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工作目录切换命令"><span class="toc-text">工作目录切换命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件文本编辑命令"><span class="toc-text">文件文本编辑命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件目录管理命令"><span class="toc-text">文件目录管理命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包压缩与搜索命令"><span class="toc-text">打包压缩与搜索命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim编辑器"><span class="toc-text">Vim编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux查询命令帮助"><span class="toc-text">Linux查询命令帮助</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#man"><span class="toc-text">man</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#whatis"><span class="toc-text">whatis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#info"><span class="toc-text">info</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用系统工作命令"><span class="toc-text">常用系统工作命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系统状态监检测命令"><span class="toc-text">系统状态监检测命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#工作目录切换命令"><span class="toc-text">工作目录切换命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件文本编辑命令"><span class="toc-text">文件文本编辑命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件目录管理命令"><span class="toc-text">文件目录管理命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打包压缩与搜索命令"><span class="toc-text">打包压缩与搜索命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vim编辑器"><span class="toc-text">Vim编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux查询命令帮助"><span class="toc-text">Linux查询命令帮助</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#man"><span class="toc-text">man</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#whatis"><span class="toc-text">whatis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#info"><span class="toc-text">info</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux软件包管理"><span class="toc-text">Linux软件包管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RPM包"><span class="toc-text">RPM包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#软件安装"><span class="toc-text">软件安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#YUM软件仓库"><span class="toc-text">YUM软件仓库</span></a></li></ol>
     </div>
   </section>
 
