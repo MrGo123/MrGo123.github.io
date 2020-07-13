@@ -372,13 +372,13 @@ UML模型的三部分构成：
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：779字</p>
+      <p>字数：973字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：2分钟</p>
+      <p>时长：3分钟</p>
     </a>
   </div>
 
@@ -483,8 +483,26 @@ UML模型的三部分构成：
 <p>类图描述一类的属性和操作，也对系统的约束。被广泛应用于类图的建模的面向对象的系统中，因为它们是唯一的，可以直接映射到面向对象的语言的 UML 图。</p>
 <p>类图显示集合的类，接口，关联，协作和约束，它也被称为作为结构图。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/DesignPatterns/UMLClass.png" alt="UMLClass"></p>
+<p>一个类图的综合例子</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/DesignPatterns/classDiagrameg.png" alt="ClassDiagram"></p>
+<p>In the example above:</p>
+<p>We can interpret the meaning of the above class diagram by reading through the points as following.</p>
+<ol>
+<li>Shape is an abstract class. It is shown in Italics.</li>
+<li>Shape is a superclass. Circle, Rectangle and Polygon are derived from Shape. In other words, a Circle is-a Shape. This is a generalization / inheritance relationship.</li>
+<li>There is an association between DialogBox and DataController.</li>
+<li>Shape is part-of Window. This is an aggregation relationship. Shape can exist without Window.</li>
+<li>Point is part-of Circle. This is a composition relationship. Point cannot exist without a Circle.</li>
+<li>Window is dependent on Event. However, Event is not dependent on Window.</li>
+<li>The attributes of Circle are radius and center. This is an entity class.</li>
+<li>The method names of Circle are area(), circum(), setCenter() and setRadius().</li>
+<li>The parameter radius in Circle is an in parameter of type float.</li>
+<li>The method area() of class Circle returns a value of type double.</li>
+<li>The attributes and method names of Rectangle are hidden. Some other classes in the diagram also have their attributes and method names hidden.</li>
+</ol>
 <hr>
 <h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a href="https://www.w3cschool.cn/uml_tutorial/" target="_blank" rel="noopener">W3CSchool——UML 教程</a></p>
+<p><a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-class-diagram/" target="_blank" rel="noopener">What is class diagram-visual Paradigm</a></p>
 
           
             <div class='article_footer'>
@@ -577,10 +595,10 @@ UML模型的三部分构成：
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-30T15:31:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-04T16:02:14+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年6月30日</p>
+    <p>更新：2020年7月4日</p>
   </a>
 </div>
 
