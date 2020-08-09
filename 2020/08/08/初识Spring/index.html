@@ -431,7 +431,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建ApplicationContext容器，给容器指定需要加载的bean配置文件，它会自动从classpath中查找指定的XML配置文件。基于xml的容器有了，想要什么就get。</span></span><br><span class="line">ApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"Beans.xml"</span>);</span><br><span class="line"><span class="comment">//3.从容器中获取需要的bean</span></span><br><span class="line">Hello he = context.getBean(<span class="string">"helloWorld"</span>,Hello<span class="class">.<span class="keyword">class</span>)</span>;</span><br></pre></td></tr></table></figure>
 
 <p>如注释所述，这里已经使用Spring容器获取了对象<code>he</code>了，其中出现的两个<code>helloWorld</code>要一一对应。SpringIOC部分大概就是这样子了吧。</p>
-<p><del>没体现依赖注入，差评</del></p>
 <h3 id="Part6-补充回顾"><a href="#Part6-补充回顾" class="headerlink" title="Part6. 补充回顾"></a>Part6. 补充回顾</h3><p>这里对上述的流程做一个简单的补充和总结。</p>
 <ol>
 <li>Part4<ol>
@@ -551,10 +550,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-08T13:23:40+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-10T00:15:36+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年8月8日</p>
+    <p>更新：2020年8月10日</p>
   </a>
 </div>
 
@@ -905,7 +904,7 @@
 
 
     <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\20\Spring1\" title="Spring1" rel="bookmark">Spring1</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\27\Spring2-BeanBuilding\" title="Spring2_BeanBuilding" rel="bookmark">Spring2_BeanBuilding</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\20\Maven\" title="Maven" rel="bookmark">Maven</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\12\javaSE-1.环境\" title="javaSE--1.环境" rel="bookmark">javaSE--1.环境</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\27\Spring2-BeanBuilding\" title="Spring2_BeanBuilding" rel="bookmark">Spring2_BeanBuilding</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\20\Spring1\" title="Spring1" rel="bookmark">Spring1</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\20\Maven\" title="Maven" rel="bookmark">Maven</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\12\javaSE-1.环境\" title="javaSE--1.环境" rel="bookmark">javaSE--1.环境</a></h3></div></li></ul>
     </div>
   </section>
 

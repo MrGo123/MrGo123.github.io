@@ -369,13 +369,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.7k字</p>
+      <p>字数：1.9k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：6分钟</p>
+      <p>时长：7分钟</p>
     </a>
   </div>
 
@@ -462,6 +462,11 @@
 <p>比如这里初始化了一个仓库，新建一个<code>README.md</code>文件，并进行三次内容编写，每一次内容保存后提交(commit)。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 第三个版本内容</span></span><br><span class="line">ASUS@HZY MINGW64 /f/test (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat README.md</span></span><br><span class="line">The first version.</span><br><span class="line"></span><br><span class="line">The second version.</span><br><span class="line"></span><br><span class="line">The third version.</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 日志展示——三个版本</span></span><br><span class="line">ASUS@HZY MINGW64 /f/test (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit d5a1be6b560ac343de2271eed87c9f81e01fe8d9 (HEAD -&gt; master)</span><br><span class="line">Author: MrGo123 &lt;250……@qq.com&gt;</span><br><span class="line">Date:   Tue Mar 3 15:40:40 2020 +0800</span><br><span class="line"></span><br><span class="line">    rebuild(readme.md):third version</span><br><span class="line"></span><br><span class="line">commit 1843f71797e8ffa2f27e18a7c01a6aa8831ff032</span><br><span class="line">Author: MrGo123 &lt;250……@qq.com&gt;</span><br><span class="line">Date:   Tue Mar 3 15:38:41 2020 +0800</span><br><span class="line"></span><br><span class="line">    reBuild(readme.md):second version</span><br><span class="line"></span><br><span class="line">commit 0c3671095671c29d64d14321da9980bddff991c9</span><br><span class="line">Author: MrGo123 &lt;250……@qq.com&gt;</span><br><span class="line">Date:   Tue Mar 3 15:36:20 2020 +0800</span><br><span class="line"></span><br><span class="line">    build(readme.md):Add README.md</span><br></pre></td></tr></table></figure>
 <p>tips:1.日志内容太多可以用 <code>$ git log --pretty=oneline</code> 来单行显示。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.<code>commit id</code>（版本号）就是commit后面的十六进制码。</p>
+<p>git config -l    查看配置信息</p>
+<p>git log –online   查看简易日志<br>git log –online  –graph    查看简易日志且显示分支结构图</p>
+<p>git merge A    是把A分支合并到当前分支（修改的是指针）</p>
+<p>fast-forward快速合并：原当前分支内容merge是基于这个分支的最新版本而进行新开发的分支（例如从master分出一个分支dev，dev做了修改，而master没动，然后master又merge bev）</p>
+<p>三方分支  原分支分出了新分支，两个分支都改了，然后再merge。其结果是再merge的当前分支新增一个二者的合并版本</p>
 <p>可以看到HEAD指向最新版本也就是 <code>third version</code>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┌────┐</span><br><span class="line">│HEAD│</span><br><span class="line">└────┘</span><br><span class="line">   │</span><br><span class="line">   └──&gt; ○ third version</span><br><span class="line">        │</span><br><span class="line">        ○ second version</span><br><span class="line">        │</span><br><span class="line">        ○ Add README.md</span><br></pre></td></tr></table></figure>
 
@@ -634,10 +639,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-13T10:27:02+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-10T00:12:36+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年6月13日</p>
+    <p>更新：2020年8月10日</p>
   </a>
 </div>
 
