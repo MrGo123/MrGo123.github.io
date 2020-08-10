@@ -369,13 +369,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：1.9k字</p>
+      <p>字数：2.2k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：7分钟</p>
+      <p>时长：8分钟</p>
     </a>
   </div>
 
@@ -447,7 +447,7 @@
 <li>首先可以fork + clone自己的仓库 + 修改</li>
 <li>然后选择性执行如下命令</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># 1. 查看当前分支命令  （直接clone下来的是 master 主干）</span><br><span class="line">$ git branch </span><br><span class="line"></span><br><span class="line">#查看所有分支命令  （查看改仓库的所有分支，显示分支列表）</span><br><span class="line">$ git branch -a</span><br><span class="line"></span><br><span class="line"># 查看所有分支的详细信息</span><br><span class="line">$ git branch -avv</span><br><span class="line"></span><br><span class="line"># 2. 新建分支命令   （新建一个名为 branchName 的分支）</span><br><span class="line">$ git branch branch-name</span><br><span class="line"></span><br><span class="line">#删除分支命令   （删除名为 branchName分支）</span><br><span class="line">$ git branch -d branchName</span><br><span class="line"></span><br><span class="line"># 3. 切换分支命令  （切换名为 branchName 分支）</span><br><span class="line">$ git checkout branchNname</span><br><span class="line"></span><br><span class="line"># 4. 在某分支上推送更新    （在 branchName分支上推送）</span><br><span class="line">$ git push origin branchName</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 1. 查看当前分支命令  （直接clone下来的是 master 主干）</span><br><span class="line">$ git branch </span><br><span class="line"></span><br><span class="line">#查看所有分支命令  （查看改仓库的所有分支，显示分支列表）</span><br><span class="line">$ git branch -a</span><br><span class="line"></span><br><span class="line"># 查看所有分支的详细信息</span><br><span class="line">$ git branch -avv</span><br><span class="line"></span><br><span class="line"># 2. 新建分支命令   （新建一个名为 branchName 的分支）</span><br><span class="line">$ git branch branchName</span><br><span class="line"></span><br><span class="line">#删除分支命令   （删除名为 branchName分支，强制删除-D）</span><br><span class="line">$ git branch -d branchName</span><br><span class="line"></span><br><span class="line"># 3. 切换分支命令  （切换名为 branchName 分支）</span><br><span class="line">$ git checkout branchNname</span><br><span class="line"></span><br><span class="line"># 4. 在某分支上推送更新    （在 branchName分支上推送）</span><br><span class="line">$ git push origin branchName</span><br><span class="line"></span><br><span class="line"># 把A分支合并到当前分支（修改的是指针）</span><br><span class="line">$ git merge A</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>tips：若不新建分支将在master分支上操作。但是这样做merge的时候不好。</p>
@@ -458,15 +458,23 @@
 <h4 id="六、关于fork之后跟源仓的同步"><a href="#六、关于fork之后跟源仓的同步" class="headerlink" title="六、关于fork之后跟源仓的同步"></a>六、关于fork之后跟源仓的同步</h4><p>由于fork之后是属于自己的project，所以fork到自己账户上的project并不会随着源仓更新而更新。所以当需要跟源仓同步时：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#1.添加源仓为自己fork后仓库的上游</span><br><span class="line">$ git remote add upstream  源仓clone地址</span><br><span class="line"></span><br><span class="line">#2.同步fetch上游仓库代码</span><br><span class="line">$ git checkout master &amp;&amp; git fetch upstream</span><br><span class="line"></span><br><span class="line">#3.将上游代码合并至自己fork后的仓库(master分支)中，保证自己的master分支永远是最新版本</span><br><span class="line">$ git merge upstream&#x2F;master</span><br></pre></td></tr></table></figure>
 
+
+<p><strong>分支策略</strong></p>
+<ul>
+<li><strong>fast-forward快速合并</strong>：原当前分支内容merge是基于这个分支的最新版本而进行新开发的分支（例如从master分出一个分支dev，dev做了修改，而master没动，然后master又merge bev）</li>
+</ul>
+<blockquote>
+<p>若不使用此策略而要新生成一个版本，可以commit或merge时使用 <code>--no-ff</code>。</p>
+</blockquote>
+<ul>
+<li><strong>三方分支</strong>  原分支分出了新分支，两个分支都改了，然后再merge。其结果是再merge的当前分支新增一个二者的合并版本</li>
+</ul>
 <h4 id="七、版本控制"><a href="#七、版本控制" class="headerlink" title="七、版本控制"></a>七、版本控制</h4><p>当你想回退到以前某一个版本的时候，就需要用到Git最核心、最关键的一部分————<strong>版本控制</strong>。</p>
 <p>比如这里初始化了一个仓库，新建一个<code>README.md</code>文件，并进行三次内容编写，每一次内容保存后提交(commit)。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 第三个版本内容</span></span><br><span class="line">ASUS@HZY MINGW64 /f/test (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> cat README.md</span></span><br><span class="line">The first version.</span><br><span class="line"></span><br><span class="line">The second version.</span><br><span class="line"></span><br><span class="line">The third version.</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 日志展示——三个版本</span></span><br><span class="line">ASUS@HZY MINGW64 /f/test (master)</span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br><span class="line">commit d5a1be6b560ac343de2271eed87c9f81e01fe8d9 (HEAD -&gt; master)</span><br><span class="line">Author: MrGo123 &lt;250……@qq.com&gt;</span><br><span class="line">Date:   Tue Mar 3 15:40:40 2020 +0800</span><br><span class="line"></span><br><span class="line">    rebuild(readme.md):third version</span><br><span class="line"></span><br><span class="line">commit 1843f71797e8ffa2f27e18a7c01a6aa8831ff032</span><br><span class="line">Author: MrGo123 &lt;250……@qq.com&gt;</span><br><span class="line">Date:   Tue Mar 3 15:38:41 2020 +0800</span><br><span class="line"></span><br><span class="line">    reBuild(readme.md):second version</span><br><span class="line"></span><br><span class="line">commit 0c3671095671c29d64d14321da9980bddff991c9</span><br><span class="line">Author: MrGo123 &lt;250……@qq.com&gt;</span><br><span class="line">Date:   Tue Mar 3 15:36:20 2020 +0800</span><br><span class="line"></span><br><span class="line">    build(readme.md):Add README.md</span><br></pre></td></tr></table></figure>
 <p>tips:1.日志内容太多可以用 <code>$ git log --pretty=oneline</code> 来单行显示。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.<code>commit id</code>（版本号）就是commit后面的十六进制码。</p>
-<p>git config -l    查看配置信息</p>
-<p>git log –online   查看简易日志<br>git log –online  –graph    查看简易日志且显示分支结构图</p>
-<p>git merge A    是把A分支合并到当前分支（修改的是指针）</p>
-<p>fast-forward快速合并：原当前分支内容merge是基于这个分支的最新版本而进行新开发的分支（例如从master分出一个分支dev，dev做了修改，而master没动，然后master又merge bev）</p>
-<p>三方分支  原分支分出了新分支，两个分支都改了，然后再merge。其结果是再merge的当前分支新增一个二者的合并版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看简易日志</span></span><br><span class="line">git <span class="built_in">log</span> --online   </span><br><span class="line"><span class="comment"># 查看简易日志且显示分支结构图</span></span><br><span class="line">git <span class="built_in">log</span> --online  --graph</span><br></pre></td></tr></table></figure>
+
 <p>可以看到HEAD指向最新版本也就是 <code>third version</code>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">┌────┐</span><br><span class="line">│HEAD│</span><br><span class="line">└────┘</span><br><span class="line">   │</span><br><span class="line">   └──&gt; ○ third version</span><br><span class="line">        │</span><br><span class="line">        ○ second version</span><br><span class="line">        │</span><br><span class="line">        ○ Add README.md</span><br></pre></td></tr></table></figure>
 
@@ -501,8 +509,13 @@
 <li>测试，<code>git bash</code>下执行如下命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure></li>
 <li>按提示输入yes，显示successful则成功。</li>
 </ol>
+<h3 id="九、冲突解决"><a href="#九、冲突解决" class="headerlink" title="九、冲突解决"></a>九、冲突解决</h3><p>在日常的开发中，两个分支对同一部分内容做了修改并提交时，会发生冲突，导致一方提交不上去。</p>
+<p>解决方法是：提交不上去的一方首先pull最新的版本，然后再提交commit，然后根据冲突内容对文件进行修改（选择哪一方的或重新修改作为最后的提交内容），再提交commit。</p>
 <h3 id="结合动态图认识一个命令"><a href="#结合动态图认识一个命令" class="headerlink" title="结合动态图认识一个命令"></a>结合动态图认识一个命令</h3><p>？？这里还没消化，先码</p>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MjM5MDA2MTI1MA==&mid=2649094728&idx=1&sn=459a3671f2afd7e832ced0c581d6f46b&chksm=be5bdde5892c54f387add99731c111e8c9bfc1b98998dfa6b2ff83b0079519a7ffbc5c4c7d6b&mpshare=1&scene=23&srcid=&sharer_sharetime=1590081929387&sharer_shareid=2cc947b5ca5c4f3edc65c12deeab5c55#rd" target="_blank" rel="noopener">用动图展示 10 个 Git 命令</a></p>
+<h3 id="十、stash储藏"><a href="#十、stash储藏" class="headerlink" title="十、stash储藏"></a>十、stash储藏</h3><p>储藏，顾名思义就是藏起来，在git中就是藏起来，使得在工作区中看不见，即清空工作区，但是是可恢复的。好处就是在“清空”之后我们可以做其他事情，当这个事情做完之后，我们又可以恢复回藏起来时的状态。命令如下:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 储藏</span></span><br><span class="line">git stash</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看储藏仓情况</span></span><br><span class="line">git stash list</span><br><span class="line"><span class="meta">#</span><span class="bash"> 恢复储藏的内容 方式一：恢复后stash内容不删除</span></span><br><span class="line">git stash apply</span><br><span class="line"><span class="meta">#</span><span class="bash"> 恢复储藏的内容 方式一：（接上一条命令）删除恢复后stash内容</span></span><br><span class="line">git stash drop</span><br><span class="line"><span class="meta">#</span><span class="bash"> 恢复储藏的内容 方式二：恢复后stash内容删除</span></span><br><span class="line">git stash pop</span><br><span class="line"><span class="meta">#</span><span class="bash"> 恢复指定的内容先使用“git stash list”，再指定</span></span><br><span class="line">git stash apply stash@&#123;0&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="其他辅助内容"><a href="#其他辅助内容" class="headerlink" title="#其他辅助内容"></a>#其他辅助内容</h3><h4 id="一、commit规范"><a href="#一、commit规范" class="headerlink" title="一、commit规范"></a>一、commit规范</h4><p>@<a href="https://seven-innovation-base.github.io/Git-IN-ACTION-docs/2020/02/23/%E9%80%9A%E8%BF%87Git%E5%92%8CAngular%E7%90%86%E8%A7%A3%E8%AF%AD%E4%B9%89%E5%8C%96%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF/" target="_blank" rel="noopener">(译)通过 Git 和 Angular 了解语义化提交信息</a></p>
 <hr>
 <h3 id="参考文档or推荐"><a href="#参考文档or推荐" class="headerlink" title="#参考文档or推荐"></a>#参考文档or推荐</h3><ol>
@@ -542,8 +555,14 @@
 <p>版本控制部分</p>
 </blockquote>
 <ol start="7">
-<li><a href="https://itrhx.blog.csdn.net/article/details/82121420" target="_blank" rel="noopener">使用 Github Pages 和 Hexo 搭建自己的独立博客【超级详细的小白教程】</a><blockquote>
+<li><p><a href="https://itrhx.blog.csdn.net/article/details/82121420" target="_blank" rel="noopener">使用 Github Pages 和 Hexo 搭建自己的独立博客【超级详细的小白教程】</a></p>
+<blockquote>
 <p>SSH关联</p>
+</blockquote>
+</li>
+<li><p><a href="https://gitee.com/liaoxuefeng/learn-java/raw/master/teach/git-cheatsheet.pdf" target="_blank" rel="noopener">git-cheatsheet.pdf</a></p>
+<blockquote>
+<p>精简主要命令pdf</p>
 </blockquote>
 </li>
 </ol>
@@ -639,7 +658,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-10T00:12:36+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-10T13:44:14+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新：2020年8月10日</p>
@@ -879,7 +898,7 @@ background：
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">#前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念简介"><span class="toc-text">概念简介</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#各部分内容"><span class="toc-text">#各部分内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、登录"><span class="toc-text">一、登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、查看配置信息"><span class="toc-text">二、查看配置信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、创建及初始化仓库"><span class="toc-text">三、创建及初始化仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、Git内部工作原理"><span class="toc-text">四、Git内部工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、分支管理"><span class="toc-text">五、分支管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、关于fork之后跟源仓的同步"><span class="toc-text">六、关于fork之后跟源仓的同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、版本控制"><span class="toc-text">七、版本控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#八、添加SSH关联"><span class="toc-text">八、添加SSH关联</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结合动态图认识一个命令"><span class="toc-text">结合动态图认识一个命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他辅助内容"><span class="toc-text">#其他辅助内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、commit规范"><span class="toc-text">一、commit规范</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档or推荐"><span class="toc-text">#参考文档or推荐</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">#前言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念简介"><span class="toc-text">概念简介</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#各部分内容"><span class="toc-text">#各部分内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、登录"><span class="toc-text">一、登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、查看配置信息"><span class="toc-text">二、查看配置信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、创建及初始化仓库"><span class="toc-text">三、创建及初始化仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、Git内部工作原理"><span class="toc-text">四、Git内部工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、分支管理"><span class="toc-text">五、分支管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、关于fork之后跟源仓的同步"><span class="toc-text">六、关于fork之后跟源仓的同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、版本控制"><span class="toc-text">七、版本控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#八、添加SSH关联"><span class="toc-text">八、添加SSH关联</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九、冲突解决"><span class="toc-text">九、冲突解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结合动态图认识一个命令"><span class="toc-text">结合动态图认识一个命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十、stash储藏"><span class="toc-text">十、stash储藏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他辅助内容"><span class="toc-text">#其他辅助内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、commit规范"><span class="toc-text">一、commit规范</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文档or推荐"><span class="toc-text">#参考文档or推荐</span></a></li></ol>
     </div>
   </section>
 
