@@ -73,7 +73,7 @@
   <div id="loading-bar-wrapper">
   <div id="loading-bar"></div>
 </div>
-<header class="l_header no_sidebar shadow blur">
+<header class="l_header no_sidebar shadow floatable blur">
   <div class='container'>
   <div class='wrapper'>
     <div class='nav-sub'>
@@ -311,7 +311,7 @@
   
     <meting-js
       mini='true'
-      autoplay='false'
+      autoplay='true'
       volume='0.2'
       loop='all'
       order='random'
@@ -359,7 +359,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布：2020年6月2日</p>
+    <p>发布：2020年8月11日</p>
   </a>
 </div>
 
@@ -370,7 +370,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：98字</p>
+      <p>字数：97字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -402,7 +402,7 @@
           
           <div align="center">
 <span style="font-family:STXingkai;font-size: 40px;color:red">Gratitude </span><br/>
-<span style="font-family:STLiti;font-size: 20px">welcome to my blog</span><br/><br/>
+<span style="font-family:STLiti;font-size: 20px">welcome to my blog</span>❤❤<br/><br/>
 <span style="font-family:STXingkai;font-size: 40px;color:red">About the blog</span><br/>
 <span align="center">
 建站时间——12 Dec 2019<br/>
@@ -411,9 +411,9 @@
 建站目的——记录平时学习的笔记<br/>
 </span><br/>
 <span style="font-family:STXingkai;font-size: 40px;color:red">About me</span><br/>
-<span style="font-family:STXingkai;font-size: 25px;color:#5858FA">Zhuangyi</span>
+<span style="font-family:STXingkai;font-size: 25px;color:#5858FA">Zhuangyi</span><br/>
 <span>
-某本科在校大二生<br/>
+本科在校大二生<br/>
 CS专业<br/>
 Java
 </span><br/><br/>
@@ -427,6 +427,7 @@ Java
 欢迎评论灌水<br/>
 留下友链<br/>
 </span>
+🌹🌹
 </div>
           
         </div>
@@ -438,10 +439,10 @@ Java
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-26T00:50:58+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-11T14:19:00+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年5月26日</p>
+    <p>更新：2020年8月11日</p>
   </a>
 </div>
 
@@ -581,7 +582,7 @@ Java
       volume='0.2'
       loop='all'
       order='random'
-      fixed='true'
+      fixed='false'
       list-max-height='200px'
       server='netease'
       type='playlist'
@@ -657,6 +658,23 @@ Java
   </footer>
 
 <script>setLoadingBarProgress(80);</script>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("12/12/2019 15:38:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
 
 
       <script>setLoadingBarProgress(60);</script>
@@ -719,7 +737,7 @@ Java
 
     <script type="text/javascript">
       $(function(){
-        var imgs=["https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/BackWallstonesea.jpg", "https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/BackWallnature.jpg", "https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/BackWallship.com.jpg"];
+        var imgs=["https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/SimpleBlueAndWhite.jpg"];
         if ('true' == 'true') {
           function shuffle(arr){
             /*From countercurrent-time*/
