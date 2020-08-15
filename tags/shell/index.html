@@ -156,22 +156,6 @@
             
             
               <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
                 <a class="flat-box" href=/message/
                   
                   
@@ -245,22 +229,6 @@
                     id="tags"
                   >
                   <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -408,7 +376,12 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>shell简介</p>
+        <h3 id="shell简介"><a href="#shell简介" class="headerlink" title="shell简介"></a>shell简介</h3><p>Shell 诞生于 Unix，是与 Unix/Linux 交互的工具。Shell虽然是Unix的第一个<strong>脚本语言</strong>，但它是相当优秀的。它结合了延展性与效率，持续保有独具的特色，并不断的被改良，使它多年来能与那些花招很多的脚本语言保持抗衡。</p>
+<p>Shell需要依赖其他程序才能完成大部分的工作，这或许是它的缺陷，但它不容置疑的长处是：简洁的脚本语言标记方式，而且比C语言编写的程序执行更快、更有效率。</p>
+<p>Shell 是将内核、程序和用户连接了起来的<strong>软件</strong>。</p>
+<p>Shell 本身支持的命令并不多，但是<strong>它可以调用其他的程序，每个程序就是一个命令</strong>，这使得 Shell 命令的数量可以无限扩展，其结果就是 Shell 的功能非常强大。</p>
+<p>shell是一种脚本语言，因此需要编译成二进制的形式才可以被计算机执行。</p>
+<p>几种常见的Shell：sh、bash、csh、tcsh、ash。其中默认的是bash，使用 <code>echo $SHELL</code> 查看默认的shell。 <code>SHELL</code> 是 Linux 系统中的环境变量，它指明了当前使用的 Shell 程序的位置，也就是使用的哪个 Shell。</p>
       
     </div>
     
@@ -1070,6 +1043,16 @@ setInterval("createtime()",250);
   <script>setLoadingBarProgress(100);</script>
   <!--单击显示文字-->
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<!-- 
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1 
+-->
+<script type="text/javascript"
+color="93, 109, 126" opacity='0.9' zIndex="-2" count="30" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
 
 </body>
 </html>

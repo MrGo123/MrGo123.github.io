@@ -21,7 +21,11 @@
     <meta name="keywords" content="Linux">
   
   
-    <meta name="description" content="更换Ubuntu的下载源镜像，回归正常速度！！">
+    <meta name="description" content="更换Ubuntu的下载源镜像，回归正常速度！！这里推阿里云的镜像
+
+用lsb_release -a 查看自己的Linux版本信息。
+用cp /etc/apt/sources.list /etc/apt/sources.list.back 备份 sources.list 文件。要是不保存也行
+到镜像网里找到自己对应...">
   
 
   <!-- feed -->
@@ -158,22 +162,6 @@
             
             
               <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
                 <a class="flat-box" href=/message/
                   
                   
@@ -247,22 +235,6 @@
                     id="tags"
                   >
                   <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -397,11 +369,7 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <p>更换Ubuntu的下载源镜像，回归正常速度！！</p>
-<a id="more"></a>
-
-
-<p>这里推<a href="https://developer.aliyun.com/mirror/" target="_blank" rel="noopener">阿里云的镜像</a></p>
+          <p>更换Ubuntu的下载源镜像，回归正常速度！！<br>这里推<a href="https://developer.aliyun.com/mirror/" target="_blank" rel="noopener">阿里云的镜像</a></p>
 <ol>
 <li>用<code>lsb_release -a</code> 查看自己的Linux版本信息。</li>
 <li>用<code>cp /etc/apt/sources.list /etc/apt/sources.list.back</code> 备份 sources.list 文件。<del>要是不保存也行</del></li>
@@ -410,7 +378,7 @@
 <li>更新原有配置：<code>sudo apt-get update</code>，sudo依旧。</li>
 <li>搞定。</li>
 </ol>
-
+<a id="more"></a>
           
             <div class='article_footer'>
               
@@ -502,10 +470,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-06-10T01:39:01+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-16T00:21:04+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年6月10日</p>
+    <p>更新：2020年8月16日</p>
   </a>
 </div>
 
@@ -532,7 +500,15 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/06/09/Linux%E6%9B%B4%E6%8D%A2%E4%B8%8B%E8%BD%BD%E6%BA%90%E9%95%9C%E5%83%8F/&title=Linux更换下载源镜像 - MrGo123&summary=更换Ubuntu的下载源镜像，回归正常速度！！"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/06/09/Linux%E6%9B%B4%E6%8D%A2%E4%B8%8B%E8%BD%BD%E6%BA%90%E9%95%9C%E5%83%8F/&title=Linux更换下载源镜像 - MrGo123&summary=更换Ubuntu的下载源镜像，回归正常速度！！这里推阿里云的镜像
+
+用lsb_release -a 查看自己的Linux版本信息。
+用cp /etc/apt/sources.list /etc/apt/sources.list.back 备份 sources.list 文件。要是不保存也行
+到镜像网里找到自己对应的Linux系统和版本。那里有教，复制对应的配置信息。
+sudo权限编辑上述的文件——sources.list，把里面的内容全替换为复制下来的信息。
+更新原有配置：sudo apt-get update，sudo依旧。
+搞定。
+"
           
           >
           
@@ -544,7 +520,15 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/06/09/Linux%E6%9B%B4%E6%8D%A2%E4%B8%8B%E8%BD%BD%E6%BA%90%E9%95%9C%E5%83%8F/&title=Linux更换下载源镜像 - MrGo123&summary=更换Ubuntu的下载源镜像，回归正常速度！！"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/06/09/Linux%E6%9B%B4%E6%8D%A2%E4%B8%8B%E8%BD%BD%E6%BA%90%E9%95%9C%E5%83%8F/&title=Linux更换下载源镜像 - MrGo123&summary=更换Ubuntu的下载源镜像，回归正常速度！！这里推阿里云的镜像
+
+用lsb_release -a 查看自己的Linux版本信息。
+用cp /etc/apt/sources.list /etc/apt/sources.list.back 备份 sources.list 文件。要是不保存也行
+到镜像网里找到自己对应的Linux系统和版本。那里有教，复制对应的配置信息。
+sudo权限编辑上述的文件——sources.list，把里面的内容全替换为复制下来的信息。
+更新原有配置：sudo apt-get update，sudo依旧。
+搞定。
+"
           
           >
           
@@ -556,7 +540,15 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/06/09/Linux%E6%9B%B4%E6%8D%A2%E4%B8%8B%E8%BD%BD%E6%BA%90%E9%95%9C%E5%83%8F/&title=Linux更换下载源镜像 - MrGo123&summary=更换Ubuntu的下载源镜像，回归正常速度！！"
+          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/06/09/Linux%E6%9B%B4%E6%8D%A2%E4%B8%8B%E8%BD%BD%E6%BA%90%E9%95%9C%E5%83%8F/&title=Linux更换下载源镜像 - MrGo123&summary=更换Ubuntu的下载源镜像，回归正常速度！！这里推阿里云的镜像
+
+用lsb_release -a 查看自己的Linux版本信息。
+用cp /etc/apt/sources.list /etc/apt/sources.list.back 备份 sources.list 文件。要是不保存也行
+到镜像网里找到自己对应的Linux系统和版本。那里有教，复制对应的配置信息。
+sudo权限编辑上述的文件——sources.list，把里面的内容全替换为复制下来的信息。
+更新原有配置：sudo apt-get update，sudo依旧。
+搞定。
+"
           
           >
           
@@ -582,11 +574,8 @@
             
               <a class='prev' href='/2020/06/10/Linux%E5%89%8D%E5%90%8E%E5%8F%B0%E5%88%87%E6%8D%A2/'>
                 <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux进程前后台切换</p>
-                <p class='content'>切换前后台 + 进程管理
-
-
-
-Background：在wsl上正常的下载着gdb调试器，一不小心，ctrl+z。？？？(⊙ˍ⊙)？怎么不下了？？原来是被扔到了后台，并且暂停了。这不是给我机会学...</p>
+                <p class='content'>在基础篇 Linux中有说到进程的一点命令：ps、top、kill等，但是跟这次的前后台有点不一样，可以操作学习一下。
+认识Linux前后台进程前后台，顾名思义。前台进程：运行在终端（跑在脸上）...</p>
               </a>
             
             
@@ -1125,7 +1114,7 @@ setInterval("createtime()",250);
     
     appId: "7k5o87qfFgd2uWkD7vPFU4Uo-gzGzoHsz",
     appKey: "uTchb9UUIFz9YEbS8EGw7iQS",
-    placeholder: "看到这了看官不如留个印记？？~~~~",
+    placeholder: "Say what you want~~~~",
     pageSize:'10',
     avatar:'monsterid',
     lang:'zh-cn',
@@ -1272,6 +1261,16 @@ setInterval("createtime()",250);
   <script>setLoadingBarProgress(100);</script>
   <!--单击显示文字-->
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<!-- 
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1 
+-->
+<script type="text/javascript"
+color="93, 109, 126" opacity='0.9' zIndex="-2" count="30" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
 
 </body>
 </html>

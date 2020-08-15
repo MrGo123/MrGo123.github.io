@@ -232,22 +232,6 @@
             
             
               <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
                 <a class="flat-box" href=/message/
                   
                   
@@ -321,22 +305,6 @@
                     id="tags"
                   >
                   <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -455,7 +423,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：313字</p>
+      <p>字数：306字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -485,7 +453,14 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>PC知识 + 一些概念</p>
+        <h2 id="三个程序"><a href="#三个程序" class="headerlink" title="三个程序"></a>三个程序</h2><ul>
+<li><p><strong>Shell</strong> 是带有命令提示符(prompt)的用于输入、输出的界面。准确地说，POSIX 桌面底层也运行着一个 Shell，即使这个 Shell 对用户不可见，因为用户会话就是由这个 Shell 启动的。</p>
+</li>
+<li><p><strong>终端</strong>是在图形界面服务器（例如 X11 或 Wayland）中运行的应用程序，其中加载了一个 Shell。只有在终端窗口启动之后，才算是运行了一个终端。终端可以认为是操作 Shell 的一个入口。</p>
+</li>
+<li><p><strong>控制台</strong>（或称“虚拟控制台”）通常表示在桌面环境以外使用的 Shell，你可以通过 Alt+Ctrl+F2 进入控制台，通常情况下从 F3 到 F7 都是不同的控制台，其中桌面环境有可能是 F1 或者 F7，这在不同的发行版中可能会有所不同。</p>
+</li>
+</ul>
       
     </div>
     
@@ -597,7 +572,14 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ASCII码 + GB2312 + Unicode</p>
+        <h3 id="几个常见的编码"><a href="#几个常见的编码" class="headerlink" title="几个常见的编码"></a>几个常见的编码</h3><ol>
+<li>ASCII <a href="https://zh.wikipedia.org/zh-hans/ASCII" target="_blank" rel="noopener">维基百科</a></li>
+</ol>
+<p><strong>来源 || 定义</strong><br>ASCII（ /ˈæski/，American Standard Code for Information Interchange，美国信息交换标准代码）是基于拉丁字母的一套电脑编码系统。它主要用于显示现代英语，而其扩展版本延伸美国标准信息交换码则可以部分支持其他西欧语言，并等同于国际标准ISO/IEC 646。新名字<code>US-ASCII</code>。</p>
+<p><strong>存储实现</strong><br>使用单字节编码，即每个字符占用<strong>一个字节</strong>(8 bit)的后七位，第一位规定为<strong>0</strong>。如 字母 ‘A’,在ASCII码中十进制是65，二进制是<code>0100 0001</code>。</p>
+<blockquote>
+<p>把最高位也拿来用之后就称为非ASCII编码，ISO-8859-1编码就是如此。</p>
+</blockquote>
       
     </div>
     
@@ -1266,6 +1248,16 @@ setInterval("createtime()",250);
   <script>setLoadingBarProgress(100);</script>
   <!--单击显示文字-->
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<!-- 
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1 
+-->
+<script type="text/javascript"
+color="93, 109, 126" opacity='0.9' zIndex="-2" count="30" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
 
 </body>
 </html>

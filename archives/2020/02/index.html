@@ -232,22 +232,6 @@
             
             
               <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
                 <a class="flat-box" href=/message/
                   
                   
@@ -321,22 +305,6 @@
                     id="tags"
                   >
                   <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -457,7 +425,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：578字</p>
+      <p>字数：566字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -487,16 +455,65 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>记录所遇到的问题+解决方法</p>
+        <a id="more"></a>
+
+<h2 id="坑1————ssh：time-out"><a href="#坑1————ssh：time-out" class="headerlink" title="坑1————ssh：time out"></a>坑1————ssh：time out</h2><p>某日夜，想要在github上clone一repo，照常执行 <code>git clone git@……</code><br>等待片刻：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure>
+
+<p>我：😳😳XXX????????<br>继续检查</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br></pre></td></tr></table></figure>
+
+<p>🌚🌚好吧！找度娘！查博客！<br>解决：在.ssh下有另外三个文件的情况下再建立config文件（文件名无后缀）<br>文件内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User &#39;github上的email&#39;</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~&#x2F;.ssh&#x2F;id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure>
+<p>完了之后，长这样<br><img src="https://img.vim-cn.com/fb/fb55f6895f15e942019d570564f15d869287b9.png" alt=""></p>
+<p>再去执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>后面 <code>yes</code>。solved。🍻🍻</p>
+<h2 id="坑2–安装MySQL"><a href="#坑2–安装MySQL" class="headerlink" title="坑2–安装MySQL"></a>坑2–安装MySQL</h2><blockquote>
+<p>由于第一次安装MySQL，为了稳定起见，特地找了两篇教程对照着安装。结果…………错错错，都是你的……。(zanghua).没事，我也就一共装了五次🌚🌚，总耗时不下4h罢了.(zanghua)Oh, I am growing right?? Keep calm. 其实最后错误都只是一个：密码错误。</p>
+</blockquote>
+<p>下面按安装顺序记录所有的问题：<br>安装到这一步：finish.<br>successfully finished \撒花\撒花。</p>
+<p>生活没有那么容易，每个人……🌗🌗</p>
+<hr>
+<ol>
+<li>启动某client,闪退</li>
+</ol>
+<p>😀😀😀，问题不大，我还能笑。</p>
+<p>闪退……闪退……闪退……</p>
+<p>😅😅😅，问题不大，我网上找找。</p>
+<ul>
+<li>人家说mysql没在运行，不好意思，我的在跑。</li>
+<li>人家说啥啥啥，不好意思，我试了，没用。</li>
+</ul>
+<p>😐😐😐<br>…………</p>
+<ol start="2">
+<li>修改登录免密码后，启动mysql：本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止</li>
+</ol>
+<p>😶😶😶<br>…………<br>（网上教程花里胡哨，不如重装）<br>still……still……still</p>
+<p>😣😣😣😖😖😖😡😡😡</p>
+<ol start="3">
+<li>access denied for user ‘root’@’localhost’ (using password:YES)</li>
+</ol>
+<p>综合网上解决方案——密码错误………………继续上述第2步……重装。</p>
+<p>(崩溃边缘)</p>
+<p>重装。</p>
+<p><strong>转折来了</strong></p>
+<blockquote>
+<p>既然上述的是密码错误，那我换个密码。</p>
+</blockquote>
+<p>卸载-&gt;干净卸载-&gt;重装-&gt;谨慎重装-&gt;输入初始化的root密码-&gt;……-&gt;finish.</p>
+<p>🌚🌚🌚client 启动。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ENTER PASSWARD:******</span><br></pre></td></tr></table></figure>
+
+<p>done!!!! What happened??? what ??</p>
+<p>Thanks god!! Yearh.</p>
+<p><strong>总结：不是PC的错，更不是MySQL的错，也不是教程的错，错就错在我输入的密码中有特殊符号，这是我所不能理解的。</strong></p>
+<p><strong>教训：特殊条件下，谨慎设密码，越简单越好。</strong></p>
+<p>走过，踩过，以后才会少犯错。🌝🌝🌝</p>
+
       
     </div>
     
-      
-        <div class="button readmore">
-          <a href="/2020/02/23/%E8%B8%A9%E5%9D%91%E5%A4%A7%E6%9D%82%E7%83%A9/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
       
     
   </section>
@@ -569,7 +586,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：502字</p>
+      <p>字数：483字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -599,7 +616,12 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="#Github上动态浏览历史版本">动态浏览历史版本</a> + <a href="#Github上精准搜索">精准搜索</a> + 项目中添加徽标</p>
+        <h3 id="Github上动态浏览历史版本"><a href="#Github上动态浏览历史版本" class="headerlink" title="Github上动态浏览历史版本"></a>Github上动态浏览历史版本</h3><p>版本控制、版本控制，当我们要浏览历史版本的时候怎么玩才更舒服更香呢？？</p>
+<p>这里就有一顿操作——动态可视化看历史版本。</p>
+<ol>
+<li>通过更改URL</li>
+</ol>
+<p>具体操作：把 URL 中的 <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> 替换成 <a href="https://github-history.netlify.com/，URL的其它部分保持不变。回车即跳转至在酷的版本页面，而且版本转换时支持动态效果。" target="_blank" rel="noopener">https://github-history.netlify.com/，URL的其它部分保持不变。回车即跳转至在酷的版本页面，而且版本转换时支持动态效果。</a></p>
       
     </div>
     
@@ -681,13 +703,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：750字</p>
+      <p>字数：731字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：3分钟</p>
+      <p>时长：2分钟</p>
     </a>
   </div>
 
@@ -711,9 +733,14 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>YAML简介+基本语法+数据类型+复合结构+纯量+引用</p>
-</blockquote>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>YAML：全称”Yet Another Markup Language”（仍是一种标记语言）。yaml是以数据中心的标记语言。YAML配置文件的文件后缀是<code>.yml</code>。</p>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ul>
+<li>大小写敏感</li>
+<li>使用缩进表示层级关系（只允许使用空格，不允许使用tab）</li>
+<li>相同层级左对齐</li>
+<li>‘#’表示注释</li>
+</ul>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>数据类型包括：对象、数组、纯量。</p>
       
     </div>
     
@@ -1382,6 +1409,16 @@ setInterval("createtime()",250);
   <script>setLoadingBarProgress(100);</script>
   <!--单击显示文字-->
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<!-- 
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1 
+-->
+<script type="text/javascript"
+color="93, 109, 126" opacity='0.9' zIndex="-2" count="30" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
 
 </body>
 </html>

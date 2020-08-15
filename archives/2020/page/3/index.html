@@ -232,22 +232,6 @@
             
             
               <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
                 <a class="flat-box" href=/message/
                   
                   
@@ -330,22 +314,6 @@
               
             
               <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
                 <a class="flat-box" href=/message/
                   
                   
@@ -398,7 +366,7 @@
           
   <h2 class="title">
     <a href="/2020/05/19/http/">
-      http
+      认识下HTTP
     </a>
   </h2>
 
@@ -477,7 +445,13 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>基于《图解http》的阅读笔记<br>ps：没有笔记+不用=没学</p>
+        <h3 id="Part1——-Web及网络基础"><a href="#Part1——-Web及网络基础" class="headerlink" title="Part1—— Web及网络基础"></a>Part1—— Web及网络基础</h3><p>3 项 <code>WWW（简称Web）</code> 构建技术，分别是：</p>
+<ul>
+<li>把 SGML（Standard Generalized Markup Language，标准通用标记语言）作为页面的文本标记语言的 HTML（HyperText Markup Language，超文本标记语言）；</li>
+<li>作为文档传递协议的 HTTP ；</li>
+<li>指定文档所在地址的 URL（Uniform Resource Locator，统一资源定位符）。 </li>
+</ul>
+<p>不同的硬件、操作系统之间的通信，都需要一种规则。这种规则称为<strong>协议（protocol）</strong>。<code>TCP/IP</code> 是互联网相关的各类协议族的总称。</p>
       
     </div>
     
@@ -672,7 +646,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：313字</p>
+      <p>字数：306字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -702,7 +676,14 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>PC知识 + 一些概念</p>
+        <h2 id="三个程序"><a href="#三个程序" class="headerlink" title="三个程序"></a>三个程序</h2><ul>
+<li><p><strong>Shell</strong> 是带有命令提示符(prompt)的用于输入、输出的界面。准确地说，POSIX 桌面底层也运行着一个 Shell，即使这个 Shell 对用户不可见，因为用户会话就是由这个 Shell 启动的。</p>
+</li>
+<li><p><strong>终端</strong>是在图形界面服务器（例如 X11 或 Wayland）中运行的应用程序，其中加载了一个 Shell。只有在终端窗口启动之后，才算是运行了一个终端。终端可以认为是操作 Shell 的一个入口。</p>
+</li>
+<li><p><strong>控制台</strong>（或称“虚拟控制台”）通常表示在桌面环境以外使用的 Shell，你可以通过 Alt+Ctrl+F2 进入控制台，通常情况下从 F3 到 F7 都是不同的控制台，其中桌面环境有可能是 F1 或者 F7，这在不同的发行版中可能会有所不同。</p>
+</li>
+</ul>
       
     </div>
     
@@ -814,7 +795,14 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ASCII码 + GB2312 + Unicode</p>
+        <h3 id="几个常见的编码"><a href="#几个常见的编码" class="headerlink" title="几个常见的编码"></a>几个常见的编码</h3><ol>
+<li>ASCII <a href="https://zh.wikipedia.org/zh-hans/ASCII" target="_blank" rel="noopener">维基百科</a></li>
+</ol>
+<p><strong>来源 || 定义</strong><br>ASCII（ /ˈæski/，American Standard Code for Information Interchange，美国信息交换标准代码）是基于拉丁字母的一套电脑编码系统。它主要用于显示现代英语，而其扩展版本延伸美国标准信息交换码则可以部分支持其他西欧语言，并等同于国际标准ISO/IEC 646。新名字<code>US-ASCII</code>。</p>
+<p><strong>存储实现</strong><br>使用单字节编码，即每个字符占用<strong>一个字节</strong>(8 bit)的后七位，第一位规定为<strong>0</strong>。如 字母 ‘A’,在ASCII码中十进制是65，二进制是<code>0100 0001</code>。</p>
+<blockquote>
+<p>把最高位也拿来用之后就称为非ASCII编码，ISO-8859-1编码就是如此。</p>
+</blockquote>
       
     </div>
     
@@ -896,7 +884,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：578字</p>
+      <p>字数：566字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -926,16 +914,65 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>记录所遇到的问题+解决方法</p>
+        <a id="more"></a>
+
+<h2 id="坑1————ssh：time-out"><a href="#坑1————ssh：time-out" class="headerlink" title="坑1————ssh：time out"></a>坑1————ssh：time out</h2><p>某日夜，想要在github上clone一repo，照常执行 <code>git clone git@……</code><br>等待片刻：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure>
+
+<p>我：😳😳XXX????????<br>继续检查</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line">ssh: connect to host github.com port 22: Connection timed out</span><br></pre></td></tr></table></figure>
+
+<p>🌚🌚好吧！找度娘！查博客！<br>解决：在.ssh下有另外三个文件的情况下再建立config文件（文件名无后缀）<br>文件内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User &#39;github上的email&#39;</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~&#x2F;.ssh&#x2F;id_rsa</span><br><span class="line">Port 443</span><br></pre></td></tr></table></figure>
+<p>完了之后，长这样<br><img src="https://img.vim-cn.com/fb/fb55f6895f15e942019d570564f15d869287b9.png" alt=""></p>
+<p>再去执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>后面 <code>yes</code>。solved。🍻🍻</p>
+<h2 id="坑2–安装MySQL"><a href="#坑2–安装MySQL" class="headerlink" title="坑2–安装MySQL"></a>坑2–安装MySQL</h2><blockquote>
+<p>由于第一次安装MySQL，为了稳定起见，特地找了两篇教程对照着安装。结果…………错错错，都是你的……。(zanghua).没事，我也就一共装了五次🌚🌚，总耗时不下4h罢了.(zanghua)Oh, I am growing right?? Keep calm. 其实最后错误都只是一个：密码错误。</p>
+</blockquote>
+<p>下面按安装顺序记录所有的问题：<br>安装到这一步：finish.<br>successfully finished \撒花\撒花。</p>
+<p>生活没有那么容易，每个人……🌗🌗</p>
+<hr>
+<ol>
+<li>启动某client,闪退</li>
+</ol>
+<p>😀😀😀，问题不大，我还能笑。</p>
+<p>闪退……闪退……闪退……</p>
+<p>😅😅😅，问题不大，我网上找找。</p>
+<ul>
+<li>人家说mysql没在运行，不好意思，我的在跑。</li>
+<li>人家说啥啥啥，不好意思，我试了，没用。</li>
+</ul>
+<p>😐😐😐<br>…………</p>
+<ol start="2">
+<li>修改登录免密码后，启动mysql：本地计算机上的MySQL服务启动后停止。某些服务在未由其他服务或程序使用时将自动停止</li>
+</ol>
+<p>😶😶😶<br>…………<br>（网上教程花里胡哨，不如重装）<br>still……still……still</p>
+<p>😣😣😣😖😖😖😡😡😡</p>
+<ol start="3">
+<li>access denied for user ‘root’@’localhost’ (using password:YES)</li>
+</ol>
+<p>综合网上解决方案——密码错误………………继续上述第2步……重装。</p>
+<p>(崩溃边缘)</p>
+<p>重装。</p>
+<p><strong>转折来了</strong></p>
+<blockquote>
+<p>既然上述的是密码错误，那我换个密码。</p>
+</blockquote>
+<p>卸载-&gt;干净卸载-&gt;重装-&gt;谨慎重装-&gt;输入初始化的root密码-&gt;……-&gt;finish.</p>
+<p>🌚🌚🌚client 启动。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ENTER PASSWARD:******</span><br></pre></td></tr></table></figure>
+
+<p>done!!!! What happened??? what ??</p>
+<p>Thanks god!! Yearh.</p>
+<p><strong>总结：不是PC的错，更不是MySQL的错，也不是教程的错，错就错在我输入的密码中有特殊符号，这是我所不能理解的。</strong></p>
+<p><strong>教训：特殊条件下，谨慎设密码，越简单越好。</strong></p>
+<p>走过，踩过，以后才会少犯错。🌝🌝🌝</p>
+
       
     </div>
     
-      
-        <div class="button readmore">
-          <a href="/2020/02/23/%E8%B8%A9%E5%9D%91%E5%A4%A7%E6%9D%82%E7%83%A9/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
       
     
   </section>
@@ -1008,7 +1045,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：502字</p>
+      <p>字数：483字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -1038,7 +1075,12 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="#Github上动态浏览历史版本">动态浏览历史版本</a> + <a href="#Github上精准搜索">精准搜索</a> + 项目中添加徽标</p>
+        <h3 id="Github上动态浏览历史版本"><a href="#Github上动态浏览历史版本" class="headerlink" title="Github上动态浏览历史版本"></a>Github上动态浏览历史版本</h3><p>版本控制、版本控制，当我们要浏览历史版本的时候怎么玩才更舒服更香呢？？</p>
+<p>这里就有一顿操作——动态可视化看历史版本。</p>
+<ol>
+<li>通过更改URL</li>
+</ol>
+<p>具体操作：把 URL 中的 <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> 替换成 <a href="https://github-history.netlify.com/，URL的其它部分保持不变。回车即跳转至在酷的版本页面，而且版本转换时支持动态效果。" target="_blank" rel="noopener">https://github-history.netlify.com/，URL的其它部分保持不变。回车即跳转至在酷的版本页面，而且版本转换时支持动态效果。</a></p>
       
     </div>
     
@@ -1120,13 +1162,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：750字</p>
+      <p>字数：731字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：3分钟</p>
+      <p>时长：2分钟</p>
     </a>
   </div>
 
@@ -1150,9 +1192,14 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>YAML简介+基本语法+数据类型+复合结构+纯量+引用</p>
-</blockquote>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>YAML：全称”Yet Another Markup Language”（仍是一种标记语言）。yaml是以数据中心的标记语言。YAML配置文件的文件后缀是<code>.yml</code>。</p>
+<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ul>
+<li>大小写敏感</li>
+<li>使用缩进表示层级关系（只允许使用空格，不允许使用tab）</li>
+<li>相同层级左对齐</li>
+<li>‘#’表示注释</li>
+</ul>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>数据类型包括：对象、数组、纯量。</p>
       
     </div>
     
@@ -1234,7 +1281,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：904字</p>
+      <p>字数：890字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -1264,16 +1311,60 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>记录博客搭建的一些信息or教程</p>
+        <a id="more"></a>
+
+
+<p>前叙：本博是在Shan San的引路下自己不断摸索整的，主要是有TRHX大佬写的究极详细的小白教程，真的是小白，无脑跟着操作就OK，可先不理解，把东西先做出来，这里安利一下大佬的CSDN专栏</p>
+<ol>
+<li><a href="https://itrhx.blog.csdn.net/article/details/82121420" target="_blank" rel="noopener">使用 Github Pages 和 Hexo 搭建自己的独立博客【超级详细的小白教程】</a></li>
+<li><a href="https://itrhx.blog.csdn.net/article/details/85420403" target="_blank" rel="noopener">Hexo 博客优化之博客美化系列（持续更新）</a></li>
+<li><a href="https://itrhx.blog.csdn.net/article/details/85010191" target="_blank" rel="noopener">Hexo 博客优化之实用功能添加系列（持续更新）</a></li>
+</ol>
+<p>有了以上大佬的三个专栏，beautiful blog就有了。当然Hexo官方文档是必不可少的。</p>
+<hr>
+<p>下面是我自己建博的简要记录：<br>前备知识：HTML + yaml + Git/Github + CSS + JS</p>
+<blockquote>
+<p>tips：没有就见啥学啥吧。just like me！didiwanyier。</p>
+</blockquote>
+<p>基础配置要求</p>
+<ol>
+<li>Node.js  官网下载</li>
+<li>Git  官网下载</li>
+<li>Hexo</li>
+</ol>
+<h3 id="本地创建"><a href="#本地创建" class="headerlink" title="本地创建"></a>本地创建</h3><blockquote>
+<p>自己新建一个文件夹，用来放博客文件，右键Git Bash here，分别输入如下命令安装</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g  </span><br><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后再建个名为Hexo的文件夹，右键Git Bash Here输入<br><code>$ hexo init</code><br>进行初始化，接着部署Hexo，执行命令：<br><code>$ hexo generate</code><br>然后执行命令<br><code>$ hexo server</code><br>运行本地服务器，打开<br><code>http://localhost:4000/</code><br>打开博客。至此本地博客建好了。</p>
+<h3 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h3><p>配置SSH+Git登录个人账户+clone新建的仓库至Hexo文件夹</p>
+<p>更换到Hexo官网选一款中意的Hexo主题，阅读Hexo说明书，修改优化主题配置。添加评论系统，我使用的是Valine+它的一个高级扩展。（这里也会有Valine的配置说明要读）到这博客就差不多建好了。更细更个性化可以自己修改主题源代码。</p>
+<hr>
+<hr>
+<h3 id="绑定域名-实现https"><a href="#绑定域名-实现https" class="headerlink" title="绑定域名+实现https"></a>绑定域名+实现https</h3><h4 id="1-运营商买域名"><a href="#1-运营商买域名" class="headerlink" title="1.运营商买域名"></a>1.运营商买域名</h4><p><img src="https://img.vim-cn.com/cb/053e0bc35e50bee029aec5506e9d0b868ecc9f.png" alt=""></p>
+<h4 id="2-域名解析"><a href="#2-域名解析" class="headerlink" title="2.域名解析"></a>2.域名解析</h4><p>点上图中的<strong>解析</strong>，然后<strong>添加记录</strong>，记录的内容按矩形方框所示，然后<strong>确定</strong>。<br><img src="https://img.vim-cn.com/34/bfd55fe683b6b51c3f4ba2146a4b2658cc7699.png" alt=""><br>tips: github的域名即<code>xxx.github.io</code>填的时候<code>io</code>后面还有个 <code>.</code>。</p>
+<h4 id="3-建CNAME文件"><a href="#3-建CNAME文件" class="headerlink" title="3.建CNAME文件"></a>3.建CNAME文件</h4><p>到github博客的source文件夹内创建名为CANME的文件，里面的内容是所购买的域名,不包含前缀。<br><img src="https://img.vim-cn.com/25/f45fb8259d01d03efb86c04a619b1b5ef5e9cb.png" alt=""></p>
+<h4 id="4-部署发布"><a href="#4-部署发布" class="headerlink" title="4.部署发布"></a>4.部署发布</h4><p>整完上面博客<code>$ hexo g -d</code>一下。</p>
+<h4 id="5-到github上save域名"><a href="#5-到github上save域名" class="headerlink" title="5.到github上save域名"></a>5.到github上save域名</h4><p>打开github-&gt;博客仓-&gt;Setting-&gt;github page,看图：<br><img src="https://img.vim-cn.com/3d/def3314a3dd1e9e0c0aa1f3da08f31e803ff6c.png" alt=""></p>
+<h4 id="6-收获http"><a href="#6-收获http" class="headerlink" title="6.收获http"></a>6.收获http</h4><p>等一会，几分钟吧！（人家教程都这样说）oh！<code>http://zy68.top</code>，真香！！https不更香？？下面就是https踩坑路。</p>
+<hr>
+<h4 id="7-整SSL证书"><a href="#7-整SSL证书" class="headerlink" title="7.整SSL证书"></a>7.整SSL证书</h4><p>回到<strong>域名控制台</strong>，点击域名列表中购买了的<strong>域名</strong>，出现该域名的<strong>基本信息</strong>，点击下面的<strong>开启SSL证书</strong>，然后出现两个一千多的SSL证书！（打扰了！回去耕田）点击<strong>返回证书列表</strong>，<strong>购买证书</strong><br><img src="https://img.vim-cn.com/d4/e0f3de78fe5d30d6e089b9e0858cd2fec7abbd.png" alt=""><br>oh! free.真香！！！然后那个啥没问题就等签发吧，十分钟不到。<br><img src="https://img.vim-cn.com/d6/5ea5302d51b6ad254070384f6a28656cd3c4b7.png" alt=""></p>
+<h4 id="8-github上打钩"><a href="#8-github上打钩" class="headerlink" title="8.github上打钩"></a>8.github上打钩</h4><p>拿到证书之后到github老位置打√。<br><img src="https://img.vim-cn.com/b2/f7b858b81698ddcf32771bd3da960b8a4353d6.png" alt=""><br>oh!https,真香！！结束</p>
+<p>tips：这里记个坑，如果上述第二步域名解析用了网上其他教程的：还有另外一个解析记录，其中的记录类型为A类型的话，github上的勾勾是不容易√上的，需要做另外的DNS操作。最简单的做法是：把A的解析记录删了，然后去打钩，over。</p>
+<p>奉上两篇Shan San整来的official docs：</p>
+<ul>
+<li><p><a href="https://help.github.com/en/github/working-with-github-pages/managing-a-custom-domain-for-your-github-pages-site?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">Managing a custom domain for your GitHub Pages site</a></p>
+</li>
+<li><p><a href="https://github.blog/2018-05-01-github-pages-custom-domains-https/" target="_blank" rel="noopener">Custom domains on GitHub Pages gain support for HTTPS</a></p>
+</li>
+</ul>
+<h3 id="其他推荐"><a href="#其他推荐" class="headerlink" title="其他推荐"></a>其他推荐</h3><blockquote>
+<p>从零基于github pages和使用jekyll搭建自己的网站 <a href="https://aleksandrhovhannisyan.github.io/blog/dev/creating-a-personal-website-with-jekyll-and-github-pages-a-comprehensive-guide/" target="_blank" rel="noopener">Creating a Personal Website with Jekyll and GitHub Pages: A Comprehensive Guide</a></p>
+</blockquote>
+
       
     </div>
     
-      
-        <div class="button readmore">
-          <a href="/2020/01/30/%E7%AE%80%E8%BF%B0%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
       
     
   </section>
@@ -2178,6 +2269,16 @@ setInterval("createtime()",250);
   <script>setLoadingBarProgress(100);</script>
   <!--单击显示文字-->
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<!-- 
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1 
+-->
+<script type="text/javascript"
+color="93, 109, 126" opacity='0.9' zIndex="-2" count="30" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
 
 </body>
 </html>

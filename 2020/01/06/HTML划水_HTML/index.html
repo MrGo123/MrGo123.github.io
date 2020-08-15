@@ -158,22 +158,6 @@
             
             
               <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
                 <a class="flat-box" href=/message/
                   
                   
@@ -247,22 +231,6 @@
                     id="tags"
                   >
                   <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -851,13 +819,12 @@ Background: 经过这几天的摸鱼，以及阅读部分Git文档的相关内�
             
               <a class='next' href='/2019/12/30/markdown%E6%91%98%E8%A6%81%E7%BB%83%E4%B9%A0/'>
                 <p class='title'>Markdown练习<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>Markdown练习
-
+                <p class='content'>
 
 
 前言Markdown是一种轻量级标记语言
 
-正文1.标题1234567891011121314151617181920# 一级标题  ## 二级标题  ### 三级标...</p>
+正文1.标题1234567891011121314151617181920# 一级标题  ## 二级标题  ### 三级标题  #### 四级标...</p>
               </a>
             
           </div>
@@ -1400,7 +1367,7 @@ setInterval("createtime()",250);
     
     appId: "7k5o87qfFgd2uWkD7vPFU4Uo-gzGzoHsz",
     appKey: "uTchb9UUIFz9YEbS8EGw7iQS",
-    placeholder: "看到这了看官不如留个印记？？~~~~",
+    placeholder: "Say what you want~~~~",
     pageSize:'10',
     avatar:'monsterid',
     lang:'zh-cn',
@@ -1547,6 +1514,16 @@ setInterval("createtime()",250);
   <script>setLoadingBarProgress(100);</script>
   <!--单击显示文字-->
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<!-- 
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1 
+-->
+<script type="text/javascript"
+color="93, 109, 126" opacity='0.9' zIndex="-2" count="30" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
 
 </body>
 </html>

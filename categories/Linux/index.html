@@ -156,22 +156,6 @@
             
             
               <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
                 <a class="flat-box" href=/message/
                   
                   
@@ -245,22 +229,6 @@
                     id="tags"
                   >
                   <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -390,7 +358,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：806字</p>
+      <p>字数：796字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -420,7 +388,7 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>码一本Linux C编程的书——<a href="https://www.kancloud.cn/wizardforcel/linux-c-book/134922" target="_blank" rel="noopener">《Linux C编程一站式学习》</a>。这里提供书籍提供目录。</p>
+        <p>码一本Linux C编程的书——<a href="https://www.kancloud.cn/wizardforcel/linux-c-book/134922" target="_blank" rel="noopener">《Linux C编程一站式学习》</a>。</p>
       
     </div>
     
@@ -533,6 +501,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>当我们要在wsl下对Windows系统操作时，需要使用 <code>/mnt/……</code> 命令。为什么？？ <code>/mnt</code> 与Windows有什么关系？？</p>
+<p>在Linux系统的文件根目录下，有名为 <code>/mnt</code> 的目录。CD2 ROM、软盘这类可移动介质的挂载点目录一般放在/ mnt 目录下, 通常有cdrom和floppy 两个子目录, 分别是光盘和软盘的挂载安装点。通过挂载光盘或软盘后, 对应进入/ mnt/ cdrom 或/ mnt/ floppy 子目录, 就可访问光盘或软盘中的内容。注意挂载点目录中不要有任何文件, 否则将无法正常挂载。————《Linux服务器的配置与管理-冯昊》</p>
+<p>因此，Windows子系统下的Linux系统就是通过 <code>/mnt</code> 目录来连通与Windows的联系。我们可以通过 <code>/mnt</code> 访问Windows下的各个磁盘，如同在Windows下一样。</p>
       
     </div>
     
@@ -644,7 +614,12 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>shell简介</p>
+        <h3 id="shell简介"><a href="#shell简介" class="headerlink" title="shell简介"></a>shell简介</h3><p>Shell 诞生于 Unix，是与 Unix/Linux 交互的工具。Shell虽然是Unix的第一个<strong>脚本语言</strong>，但它是相当优秀的。它结合了延展性与效率，持续保有独具的特色，并不断的被改良，使它多年来能与那些花招很多的脚本语言保持抗衡。</p>
+<p>Shell需要依赖其他程序才能完成大部分的工作，这或许是它的缺陷，但它不容置疑的长处是：简洁的脚本语言标记方式，而且比C语言编写的程序执行更快、更有效率。</p>
+<p>Shell 是将内核、程序和用户连接了起来的<strong>软件</strong>。</p>
+<p>Shell 本身支持的命令并不多，但是<strong>它可以调用其他的程序，每个程序就是一个命令</strong>，这使得 Shell 命令的数量可以无限扩展，其结果就是 Shell 的功能非常强大。</p>
+<p>shell是一种脚本语言，因此需要编译成二进制的形式才可以被计算机执行。</p>
+<p>几种常见的Shell：sh、bash、csh、tcsh、ash。其中默认的是bash，使用 <code>echo $SHELL</code> 查看默认的shell。 <code>SHELL</code> 是 Linux 系统中的环境变量，它指明了当前使用的 Shell 程序的位置，也就是使用的哪个 Shell。</p>
       
     </div>
     
@@ -726,7 +701,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：931字</p>
+      <p>字数：916字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -756,7 +731,7 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Gcc简介+Gcc编译流程及主要相关命令。</p>
+        <h2 id="gcc"><a href="#gcc" class="headerlink" title="gcc"></a>gcc</h2><h3 id="gcc简介"><a href="#gcc简介" class="headerlink" title="gcc简介"></a>gcc简介</h3><p>GNU编译器套装（英语：GNU Compiler Collection，缩写为GCC），指一套编程语言编译器，以GPL及LGPL许可证所发行的自由软件，也是GNU计划的关键部分，也是GNU工具链的主要组成部分之一。GCC（特别是其中的C语言编译器）也常被认为是跨平台编译器的事实标准。可处理C、C++、Fortran、Pascal、Objective-C、Java、Ada，Go等其他语言。——Wiki</p>
       
     </div>
     
@@ -838,7 +813,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：432字</p>
+      <p>字数：373字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -868,7 +843,8 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>切换前后台 + 进程管理</p>
+        <p>在基础篇 <a href="Linux.md">Linux</a>中有说到进程的一点命令：ps、top、kill等，但是跟这次的前后台有点不一样，可以操作学习一下。</p>
+<h3 id="认识Linux前后台进程"><a href="#认识Linux前后台进程" class="headerlink" title="认识Linux前后台进程"></a>认识Linux前后台进程</h3><p>前后台，顾名思义。<br>前台进程：运行在终端（跑在脸上）的，可以直接操控，终端关闭，进程也停止。<br>后台进程：也叫守护进程（Daemon），是运行在后台的一种特殊进程，不受终端控制，它不需要终端的交互。进程的主要战场。</p>
       
     </div>
     
@@ -980,7 +956,15 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>更换Ubuntu的下载源镜像，回归正常速度！！</p>
+        <p>更换Ubuntu的下载源镜像，回归正常速度！！<br>这里推<a href="https://developer.aliyun.com/mirror/" target="_blank" rel="noopener">阿里云的镜像</a></p>
+<ol>
+<li>用<code>lsb_release -a</code> 查看自己的Linux版本信息。</li>
+<li>用<code>cp /etc/apt/sources.list /etc/apt/sources.list.back</code> 备份 sources.list 文件。<del>要是不保存也行</del></li>
+<li>到镜像网里找到自己对应的Linux系统和版本。<del>那里有教</del>，复制对应的配置信息。</li>
+<li>sudo权限编辑上述的文件——sources.list，把里面的内容全替换为复制下来的信息。</li>
+<li>更新原有配置：<code>sudo apt-get update</code>，sudo依旧。</li>
+<li>搞定。</li>
+</ol>
       
     </div>
     
@@ -1756,6 +1740,16 @@ setInterval("createtime()",250);
   <script>setLoadingBarProgress(100);</script>
   <!--单击显示文字-->
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<!-- 
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1 
+-->
+<script type="text/javascript"
+color="93, 109, 126" opacity='0.9' zIndex="-2" count="30" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
 
 </body>
 </html>

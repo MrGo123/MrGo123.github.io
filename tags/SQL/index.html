@@ -156,22 +156,6 @@
             
             
               <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
                 <a class="flat-box" href=/message/
                   
                   
@@ -245,22 +229,6 @@
                     id="tags"
                   >
                   <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -378,7 +346,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：782字</p>
+      <p>字数：762字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -408,7 +376,32 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>SQL</p>
+        <h3 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p><strong>SQL</strong>（Structured Query Language，SQL） 结构化英语查询语言，非过程性语言。集数据定义语言（DDL）、数据操作语言（DML）、数据控制语言（DCL）三大功能于一体。</p>
+<p>SQL的几个动词</p>
+<table>
+<thead>
+<tr>
+<th align="center">SQL 功能</th>
+<th align="center">动词</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">数 据 查 询</td>
+<td align="center">SELECT</td>
+</tr>
+<tr>
+<td align="center">数 据 定 义</td>
+<td align="center">CREATE，DROP，ALTER</td>
+</tr>
+<tr>
+<td align="center">数 据 操 纵</td>
+<td align="center">INSERT，UPDATE，DELETE</td>
+</tr>
+<tr>
+<td align="center">数 据 控 制</td>
+<td align="center">GRANT，REVOKE</td>
+</tr>
+</tbody></table>
       
     </div>
     
@@ -1070,6 +1063,16 @@ setInterval("createtime()",250);
   <script>setLoadingBarProgress(100);</script>
   <!--单击显示文字-->
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<!-- 
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1 
+-->
+<script type="text/javascript"
+color="93, 109, 126" opacity='0.9' zIndex="-2" count="30" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
 
 </body>
 </html>

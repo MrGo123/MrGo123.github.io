@@ -156,22 +156,6 @@
             
             
               <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
                 <a class="flat-box" href=/message/
                   
                   
@@ -245,22 +229,6 @@
                     id="tags"
                   >
                   <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -525,7 +493,13 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>装配Bean</p>
+        <h3 id="使用Spring容器"><a href="#使用Spring容器" class="headerlink" title="使用Spring容器"></a>使用Spring容器</h3><ol>
+<li>maven配置；</li>
+<li>创建Bean配置文件并定义好所需对象；</li>
+<li>创建Spring容器并制定需要装载的Bean配置文件；</li>
+<li>通过容器提供的方法获取容器中的对象来使用。</li>
+</ol>
+<h3 id="Bean"><a href="#Bean" class="headerlink" title="Bean"></a>Bean</h3><p><strong>什么是Bean？？</strong><br>Bean是一套约定或规范。具体的说Bean：<br>1、所有属性为private<br>2、提供默认构造方法<br>3、提供getter和setter<br>4、实现serializable接口</p>
       
     </div>
     
@@ -607,7 +581,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：880字</p>
+      <p>字数：847字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -637,7 +611,11 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Spring概念 + IOC + AOP</p>
+        <h3 id="Spring容器（框架）"><a href="#Spring容器（框架）" class="headerlink" title="Spring容器（框架）"></a>Spring容器（框架）</h3><ul>
+<li>定义：Spring是一个<strong>轻量级的、非入侵式的开源</strong>框架（容器）。</li>
+<li>目标和使命：简化java开发，促进代码的松散耦合。</li>
+</ul>
+<p>spring容器的概念，容器可以放很多东西，程序启动的时候会创建spring容器，会给spring容器一个清单，清单中列出了需要创建的对象以及对象依赖关系，spring容器会创建和组装好清单中的对象，然后将这些对象存放在spring容器中，当程序中需要使用的时候，可以到容器中查找获取，然后直接使用。具有依赖注入功能的容器，负责对象的实例化、对象的初始化，对象和对象之间依赖关系配置、对象的销毁、对外提供对象的查找等操作，控制对象的整个生命周期。</p>
       
     </div>
     
@@ -1300,6 +1278,16 @@ setInterval("createtime()",250);
   <script>setLoadingBarProgress(100);</script>
   <!--单击显示文字-->
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<!-- 
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1 
+-->
+<script type="text/javascript"
+color="93, 109, 126" opacity='0.9' zIndex="-2" count="30" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
 
 </body>
 </html>

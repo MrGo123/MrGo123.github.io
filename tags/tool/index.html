@@ -156,22 +156,6 @@
             
             
               <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
                 <a class="flat-box" href=/message/
                   
                   
@@ -245,22 +229,6 @@
                     id="tags"
                   >
                   <i class='fas fa-tags fa-fw'></i>标签
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="flat-box" href=/projects/
-                  
-                  
-                  
-                    id="projects"
-                  >
-                  <i class='fas fa-code-branch fa-fw'></i>项目
                 </a>
                 
               </li>
@@ -378,7 +346,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：451字</p>
+      <p>字数：402字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -408,7 +376,7 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>IDEA小知识</p>
+        <h3 id="概念解释or介绍"><a href="#概念解释or介绍" class="headerlink" title="概念解释or介绍"></a>概念解释or介绍</h3><h4 id="IDEA不像Eclipse设置工作空间"><a href="#IDEA不像Eclipse设置工作空间" class="headerlink" title="IDEA不像Eclipse设置工作空间"></a>IDEA不像Eclipse设置工作空间</h4><p>IDEA不需要设置工作空间，因为每一个Project都具备一个工作空间！！对于每一个IDEA的项目工程（Project）而言，它的每一个子模块（Module）都可以使用独立的JDK和MAVEN配置。<br>每个新项目（Project）都需要设置自己的JDK和MAVEN等相关配置</p>
       
     </div>
     
@@ -1070,6 +1038,16 @@ setInterval("createtime()",250);
   <script>setLoadingBarProgress(100);</script>
   <!--单击显示文字-->
 <script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<!-- 
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1 
+-->
+<script type="text/javascript"
+color="93, 109, 126" opacity='0.9' zIndex="-2" count="30" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
 
 </body>
 </html>
