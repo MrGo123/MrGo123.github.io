@@ -603,24 +603,7 @@ ASCII 维基百科
 
 
 
-  <article class="post white-box reveal comments shadow">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 评论</p>
-      
-      
-      
-      
-      
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-          </div>
-        </section>
-      
-      
-    </section>
-  </article>
+  
 
 
   
@@ -856,7 +839,7 @@ ASCII 维基百科
 
 
     <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\23\Windows系统\" title="Windows系统相关知识" rel="bookmark">Windows系统相关知识</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\03\A-Rebuild-Record\" title="重装系统+环境恢复简记" rel="bookmark">重装系统+环境恢复简记</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\23\Windows系统\" title="Windows系统相关知识" rel="bookmark">Windows系统相关知识</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\03\Computer-English\" title="Computer English" rel="bookmark">Computer English</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1089,60 +1072,6 @@ setInterval("createtime()",250);
 
 
 
-
-  
-    
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
-
-  
-  <script>
-  var GUEST_INFO = ['nick','mail','link'];
-  var meta = 'nick,mail,link'.split(',').filter(function(item){
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var REQUIRED_FIELDS = ['nick','mail','link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function(item){
-    return REQUIRED_FIELDS.indexOf(item) > -1
-  });
-  var valine = new Valine();
-  function emoji(path, idx, ext) {
-      return path + "/" + path + "-" + idx + "." + ext;
-  }
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-  valine.init({
-    el: '#valine_container',
-    meta: meta,
-    
-    appId: "7k5o87qfFgd2uWkD7vPFU4Uo-gzGzoHsz",
-    appKey: "uTchb9UUIFz9YEbS8EGw7iQS",
-    placeholder: "Say what you want~~~~",
-    pageSize:'10',
-    avatar:'monsterid',
-    lang:'zh-cn',
-    visitor: 'true',
-    highlight: 'true',
-    mathJax: 'false',
-    enableQQ: 'true',
-    requiredFields: requiredFields,
-    emojiCDN: 'https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/emoji/valine/',
-    emojiMaps: emojiMaps
-  })
-  </script>
 
 
 
