@@ -598,7 +598,22 @@ JAR文件Java 归档（jar）文件：是压缩格式，文件内可以包含类
 
 
 
-  
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+      
+      
+    </section>
+  </article>
 
 
   
@@ -834,7 +849,7 @@ JAR文件Java 归档（jar）文件：是压缩格式，文件内可以包含类
 
 
     <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\04\25\PC系统知识\" title="PC系统的一些概念" rel="bookmark">PC系统的一些概念</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\03\Computer-English\" title="Computer English" rel="bookmark">Computer English</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\04\25\PC系统知识\" title="PC系统的一些概念" rel="bookmark">PC系统的一些概念</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\06\03\A-Rebuild-Record\" title="重装系统+环境恢复简记" rel="bookmark">重装系统+环境恢复简记</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1064,6 +1079,23 @@ setInterval("createtime()",250);
 
 
 
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "6a8999d9a4b1cd2bfe92",
+      clientSecret: "ed2db13d3a8dccae790fdaf41de764d95eee94b3",
+      repo: "gitalk",
+      owner: "MrGo123",
+      admin: "MrGo123",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
 
 
 

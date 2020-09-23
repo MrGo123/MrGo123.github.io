@@ -644,7 +644,22 @@ Java是完全面向对象的
 
 
 
-  
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+      
+      
+    </section>
+  </article>
 
 
   
@@ -880,7 +895,7 @@ Java是完全面向对象的
 
 
     <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\12\javaSE-1.环境\" title="javaSE--1.环境" rel="bookmark">javaSE--1.环境</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\20\javaSE-12-部署\" title="javaSE-12.部署" rel="bookmark">javaSE-12.部署</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\14\javaSE-2.程序结构\" title="javaSE--2.程序结构" rel="bookmark">javaSE--2.程序结构</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\16\javaSE-3.面向对象\" title="javaSE--3.面向对象" rel="bookmark">javaSE--3.面向对象</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\20\javaSE-7-泛型\" title="javaSE--7.泛型" rel="bookmark">javaSE--7.泛型</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\12\javaSE-1.环境\" title="javaSE--1.环境" rel="bookmark">javaSE--1.环境</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\14\javaSE-2.程序结构\" title="javaSE--2.程序结构" rel="bookmark">javaSE--2.程序结构</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\05\20\javaSE-12-部署\" title="javaSE-12.部署" rel="bookmark">javaSE-12.部署</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\16\javaSE-3.面向对象\" title="javaSE--3.面向对象" rel="bookmark">javaSE--3.面向对象</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\01\20\javaSE-7-泛型\" title="javaSE--7.泛型" rel="bookmark">javaSE--7.泛型</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -1110,6 +1125,23 @@ setInterval("createtime()",250);
 
 
 
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "6a8999d9a4b1cd2bfe92",
+      clientSecret: "ed2db13d3a8dccae790fdaf41de764d95eee94b3",
+      repo: "gitalk",
+      owner: "MrGo123",
+      admin: "MrGo123",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
 
 
 
