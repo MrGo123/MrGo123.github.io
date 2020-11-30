@@ -5,6 +5,33 @@
     
     <entry>
       <title>关于java的深浅拷贝</title>
+      <link href="/2020/11/29/Atest/"/>
+      <url>/2020/11/29/Atest/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>以前经常会看见java“深拷贝”和“浅拷贝”的字眼，不如现在从创建到拷贝来好好捋一捋，学习一下关于java深浅拷贝的知识。</p></blockquote><p><strong>浅拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则<span class='p red'>复制引用</span>但不复制引用的对象。</strong></p><p><strong>深拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则<span class='p red'>复制引用的对象</span>。</strong></p><p><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/java/objectCopyShow.svg" alt=""></p><a id="more"></a><blockquote><p>插话：对于很久没有更新博客，谢一波罪。主要是最近在学的东西都更新在了笔记系统上，很久没有写博客作技术分享了。但博客是博客，笔记是笔记，一个是输出，一个是输入，无论如何不能把搭建博客的初心给忘了。🌝🌝<del>待笔记逐渐完善后，我会分享链接至导航栏，敬请关注！</del> 那我们现在开始吧~~👇👇</p></blockquote><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaSE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> javaSE </tag>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于java的深浅拷贝</title>
       <link href="/2020/11/29/theObjectCopyofJava/"/>
       <url>/2020/11/29/theObjectCopyofJava/</url>
       
@@ -20,9 +47,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> javaSE </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -203,9 +230,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> javaSE </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -230,9 +257,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> javaSE </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -488,9 +515,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> javaSE </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -809,9 +836,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> javaSE </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -836,9 +863,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> javaSE </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -863,9 +890,9 @@
       
         <tags>
             
-            <tag> maven </tag>
-            
             <tag> java </tag>
+            
+            <tag> maven </tag>
             
         </tags>
       
@@ -890,9 +917,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> javaSE </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -917,9 +944,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> javaSE </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -944,9 +971,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> javaSE </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -971,9 +998,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> javaSE </tag>
+            
+            <tag> java </tag>
             
         </tags>
       

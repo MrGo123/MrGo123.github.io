@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,8 +16,16 @@
 
   <!-- 页面元数据 -->
   
-    <title>标签：shell - Sustart</title>
+    <title>关于java的深浅拷贝 - Sustart</title>
   
+    <meta name="keywords" content="javaSE,java">
+  
+  
+    <meta name="description" content="
+以前经常会看见java“深拷贝”和“浅拷贝”的字眼，不如现在从创建到拷贝来好好捋一捋，学习一下关于java深浅拷贝的知识。
+
+浅拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则复制引用但不复制引用的对象。
+深拷贝：以某个...">
   
 
   <!-- feed -->
@@ -319,39 +325,28 @@
     <div class='body-wrapper'>
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
     
       
       
+        <a title='关于java的深浅拷贝' href='/2020/11/29/Atest/'><img class='thumbnail' src='https://img.vim-cn.com/17/0c7b02722686d1527a1df807dae0794d995860.png'></a>
+      
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/06/17/Shell/">
-      Shell
+  <h1 class="title">
+    <a href="/2020/11/29/Atest/">
+      关于java的深浅拷贝
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -374,9 +369,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Linux/' rel="nofollow">
+    <a href='/categories/JavaSE/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Linux</p>
+      <p>JavaSE</p>
     </a>
   </div>
 
@@ -387,7 +382,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布：2020年6月17日</p>
+    <p>发布：2020年11月29日</p>
   </a>
 </div>
 
@@ -398,13 +393,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3.1k字</p>
+      <p>字数：311字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：12分钟</p>
+      <p>时长：1分钟</p>
     </a>
   </div>
 
@@ -425,45 +420,257 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="shell简介"><a href="#shell简介" class="headerlink" title="shell简介"></a>shell简介</h3><p>Shell 诞生于 Unix，是与 Unix/Linux 交互的工具。Shell虽然是Unix的第一个<strong>脚本语言</strong>，但它是相当优秀的。它结合了延展性与效率，持续保有独具的特色，并不断的被改良，使它多年来能与那些花招很多的脚本语言保持抗衡。</p>
-<p>Shell需要依赖其他程序才能完成大部分的工作，这或许是它的缺陷，但它不容置疑的长处是：简洁的脚本语言标记方式，而且比C语言编写的程序执行更快、更有效率。</p>
-<p>Shell 是将内核、程序和用户连接了起来的<strong>软件</strong>。</p>
-<p>Shell 本身支持的命令并不多，但是<strong>它可以调用其他的程序，每个程序就是一个命令</strong>，这使得 Shell 命令的数量可以无限扩展，其结果就是 Shell 的功能非常强大。</p>
-<p>shell是一种脚本语言，因此需要编译成二进制的形式才可以被计算机执行。</p>
-<p>几种常见的Shell：sh、bash、csh、tcsh、ash。其中默认的是bash，使用 <code>echo $SHELL</code> 查看默认的shell。 <code>SHELL</code> 是 Linux 系统中的环境变量，它指明了当前使用的 Shell 程序的位置，也就是使用的哪个 Shell。</p>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/06/17/Shell/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <blockquote>
+<p>以前经常会看见java“深拷贝”和“浅拷贝”的字眼，不如现在从创建到拷贝来好好捋一捋，学习一下关于java深浅拷贝的知识。</p>
+</blockquote>
+<p><strong>浅拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则<span class='p red'>复制引用</span>但不复制引用的对象。</strong></p>
+<p><strong>深拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则<span class='p red'>复制引用的对象</span>。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/java/objectCopyShow.svg" alt=""></p>
+<a id="more"></a>
 
-          </div>
+
+<blockquote>
+<p>插话：对于很久没有更新博客，谢一波罪。主要是最近在学的东西都更新在了笔记系统上，很久没有写博客作技术分享了。但博客是博客，笔记是笔记，一个是输出，一个是输入，无论如何不能把搭建博客的初心给忘了。🌝🌝<del>待笔记逐渐完善后，我会分享链接至导航栏，敬请关注！</del> 那我们现在开始吧~~👇👇</p>
+</blockquote>
+<hr>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://zy68.top/2020/11/29/Atest/>https://zy68.top/2020/11/29/Atest/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-30T08:30:02+00:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新：2020年11月30日</p>
+  </a>
+</div>
+
         
       
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/javaSE/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>javaSE</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>java</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2020/11/29/Atest/&title=关于java的深浅拷贝 - Sustart&pics=https://img.vim-cn.com/17/0c7b02722686d1527a1df807dae0794d995860.png&summary=
+以前经常会看见java“深拷贝”和“浅拷贝”的字眼，不如现在从创建到拷贝来好好捋一捋，学习一下关于java深浅拷贝的知识。
+
+浅拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则复制引用但不复制引用的对象。
+深拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则复制引用的对象。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2020/11/29/Atest/&title=关于java的深浅拷贝 - Sustart&pics=https://img.vim-cn.com/17/0c7b02722686d1527a1df807dae0794d995860.png&summary=
+以前经常会看见java“深拷贝”和“浅拷贝”的字眼，不如现在从创建到拷贝来好好捋一捋，学习一下关于java深浅拷贝的知识。
+
+浅拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则复制引用但不复制引用的对象。
+深拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则复制引用的对象。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2020/11/29/Atest/&title=关于java的深浅拷贝 - Sustart&pics=https://img.vim-cn.com/17/0c7b02722686d1527a1df807dae0794d995860.png&summary=
+以前经常会看见java“深拷贝”和“浅拷贝”的字眼，不如现在从创建到拷贝来好好捋一捋，学习一下关于java深浅拷贝的知识。
+
+浅拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则复制引用但不复制引用的对象。
+深拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则复制引用的对象。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/11/29/theObjectCopyofJava/'>
+                <p class='title'>关于java的深浅拷贝<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+以前经常会看见java“深拷贝”和“浅拷贝”的字眼，不如现在从创建到拷贝来好好捋一捋，学习一下关于java深浅拷贝的知识。
+
+浅拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
   
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+      
+      
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '关于java的深浅拷贝',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class='l_side'>
   
@@ -531,6 +738,14 @@
     
   </div>
 </section>
+
+  
+
+  
+    
+    
+
+
 
   
 
@@ -648,90 +863,20 @@
     
   
 
-  <section class="widget tagcloud shadow desktop mobile">
+  <section class="widget related_posts shadow desktop mobile">
     
   <header>
     
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>推荐阅读</span>
     
   </header>
 
 
-    <div class='content'>
-      <a href="/tags/C/" style="font-size: 16px; color: #8b8b8b">C</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C++</a> <a href="/tags/C-C/" style="font-size: 14px; color: #999">C/C++</a> <a href="/tags/CSBasic/" style="font-size: 16px; color: #8b8b8b">CSBasic</a> <a href="/tags/English/" style="font-size: 14px; color: #999">English</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/HTML/" style="font-size: 14px; color: #999">HTML</a> <a href="/tags/Linux/" style="font-size: 20px; color: #707070">Linux</a> <a href="/tags/MySQL/" style="font-size: 14px; color: #999">MySQL</a> <a href="/tags/SQL/" style="font-size: 14px; color: #999">SQL</a> <a href="/tags/Spring/" style="font-size: 18px; color: #7e7e7e">Spring</a> <a href="/tags/UML/" style="font-size: 14px; color: #999">UML</a> <a href="/tags/algorithm/" style="font-size: 14px; color: #999">algorithm</a> <a href="/tags/blog/" style="font-size: 14px; color: #999">blog</a> <a href="/tags/github/" style="font-size: 16px; color: #8b8b8b">github</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/java/" style="font-size: 24px; color: #555">java</a> <a href="/tags/javaSE/" style="font-size: 22px; color: #636363">javaSE</a> <a href="/tags/javaWeb/" style="font-size: 14px; color: #999">javaWeb</a> <a href="/tags/markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="/tags/maven/" style="font-size: 14px; color: #999">maven</a> <a href="/tags/rebuild/" style="font-size: 14px; color: #999">rebuild</a> <a href="/tags/shell/" style="font-size: 14px; color: #999">shell</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">网络</a>
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/12/javaSE-1.环境/" title="javaSE--1.环境" rel="bookmark">javaSE--1.环境</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/05/20/javaSE-12-部署/" title="javaSE-12.部署" rel="bookmark">javaSE-12.部署</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/14/javaSE-2.程序结构/" title="javaSE--2.程序结构" rel="bookmark">javaSE--2.程序结构</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/16/javaSE-3.面向对象/" title="javaSE--3.面向对象" rel="bookmark">javaSE--3.面向对象</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/17/javaSE-4-继承/" title="javaSE-4.继承" rel="bookmark">javaSE-4.继承</a></h3></div></li></ul>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-
-<section class="widget list shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-star fa-fw" aria-hidden="true"></i><span class='name'>SomeThing</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <ul class="list entry navigation">
-      
-        <li><a class="flat-box" title="https://volantis.js.org/" href="https://volantis.js.org/"
-          
-          
-          id="https:volantisjsorg"
-          >
-          <div class='name'>
-            
-            😀 Volantis(theme)
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="/ReadBooks/" href="/ReadBooks/"
-          
-          
-          id="ReadBooks"
-          >
-          <div class='name'>
-            
-            📕 Readlist
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="/ABrainlessArticle/" href="/ABrainlessArticle/"
-          
-          
-          id="ABrainlessArticle"
-          >
-          <div class='name'>
-            
-            👻 A Cup of Tea
-          </div>
-          
-        </a></li>
-      
-        <li><a class="flat-box" title="/Awesome%20Collection/" href="/Awesome%20Collection/"
-          
-          
-          id="Awesome20Collection"
-          >
-          <div class='name'>
-            
-            ⭐ Awesome Collection
-          </div>
-          
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
 
   
 
@@ -958,6 +1103,23 @@ setInterval("createtime()",250);
 
 
 
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "6a8999d9a4b1cd2bfe92",
+      clientSecret: "ed2db13d3a8dccae790fdaf41de764d95eee94b3",
+      repo: "MrGo123.github.io",
+      owner: "MrGo123",
+      admin: "MrGo123",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
 
 
 
