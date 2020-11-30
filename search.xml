@@ -4,25 +4,23 @@
   
     
     <entry>
-      <title>关于java的深浅拷贝</title>
-      <link href="/2020/11/29/Atest/"/>
-      <url>/2020/11/29/Atest/</url>
+      <title>（码）使用Github Action实现hexo博客的自动部署</title>
+      <link href="/2020/11/30/DeployHexoWithGithubAction/"/>
+      <url>/2020/11/30/DeployHexoWithGithubAction/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>以前经常会看见java“深拷贝”和“浅拷贝”的字眼，不如现在从创建到拷贝来好好捋一捋，学习一下关于java深浅拷贝的知识。</p></blockquote><p><strong>浅拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则<span class='p red'>复制引用</span>但不复制引用的对象。</strong></p><p><strong>深拷贝：以某个对象为基准创建新对象，将其所有非静态属性复制到新对象。如果属性是值类型（基本数据类型），则直接复制该字段；如果属性是引用类型，则<span class='p red'>复制引用的对象</span>。</strong></p><p><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/java/objectCopyShow.svg" alt=""></p><a id="more"></a><blockquote><p>插话：对于很久没有更新博客，谢一波罪。主要是最近在学的东西都更新在了笔记系统上，很久没有写博客作技术分享了。但博客是博客，笔记是笔记，一个是输出，一个是输入，无论如何不能把搭建博客的初心给忘了。🌝🌝<del>待笔记逐渐完善后，我会分享链接至导航栏，敬请关注！</del> 那我们现在开始吧~~👇👇</p></blockquote><hr>]]></content>
+        <content type="html"><![CDATA[<p>使用Github Action实现hexo博客的自动部署，真香。😍😍</p><p>#本地博客的弊端：</p><ol><li>写完博客需要generate、deploy；</li><li>需要保存博客源码，避免丢失；</li><li>当博客量大了之后，generate和deploy需要花费很多时间。</li><li>……</li></ol><p>#使用Github Action实现hexo博客的自动部署的好处：</p><ol><li>本地博客的弊端全解决；</li><li>实现CI/CD持续集成；</li><li>方便，即使更换电脑也能直接clone恢复以往操作。</li><li>更niubility？</li><li>减少了又是node.js、hexo版本等的问题。<blockquote><p>使用github action无需在本地下载按照软件。</p></blockquote></li><li>总之，香🤭🤭</li></ol><blockquote><p>有个不好的地方——出错了调试错误不太方便。</p></blockquote><p>因为时间的原因，暂不深入研究，暂时码住参考的大佬的文章👉👉<a href="https://www.heson10.com/posts/61031.html" target="_blank" rel="noopener">Click me</a>。这里道一声“谢谢<del>~</del>”。</p><details red><summary> <p>记录一下遇到的一点问题</p> </summary>              <div class='content'>              <p>在一切都弄完之后，写博客发布（git push）之后，一直无法push成功，需要登录，且登录失败。这里应该有一个授权问题。<br>solve：既然搭建成功，那么push就可以触发action进行渲染和发布，so，重新clone一份，重复操作，Σ(っ °Д °;)っ 问题解决！！！</p>              </div>            </details>]]></content>
       
       
       <categories>
           
-          <category> JavaSE </category>
+          <category> Mark </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> javaSE </tag>
-            
-            <tag> java </tag>
+            <tag> blog </tag>
             
         </tags>
       
@@ -47,9 +45,9 @@
       
         <tags>
             
-            <tag> javaSE </tag>
-            
             <tag> java </tag>
+            
+            <tag> javaSE </tag>
             
         </tags>
       
@@ -230,9 +228,9 @@
       
         <tags>
             
-            <tag> javaSE </tag>
-            
             <tag> java </tag>
+            
+            <tag> javaSE </tag>
             
         </tags>
       
@@ -257,9 +255,9 @@
       
         <tags>
             
-            <tag> javaSE </tag>
-            
             <tag> java </tag>
+            
+            <tag> javaSE </tag>
             
         </tags>
       
@@ -515,9 +513,9 @@
       
         <tags>
             
-            <tag> javaSE </tag>
-            
             <tag> java </tag>
+            
+            <tag> javaSE </tag>
             
         </tags>
       
@@ -836,9 +834,9 @@
       
         <tags>
             
-            <tag> javaSE </tag>
-            
             <tag> java </tag>
+            
+            <tag> javaSE </tag>
             
         </tags>
       
@@ -863,9 +861,9 @@
       
         <tags>
             
-            <tag> javaSE </tag>
-            
             <tag> java </tag>
+            
+            <tag> javaSE </tag>
             
         </tags>
       
@@ -890,9 +888,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> maven </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -917,9 +915,9 @@
       
         <tags>
             
-            <tag> javaSE </tag>
-            
             <tag> java </tag>
+            
+            <tag> javaSE </tag>
             
         </tags>
       
@@ -944,9 +942,9 @@
       
         <tags>
             
-            <tag> javaSE </tag>
-            
             <tag> java </tag>
+            
+            <tag> javaSE </tag>
             
         </tags>
       
@@ -971,9 +969,9 @@
       
         <tags>
             
-            <tag> javaSE </tag>
-            
             <tag> java </tag>
+            
+            <tag> javaSE </tag>
             
         </tags>
       
@@ -998,9 +996,9 @@
       
         <tags>
             
-            <tag> javaSE </tag>
-            
             <tag> java </tag>
+            
+            <tag> javaSE </tag>
             
         </tags>
       
