@@ -389,7 +389,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：2.2k字</p>
+      <p>字数：2.3k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -470,6 +470,10 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 1. 查看当前分支命令  （直接clone下来的是 master 主干）</span><br><span class="line">$ git branch </span><br><span class="line"></span><br><span class="line">#查看所有分支命令  （查看改仓库的所有分支，显示分支列表）</span><br><span class="line">$ git branch -a</span><br><span class="line"></span><br><span class="line"># 查看所有分支的详细信息</span><br><span class="line">$ git branch -avv</span><br><span class="line"></span><br><span class="line"># 2. 新建分支命令   （新建一个名为 branchName 的分支）</span><br><span class="line">$ git branch branchName</span><br><span class="line"></span><br><span class="line">#删除分支命令   （删除名为 branchName分支，强制删除-D）</span><br><span class="line">$ git branch -d branchName</span><br><span class="line"></span><br><span class="line"># 3. 切换分支命令  （切换名为 branchName 分支）</span><br><span class="line">$ git checkout branchNname</span><br><span class="line"></span><br><span class="line"># 4. 在某分支上推送更新    （在 branchName分支上推送）</span><br><span class="line">$ git push origin branchName</span><br><span class="line"></span><br><span class="line"># 把A分支合并到当前分支（修改的是指针）</span><br><span class="line">$ git merge A</span><br></pre></td></tr></table></figure>
 
+<p>备注更改主分支名：<code>git branch -M main</code></p>
+<blockquote>
+<p>受种族歧视问题影响，master分支更改为main分支，使用此命令可将master改为main。</p>
+</blockquote>
 <blockquote>
 <p>tips：若不新建分支将在master分支上操作。但是这样做merge的时候不好。</p>
 </blockquote>
@@ -479,7 +483,9 @@
 <h4 id="六、关于fork之后跟源仓的同步"><a href="#六、关于fork之后跟源仓的同步" class="headerlink" title="六、关于fork之后跟源仓的同步"></a>六、关于fork之后跟源仓的同步</h4><p>由于fork之后是属于自己的project，所以fork到自己账户上的project并不会随着源仓更新而更新。所以当需要跟源仓同步时：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#1.添加源仓为自己fork后仓库的上游</span><br><span class="line">$ git remote add upstream  源仓clone地址</span><br><span class="line"></span><br><span class="line">#2.同步fetch上游仓库代码</span><br><span class="line">$ git checkout master &amp;&amp; git fetch upstream</span><br><span class="line"></span><br><span class="line">#3.将上游代码合并至自己fork后的仓库(master分支)中，保证自己的master分支永远是最新版本</span><br><span class="line">$ git merge upstream&#x2F;master</span><br></pre></td></tr></table></figure>
 
-
+<blockquote>
+<p>详细可参考–<a href="https://xkcoding.com/2018/09/18/how-to-update-the-fork-project.html" target="_blank" rel="noopener">git 如何更新 fork 的项目到原项目的最新版本</a></p>
+</blockquote>
 <p><strong>分支策略</strong></p>
 <ul>
 <li><strong>fast-forward快速合并</strong>：原当前分支内容merge是基于这个分支的最新版本而进行新开发的分支（例如从master分出一个分支dev，dev做了修改，而master没动，然后master又merge bev）</li>
@@ -674,10 +680,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-30T13:26:36+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-12T10:35:42+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2020年11月30日</p>
+    <p>更新：2020年12月12日</p>
   </a>
 </div>
 
@@ -1001,6 +1007,11 @@ background：
             title="/categories/Spring/" href="/categories/Spring/"
             id="categoriesSpring"
             ><div class='name'>Spring</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Springboot/" href="/categories/Springboot/"
+            id="categoriesSpringboot"
+            ><div class='name'>Springboot</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Tool/" href="/categories/Tool/"
