@@ -390,7 +390,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：3k字</p>
+      <p>字数：3.1k字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -485,7 +485,7 @@
               </div>
             </details>
 
-<h4 id="5-多级调度问题"><a href="#5-多级调度问题" class="headerlink" title="5.多级调度问题"></a>5.多级调度问题</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;有<code>n</code>个作业，完成作业的耗时分别为<code>T1,T2,T3,...,Tn</code>，一共有<code>m</code>台机器<code>(m&lt;n)</code>，每个作业为非抢占式，问如何安排作业才能使得完成所有的作业耗时最少？看个例子：</p>
+<h4 id="4-多级调度问题"><a href="#4-多级调度问题" class="headerlink" title="4.多级调度问题"></a>4.多级调度问题</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;有<code>n</code>个作业，完成作业的耗时分别为<code>T1,T2,T3,...,Tn</code>，一共有<code>m</code>台机器<code>(m&lt;n)</code>，每个作业为非抢占式，问如何安排作业才能使得完成所有的作业耗时最少？看个例子：</p>
 <details red><summary> <p>作业调度</p> </summary>
               <div class='content'>
               <p>例如<code>n=7</code>，<code>m=3</code>，每个作业完成所需的时间如表所示</p><table><thead><tr><th align="center">作业编号</th><th align="center">1</th><th align="center">2</th><th align="center">3</th><th align="center">4</th><th align="center">5</th><th align="center">6</th><th align="center">7</th></tr></thead><tbody><tr><td align="center">完成用时</td><td align="center">2</td><td align="center">14</td><td align="center">4</td><td align="center">16</td><td align="center">6</td><td align="center">5</td><td align="center">3</td></tr></tbody></table>
@@ -495,11 +495,12 @@
 <p>算法可设计为：</p>
 <ol>
 <li>将所有的作业按所用时间大小从大到小排序；</li>
-<li>根据作业次序，按<code>M1 ~ Mm</code>的工作量从小到达分配，工作量即已安排的作业的时间叠加，谁的工作量小就把一个作业分配给谁。</li>
-<li>不断重复步骤2，直到分配完毕。最后工作量最大的机器的的工作量就是完成所有作业的最短时间。</li>
+<li>根据作业次序，按<code>M1 ~ Mm</code>的工作量从小到大分配，工作量即已安排的作业的时间叠加，谁的工作量小就把一个作业分配给谁。</li>
+<li>不断重复步骤2，直到分配完毕。最后工作量最大的机器的工作量就是完成所有作业的最短时间。</li>
+<li>机器与机器之间是并行关系。</li>
 </ol>
 <blockquote>
-<p>贪心算法的应用还有很多，比如哈夫曼编码和旅行商问题等。应用不可能面面俱到，最核心的还是要掌握算法的思想，利用思想去举一反三，解决变化多样的问题。</p>
+<p>贪心算法的应用还有很多，比如<strong>哈夫曼编码</strong>和<strong>旅行商问题</strong>等。应用不可能面面俱到，最核心的还是要掌握算法的思想，利用思想去举一反三，解决变化多样的问题。</p>
 </blockquote>
 <hr>
 <h3 id="三、总结一下"><a href="#三、总结一下" class="headerlink" title="三、总结一下"></a>三、总结一下</h3><p>最后稍微总结一下贪心算法，先再看一波<a href="#一贪婪算法">概念</a>，希望有所体会或新的收获。</p>
@@ -601,10 +602,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-12T11:48:43+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-30T14:57:18+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新：2021年1月12日</p>
+    <p>更新：2021年1月30日</p>
   </a>
 </div>
 
@@ -681,6 +682,21 @@
         
         
           <div class="prev-next">
+            
+              <a class='prev' href='/2021/01/17/dynamicProgram/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>常用算法系列3一动态规划算法及其应用</p>
+                <p class='content'>好家伙，玩耍真香，整项目真香，看书真香，算法都不写了，赶紧补补~
+
+
+
+
+
+
+
+
+
+一、动态规划算法&nbsp;&nbsp;&nbsp;&nbsp;动态规划算法（Dynamic Programm...</p>
+              </a>
             
             
               <a class='next' href='/2021/01/11/divideAndConquer/'>
@@ -826,7 +842,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、贪婪算法"><span class="toc-text">一、贪婪算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、贪婪算法的典型应用"><span class="toc-text">二、贪婪算法的典型应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-找零钱问题"><span class="toc-text">1.找零钱问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-背包问题"><span class="toc-text">2.背包问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-最小生成树——Prim为例"><span class="toc-text">3.最小生成树——Prim为例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-多级调度问题"><span class="toc-text">5.多级调度问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、总结一下"><span class="toc-text">三、总结一下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、贪婪算法"><span class="toc-text">一、贪婪算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、贪婪算法的典型应用"><span class="toc-text">二、贪婪算法的典型应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-找零钱问题"><span class="toc-text">1.找零钱问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-背包问题"><span class="toc-text">2.背包问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-最小生成树——Prim为例"><span class="toc-text">3.最小生成树——Prim为例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-多级调度问题"><span class="toc-text">4.多级调度问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、总结一下"><span class="toc-text">三、总结一下</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
     </div>
   </section>
 
@@ -853,7 +869,7 @@
           <li><a class="flat-box"
             title="/categories/Algorithm/" href="/categories/Algorithm/"
             id="categoriesAlgorithm"
-            ><div class='name'>Algorithm</div><div class='badge'>(3)</div></a></li>
+            ><div class='name'>Algorithm</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/C-C/" href="/categories/C-C/"
@@ -962,7 +978,7 @@
 
 
     <div class="content">
-      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/28/Algorithm/" title="didi算法相关知识" rel="bookmark">didi算法相关知识</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/11/divideAndConquer/" title="常用算法系列1一分治算法及其应用" rel="bookmark">常用算法系列1一分治算法及其应用</a></h3></div></li></ul>
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/01/28/Algorithm/" title="didi算法相关知识" rel="bookmark">didi算法相关知识</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/11/divideAndConquer/" title="常用算法系列1一分治算法及其应用" rel="bookmark">常用算法系列1一分治算法及其应用</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2021/01/17/dynamicProgram/" title="常用算法系列3一动态规划算法及其应用" rel="bookmark">常用算法系列3一动态规划算法及其应用</a></h3></div></li></ul>
     </div>
   </section>
 
