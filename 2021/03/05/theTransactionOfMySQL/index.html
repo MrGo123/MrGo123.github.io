@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.6'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>MySQL事务机制 - Sustart</title>
+  
+    <meta name="keywords" content="MySQL,database">
+  
+  
+    <meta name="description" content="🈲🈲Ctrl + z  Ctrl + Y🈲🈲
+&nbsp;&nbsp;&nbsp;好不容易开开心心撸完这篇博客，一下子Ctrl Z，手忙脚乱，啪，没了😔😔。淦，这是二次回放。第一次的思维已经莫得了。。。谨慎撤销、谨慎撤销、谨慎撤销。
+">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/mybloghp.jpg">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow floatable blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            Sustart
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/message/
+                  
+                  
+                  
+                    id="message"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                敬请期待
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search ~~" />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-home fa-fw'></i>主页
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/message/
+                  
+                  
+                  
+                    id="message"
+                  >
+                  <i class='fas fa-comments fa-fw'></i>留言
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-ellipsis-v fa-fw'></i>更多
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                敬请期待
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2021/03/05/theTransactionOfMySQL/">
+      MySQL事务机制
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="/about/" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/MrGo123/asset/headPortrait/mybloghp.jpg">
+    <p>Sustart</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/MySQL/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>MySQL</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布：2021年3月5日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：2.7k字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：9分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>🈲🈲<code>Ctrl + z</code>  <code>Ctrl + Y</code>🈲🈲</p>
+<p>&nbsp;&nbsp;&nbsp;好不容易开开心心撸完这篇博客，一下子Ctrl Z，手忙脚乱，啪，没了😔😔。淦，这是二次回放。第一次的思维已经莫得了。。。<strong>谨慎撤销、谨慎撤销、谨慎撤销</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/mysql/mysqlTransaction.png" alt=""></p>
+<a id="more"></a>
+
+
+<hr>
+<!-- 大纲 -->
+
+<p>&nbsp;&nbsp;&nbsp;为什么需要事务？考虑一个场景——转账。账户A有<code>100</code>块钱，给账户B转<code>50</code>。其中就包含着两个有先后顺序的 <code>update</code> 操作。正常情况下，第一个<code>update</code>，账户A <code>100-50</code> 剩 <code>50</code>。同时账户B <code>update</code> 加<code>50</code>。总的金额还是<code>100</code>，保持不变。如果出现异常，在第一次 <code>update</code> 执行结束后，第二个<code>update</code> 执行失败，那么账户A <code>100-50</code> 剩 <code>50</code>。但账户B并没有加<code>50</code>。此时金额的总量由<code>100</code>变成了<code>50</code>。这是无法忍受的，那么就需要<strong>事务处理机制</strong>来解决。</p>
+<h2 id="一、事务"><a href="#一、事务" class="headerlink" title="一、事务"></a>一、事务</h2><p><strong>事务处理（transaction processing）</strong>可以用来维护<strong>数据库的完整性</strong>，它保证成批的MySQL操作要么<strong>完全</strong>执行，要么<strong>完全</strong>不执行。</p>
+<blockquote>
+<p>用事务思维思考上述场景：如果转账的两个操作能够要么完全执行，要么完全不执行，还会出现金额丢失的情况吗？不会，结果要么正常转账，要么转账失败，但金额不变。这两个update就是事务。由此，可以进一步探究事务的特性👇👇。</p>
+</blockquote>
+<h3 id="ACID特性"><a href="#ACID特性" class="headerlink" title="ACID特性"></a>ACID特性</h3><p><strong>四个特性ACID</strong>：</p>
+<ul>
+<li><p><strong>原子性(Atomicity)</strong>：事务的整个过程如原子操作一样，最终要么全部成功，或者全部失败。</p>
+</li>
+<li><p><strong>一致性(Consistency)</strong>：一个事务必须使数据库从一个一致性状态变换到另一个一致性状态。即达到期望。</p>
+</li>
+<li><p><strong>隔离性(Isolation)</strong>：一个事务的执行不能被其他事务干扰。</p>
+</li>
+<li><p><strong>持久性(Durability)</strong>：一个事务一旦提交，他对数据库中数据的改变就应该是永久性的。当事务提交之后，数据会持久化到硬盘，修改是永久性的。</p>
+</li>
+</ul>
+<blockquote>
+<p>初步认识了事务的来源背景和事务特性，再来在看看数据库中怎么用，增强认识。</p>
+</blockquote>
+<h2 id="二、显隐式事务"><a href="#二、显隐式事务" class="headerlink" title="二、显隐式事务"></a>二、显隐式事务</h2><h3 id="隐式事务"><a href="#隐式事务" class="headerlink" title="隐式事务"></a>隐式事务</h3><p><code>MySQL</code> 中事务默认是<strong>隐式事务</strong>，执行<code>insert</code>、<code>update</code>、<code>delete</code>操作的时候，<strong>数据库自动开启事务、提交或回滚事务</strong>。</p>
+<h3 id="显式事务"><a href="#显式事务" class="headerlink" title="显式事务"></a>显式事务</h3><p>很明显，<strong>显式事务就是需要手动开启、提交或回滚，由开发者自己控制。</strong></p>
+<h2 id="三、事务操作"><a href="#三、事务操作" class="headerlink" title="三、事务操作"></a>三、事务操作</h2><h3 id="1-操作术语"><a href="#1-操作术语" class="headerlink" title="1. 操作术语"></a>1. 操作术语</h3><ul>
+<li><strong>事务（transaction）</strong> 指一组SQL语句；</li>
+<li><strong>回退（rollback）</strong> 指撤销指定SQL语句的过程；</li>
+<li><strong>提交（commit）</strong> 指将未存储的SQL语句结果写入数据库表；</li>
+<li><strong>保留点（savepoint）</strong> 指事务处理中设置的临时占位符（placeholder），你可以对它发布回退（与回退整个事务处理不同）。</li>
+</ul>
+<p>否开启隐式事务是由变量autocommit控制的。为ON表示开启了自动提交。<br>语法：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show variables like 'transaction_isolation';</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-开启事务"><a href="#2-开启事务" class="headerlink" title="2. 开启事务"></a>2. 开启事务</h3><p>方式1：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//设置不自动提交事务</span><br><span class="line">set autocommit=0;</span><br><span class="line"></span><br><span class="line">//执行事务操作</span><br><span class="line"></span><br><span class="line">//事务结束：提交或回滚</span><br><span class="line">commit|rollback;</span><br></pre></td></tr></table></figure>
+
+<p>方式2：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 开启事务</span><br><span class="line">start transaction;</span><br><span class="line"></span><br><span class="line">// 执行事务操作</span><br><span class="line"></span><br><span class="line">commit|rollback;</span><br></pre></td></tr></table></figure>
+
+<details blue><summary> <p>开启事务示例</p> </summary>
+              <div class='content'>
+              <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> show variables like <span class="string">'transaction_isolation'</span>;</span></span><br><span class="line">+-----------------------+-----------------+</span><br><span class="line">| Variable_name         | Value           |</span><br><span class="line">+-----------------------+-----------------+</span><br><span class="line">| transaction_isolation | REPEATABLE-READ |</span><br><span class="line">+-----------------------+-----------------+</span><br><span class="line">1 row in set, 1 warning (0.10 sec)</span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> show variables like <span class="string">"autocommit"</span>;</span></span><br><span class="line">+---------------+-------+</span><br><span class="line">| Variable_name | Value |</span><br><span class="line">+---------------+-------+</span><br><span class="line">| autocommit    | OFF   |</span><br><span class="line">+---------------+-------+</span><br><span class="line">1 row in set, 1 warning (0.01 sec)</span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> <span class="built_in">set</span> autocommit = 1;</span></span><br><span class="line">Query OK, 0 rows affected (0.14 sec)</span><br><span class="line"></span><br><span class="line"><span class="meta">mysql&gt;</span><span class="bash"> show variables like <span class="string">"autocommit"</span>;</span></span><br><span class="line">+---------------+-------+</span><br><span class="line">| Variable_name | Value |</span><br><span class="line">+---------------+-------+</span><br><span class="line">| autocommit    | ON    |</span><br><span class="line">+---------------+-------+</span><br><span class="line">1 row in set, 1 warning (0.00 sec)</span><br></pre></td></tr></table></figure>
+              </div>
+            </details>
+
+
+<h3 id="3-保留点"><a href="#3-保留点" class="headerlink" title="3. 保留点"></a>3. 保留点</h3><p>如果发生故障时不需要全部回退，而只选择性的回退一部分，则可以使用保留点，回退到指定的点。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SAVEPOINT 保留点名;</span><br><span class="line">ROLLBACK TO 保留点名;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-只读事务"><a href="#4-只读事务" class="headerlink" title="4. 只读事务"></a>4. 只读事务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start transaction read only;</span><br></pre></td></tr></table></figure>
+<p>开启了之后，执行更改数据的命令会出错。</p>
+<p>进一步解析事务执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 开启手动操作事务</span><br><span class="line">set autocommit = 0;</span><br><span class="line"></span><br><span class="line">// 事务操作：insert \ update \ delete</span><br><span class="line">// 执行了事务之后，数据库中的表已经发生了修改了。意味着其他事务可以读取数据来使用。这也就导致问题的出现</span><br><span class="line"></span><br><span class="line">// 执行提交或回滚，执行完之后事务才算结束。</span><br><span class="line">commit | rollback;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>可见，在事务中一旦执行更新表操作，表中的数据就会变化。而此时其他事务是可以读取表中的数据来使用的，而一旦该事务不提交而回滚了，那么其他事务读取到的将是错误的数据。由此，说明事务是存在问题的。</p>
+</blockquote>
+<h2 id="四、事务中存在的问题"><a href="#四、事务中存在的问题" class="headerlink" title="四、事务中存在的问题"></a>四、事务中存在的问题</h2><ol>
+<li><strong>脏读</strong></li>
+</ol>
+<p>一个事务在执行的过程中读取到了其他事务还没有提交的数据。</p>
+<ol start="2">
+<li><strong>读已提交</strong></li>
+</ol>
+<p>一个事务操作过程中可以读取到其他事务已经提交的数据。<br>事务中的每次读取操作，读取到的都是数据库中其他事务已提交的最新的数据（相当于当前读）</p>
+<ol start="3">
+<li><strong>可重复读</strong></li>
+</ol>
+<p>一个事务操作中对于一个读取操作不管多少次，读取到的结果都是一样的。</p>
+<ol start="4">
+<li><strong>幻读</strong></li>
+</ol>
+<p>幻读发生在可重复读的基础上。事务中后面的操作需要前面的读取操作提供支持，但读取操作却不能支持下面的操作时产生的错误，就像发生了幻觉一样。</p>
+<blockquote>
+<p>比如：</p>
+<p><strong>事务A</strong>：1.读取某条记录—发现不存在；2.那么事务A进行插入—结果插入失败；3.再次读取该条记录—还是发现不存在——事务A纳闷发生了什么？（幻读-事务A明明没有读到该条记录啊）</p>
+<p><strong>事务B</strong>：1.在事务A读取之后，插入之前，事务B插入了该条数据——导致事务A插入失败；2.但事务A再次读的时候还是不存在（可重复读）</p>
+</blockquote>
+<blockquote>
+<p>针对上面这些问题：如何保证事务中数据的正确性——<strong>一个事务是否可以看见另一个事务已提交或未提交的数据？</strong>——通过事务的隔离级别来解决。</p>
+</blockquote>
+<h2 id="五、隔离级别"><a href="#五、隔离级别" class="headerlink" title="五、隔离级别"></a>五、隔离级别</h2><p>事务隔离级别主要是解决了上面多个事务之间数据可见性及数据正确性的问题。</p>
+<p>隔离级别相当于数据库环境的状态，不同的状态有不同的功能效果。</p>
+<p>隔离级别分为4种：</p>
+<ul>
+<li><p><strong>读未提交：READ-UNCOMMITTED</strong></p>
+</li>
+<li><p><strong>读已提交：READ-COMMITTED</strong></p>
+</li>
+<li><p><strong>可重复读：REPEATABLE-READ</strong></p>
+</li>
+<li><p><strong>串行：SERIALIZABLE</strong></p>
+</li>
+</ul>
+<p><strong>4中隔离级别越来越强，会导致数据库的并发性也越来越低。</strong></p>
+<blockquote>
+<p>查看隔离级别：show variables like ‘transaction_isolation’;</p>
+</blockquote>
+<p><strong>设置隔离级别</strong></p>
+<ol>
+<li>修改mysql中的my.init文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 隔离级别设置,READ-UNCOMMITTED读未提交, READ-COMMITTED读已提交,</span><br><span class="line"># REPEATABLE-READ可重复读, SERIALIZABLE串行</span><br><span class="line">transaction-isolation&#x3D;READ-UNCOMMITTED</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>重启mysql。</li>
+</ol>
+<p><strong>各种隔离级别中会出现的问题</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">隔离级别</th>
+<th align="center">脏读</th>
+<th align="center">不可重复读</th>
+<th align="center">幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">READ-UNCOMMITTED</td>
+<td align="center">有</td>
+<td align="center">有</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">READ-COMMITTED</td>
+<td align="center">无</td>
+<td align="center">有</td>
+<td align="center">无</td>
+</tr>
+<tr>
+<td align="center">REPEATABLE-READ</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">有</td>
+</tr>
+<tr>
+<td align="center">SERIALIZABLE    无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">无</td>
+</tr>
+</tbody></table>
+<h4 id="1-隔离级别为——读未提交"><a href="#1-隔离级别为——读未提交" class="headerlink" title="1. 隔离级别为——读未提交"></a>1. 隔离级别为——读未提交</h4><p><strong>场景模拟</strong>（空表，两个事务，按序号顺序）：</p>
+<p><strong>事务A</strong>：1. 开启事务，然后读取——空表；4.读取——成功，事务B插入的数据；6.commit；</p>
+<p><strong>事务B</strong>：2.开启事务，然后插入数据——成功；3.读取——成功，有数据；5. commit；</p>
+<p><strong>结论：</strong></p>
+<ul>
+<li><strong>读未提交情况下，可以读取到其他事务还未提交的数据，出现了脏读；</strong></li>
+<li><strong>多次读取结果不一样，为不可重复读。</strong></li>
+</ul>
+<h4 id="2-隔离级别为——读已提交"><a href="#2-隔离级别为——读已提交" class="headerlink" title="2. 隔离级别为——读已提交"></a>2. 隔离级别为——读已提交</h4><p><strong>场景模拟</strong>（空表，两个事务，按序号顺序）：</p>
+<p><strong>事务A</strong>：1.开启事务，然后读取——空表；4. 读取数据——还是空表；6. 读取数据——有事务B插入的数据；7.commit；</p>
+<p><strong>事务B</strong>：2.开启事务，然后插入——成功；3.读取数据——成功；5. commit；</p>
+<p><strong>结论：</strong></p>
+<ul>
+<li><strong>读已提交情况下，无法读取到其他事务还未提交的数据，未出现脏读；</strong></li>
+<li><strong>可以读取到其他事务已经提交的数据，出现了读已提交；</strong></li>
+<li><strong>多次读取结果不一样，不可重复读。</strong></li>
+</ul>
+<h4 id="3-隔离级别为——可重复读"><a href="#3-隔离级别为——可重复读" class="headerlink" title="3. 隔离级别为——可重复读"></a>3. 隔离级别为——可重复读</h4><p><strong>场景模拟</strong>（空表，两个事务，按序号顺序）：</p>
+<p><strong>事务A</strong>：1.开启事务，然后读取——空表；3.读取数据——还是空表；5.读取数据——还是空表；6.commit；7. 读取数据——有事务B插入的数据；</p>
+<p><strong>事务B</strong>：1.开启事务，插入数据——成功；2.读取数据——成功；4.commit；</p>
+<p><strong>结论：</strong><br>• <strong>可重复读的情况下，无法读取到其他事务还未提交的数据，未出现脏读；</strong><br>• <strong>未读取到其他事务已经提交的数据，且多次读取结果一直，为可重复读；</strong></p>
+<h4 id="4-隔离级别为——可重复读——幻读"><a href="#4-隔离级别为——可重复读——幻读" class="headerlink" title="4. 隔离级别为——可重复读——幻读"></a>4. 隔离级别为——可重复读——幻读</h4><p><strong>场景模拟</strong>（空表，两个事务，按序号顺序）：</p>
+<p><strong>事务A</strong>：1.开启事务，然后读取某条记录——发现不存在；4.进行该记录插入——结果插入失败；5.再次读取该条记录——还是发现不存在啊——事务A纳闷发生了什么？第一次读取是发生了幻觉？（幻读-事务A明明没有读到该条记录啊）</p>
+<p><strong>事务B</strong>：2.开启事务，插入了该条数据——成功；3.读取该条记录——成功；6.commit；</p>
+<p><strong>结论：</strong></p>
+<p><strong>事务A第一次读取的时候相当于幻觉，即幻读。明明没这条数据，但插入还是失败，第二次再读取来确认，发现确实是不存在的呀，晕。——第二次读还是不存在，得益于可重复读级别。</strong></p>
+<h4 id="5-隔离级别为——串行"><a href="#5-隔离级别为——串行" class="headerlink" title="5. 隔离级别为——串行"></a>5. 隔离级别为——串行</h4><p>串行是针对整个事务而言的。一个事务想要执行，必须等待上一个事务执行结束才可以执行。</p>
+<p><strong>结论：</strong>一个个事务串行执行，不存在脏读、不可重复读、幻读的问题。但效率较低。</p>
+<h2 id="六、关于隔离级别的选择"><a href="#六、关于隔离级别的选择" class="headerlink" title="六、关于隔离级别的选择"></a>六、关于隔离级别的选择</h2><ol>
+<li>需要对各种隔离级别产生的现象非常了解，然后选择的时候才能游刃有余</li>
+<li>隔离级别越高，并发性也低，比如最高级别SERIALIZABLE 会让事物串行执行，并发操作变成串行了，会导致系统性能直接降低。</li>
+<li>具体选择哪种需要结合具体的业务来选择。</li>
+<li>读已提交（READ-COMMITTED）通常用的比较多。</li>
+</ol>
+<p>吐槽：好好的一篇文章变成了流水账，可惜！！！💔💔写文章确实需要灵感，一件艺术品，总是需要精心雕刻的。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>《MySQL必知必会》</li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzA5MTkxMDQ4MQ==&mid=2648933355&idx=1&sn=b426ad28dfc2a64bba813df5b7c341a4&scene=19#wechat_redirect" target="_blank" rel="noopener">玩转Mysql系列 - 第13篇：详解事务</a></li>
+</ul>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://zy68.top/2021/03/05/theTransactionOfMySQL/>https://zy68.top/2021/03/05/theTransactionOfMySQL/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-05T10:24:57+00:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新：2021年3月5日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/MySQL/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>MySQL</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/database/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>database</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2021/03/05/theTransactionOfMySQL/&title=MySQL事务机制 - Sustart&summary=🈲🈲Ctrl + z  Ctrl + Y🈲🈲
+&nbsp;&nbsp;&nbsp;好不容易开开心心撸完这篇博客，一下子Ctrl Z，手忙脚乱，啪，没了😔😔。淦，这是二次回放。第一次的思维已经莫得了。。。谨慎撤销、谨慎撤销、谨慎撤销。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2021/03/05/theTransactionOfMySQL/&title=MySQL事务机制 - Sustart&summary=🈲🈲Ctrl + z  Ctrl + Y🈲🈲
+&nbsp;&nbsp;&nbsp;好不容易开开心心撸完这篇博客，一下子Ctrl Z，手忙脚乱，啪，没了😔😔。淦，这是二次回放。第一次的思维已经莫得了。。。谨慎撤销、谨慎撤销、谨慎撤销。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2021/03/05/theTransactionOfMySQL/&title=MySQL事务机制 - Sustart&summary=🈲🈲Ctrl + z  Ctrl + Y🈲🈲
+&nbsp;&nbsp;&nbsp;好不容易开开心心撸完这篇博客，一下子Ctrl Z，手忙脚乱，啪，没了😔😔。淦，这是二次回放。第一次的思维已经莫得了。。。谨慎撤销、谨慎撤销、谨慎撤销。
+"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2021/01/12/greedy/'>
+                <p class='title'>常用算法系列2一贪心算法及其应用<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>今天来复习一波贪心算法。贪，就完了~
+
+
+
+
+
+
+
+一、贪婪算法&nbsp;&nbsp;&nbsp;&nbsp;贪婪算法(Greedy Algorithm)，又称贪心算法，其主要思想是：在每一步...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+        <section id="comments">
+          <div id="gitalk-container"></div>
+        </section>
+      
+      
+      
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'MySQL事务机制',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/MrGo123/asset@2020-1-2-1.0/headPortrait/mybloghp.jpg'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>Sustart</h2>
+        
+        
+        
+          <p><span id="jinrishici-sentence">Sustart</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="https://www.zhihu.com/people/mry-15-56"
+              class="social fab fa-zhihu fa-lg flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=NE5NWVVdWAIMdFJbTFlVXVgaV1tZ"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/MrGo123"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/playlist?id=2896521768"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、事务"><span class="toc-text">一、事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ACID特性"><span class="toc-text">ACID特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、显隐式事务"><span class="toc-text">二、显隐式事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式事务"><span class="toc-text">隐式事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显式事务"><span class="toc-text">显式事务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、事务操作"><span class="toc-text">三、事务操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-操作术语"><span class="toc-text">1. 操作术语</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-开启事务"><span class="toc-text">2. 开启事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-保留点"><span class="toc-text">3. 保留点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-只读事务"><span class="toc-text">4. 只读事务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、事务中存在的问题"><span class="toc-text">四、事务中存在的问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、隔离级别"><span class="toc-text">五、隔离级别</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-隔离级别为——读未提交"><span class="toc-text">1. 隔离级别为——读未提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-隔离级别为——读已提交"><span class="toc-text">2. 隔离级别为——读已提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-隔离级别为——可重复读"><span class="toc-text">3. 隔离级别为——可重复读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-隔离级别为——可重复读——幻读"><span class="toc-text">4. 隔离级别为——可重复读——幻读</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-隔离级别为——串行"><span class="toc-text">5. 隔离级别为——串行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#六、关于隔离级别的选择"><span class="toc-text">六、关于隔离级别的选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget category shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/Algorithm/" href="/categories/Algorithm/"
+            id="categoriesAlgorithm"
+            ><div class='name'>Algorithm</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/C-C/" href="/categories/C-C/"
+            id="categoriesC-C"
+            ><div class='name'>C/C++</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/ComputerBasic/" href="/categories/ComputerBasic/"
+            id="categoriesComputerBasic"
+            ><div class='name'>ComputerBasic</div><div class='badge'>(5)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/DataBase/" href="/categories/DataBase/"
+            id="categoriesDataBase"
+            ><div class='name'>DataBase</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Design-Patterns/" href="/categories/Design-Patterns/"
+            id="categoriesDesign-Patterns"
+            ><div class='name'>Design Patterns</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Experience/" href="/categories/Experience/"
+            id="categoriesExperience"
+            ><div class='name'>Experience</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/HTML/" href="/categories/HTML/"
+            id="categoriesHTML"
+            ><div class='name'>HTML</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/HTTP/" href="/categories/HTTP/"
+            id="categoriesHTTP"
+            ><div class='name'>HTTP</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/JavaSE/" href="/categories/JavaSE/"
+            id="categoriesJavaSE"
+            ><div class='name'>JavaSE</div><div class='badge'>(9)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/JavaWeb/" href="/categories/JavaWeb/"
+            id="categoriesJavaWeb"
+            ><div class='name'>JavaWeb</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Linux/" href="/categories/Linux/"
+            id="categoriesLinux"
+            ><div class='name'>Linux</div><div class='badge'>(7)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Mark/" href="/categories/Mark/"
+            id="categoriesMark"
+            ><div class='name'>Mark</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Maven/" href="/categories/Maven/"
+            id="categoriesMaven"
+            ><div class='name'>Maven</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/MySQL/" href="/categories/MySQL/"
+            id="categoriesMySQL"
+            ><div class='name'>MySQL</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Spring/" href="/categories/Spring/"
+            id="categoriesSpring"
+            ><div class='name'>Spring</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Tool/" href="/categories/Tool/"
+            id="categoriesTool"
+            ><div class='name'>Tool</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/YAML/" href="/categories/YAML/"
+            id="categoriesYAML"
+            ><div class='name'>YAML</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/git-github/" href="/categories/git-github/"
+            id="categoriesgit-github"
+            ><div class='name'>git/github</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/markdown/" href="/categories/markdown/"
+            id="categoriesmarkdown"
+            ><div class='name'>markdown</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget related_posts shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>推荐阅读</span>
+    
+  </header>
+
+
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="/2020/05/30/SQL_Practice/" title="SQL——Practice" rel="bookmark">SQL——Practice</a></h3></div></li></ul>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.2'
+      loop='all'
+      order='random'
+      fixed='false'
+      list-max-height='200px'
+      server='netease'
+      type='playlist'
+      id='2896521768'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="https://www.zhihu.com/people/mry-15-56"
+                class="social fab fa-zhihu fa-lg flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=NE5NWVVdWAIMdFJbTFlVXVgaV1tZ"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/MrGo123"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/playlist?id=2896521768"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+      
+    
+      
+        本站使用
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        作为主题，总访问量为
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="false"></i></span>
+          次
+        
+        <br>
+        <span id="timeDate"></span><span id="times"></span>
+        <script>
+            function createtime() { 
+              var now = new Date(); 
+                var grt= new Date("12/31/2019 15:38:00");
+                now.setTime(now.getTime()+250); 
+                days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                document.getElementById("timeDate").innerHTML = dnum+" 天 "; 
+                document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+            } 
+        setInterval("createtime()",250);
+        </script>
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://zy68.top">Copyright © 2019-2020 Sustart He</a></p>
+
+        </div>
+      
+    
+      
+        
+          <div><p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">桂ICP备2021001128号</a></p>
+</div>
+        
+      
+    
+  </footer>
+
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/MrGo123/asset@master/headPortrait/SimpleBlueAndWhite.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('') {
+          $('').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: "6a8999d9a4b1cd2bfe92",
+      clientSecret: "ed2db13d3a8dccae790fdaf41de764d95eee94b3",
+      repo: "MrGo123.github.io",
+      owner: "MrGo123",
+      admin: "MrGo123",
+      
+        id: location.pathname,      // Ensure uniqueness and length less than 50
+      
+      distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+    gitalk.render('gitalk-container');
+  </script>
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.6.5/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 标准 markdown 描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+  <!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
+<!--动态线条背景-->
+<!-- 
+color：表示线条颜色，三个数字分别为(R,G,B)，默认：（0,0,0）
+opacity：表示线条透明度（0~1），默认：0.5
+count：表示线条的总数量，默认：150
+zIndex：表示背景的z-index属性，css属性用于控制所在层的位置，默认：-1 
+-->
+<script type="text/javascript"
+color="93, 109, 126" opacity='0.9' zIndex="-2" count="30" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+<!-- 使用TRHX的页面预加载来提升网页速度 -->
+<script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@2.0.2/js/instantclick-1.2.2.js" type="module"></script>
+</body>
+</html>
