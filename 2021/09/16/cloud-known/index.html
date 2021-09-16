@@ -21,6 +21,9 @@
     <meta name="keywords" content="Cloud Computing,Cloud Native">
   
   
+    <meta name="description" content="
+前言：回顾一下最近的学习，除了扎入CS的基础，也看了网站架构、了解了微服务实践的 Spring Cloud。同时，也关注了下云原生的 Kubernetes 和 Docker，当然还有实习的大数据生态。在感受这些有趣的东西的同时，也不禁要思考自己到底喜欢什么？自己到底应该想走什么方向，那么所有的这些东西又代表了什...">
+  
 
   <!-- feed -->
   
@@ -436,7 +439,10 @@
           <blockquote>
 <p>前言：回顾一下最近的学习，除了扎入CS的基础，也看了网站架构、了解了微服务实践的 Spring Cloud。同时，也关注了下云原生的 Kubernetes 和 Docker，当然还有实习的大数据生态。在感受这些有趣的东西的同时，也不禁要思考自己到底喜欢什么？自己到底应该想走什么方向，那么所有的这些东西又代表了什么？与未来发展的方向又有什么关系？越了解，发现这个坑越深，也越有趣，随手梳理记录一下，扫一下互联网的盲点。</p>
 </blockquote>
-<p>![云计算](<a href="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/system_design/single" target="_blank" rel="noopener">https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/system_design/single</a> cloud.jpeg)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/system_design/single_cloud.jpeg" alt="云计算"></p>
+<a id="more"></a>
+
+
 <h2 id="从单机到互联"><a href="#从单机到互联" class="headerlink" title="从单机到互联"></a>从单机到互联</h2><p>作为一名开发者，说到互联网的发展史，单体计算机和网络是不可不谈的。</p>
 <p>单机时代：从最开始基本的冯·诺伊曼结构：运算器、控制器、存储器、输入设备、输出设备，到与操作系统的有机组合成为了一个具有多用户、多任务调度功能的计算机。这样的计算机能够接收大量的计算任务，减少了大量的手工计算并能满足早期基本的工作使用。</p>
 <p>互联时代：有了单个计算机的计算，很自然地就会增加机器间的数据传输的需求，在经历了机械的磁盘搬运之后，产生了网络通信。从最开始的点到点，到后来至今的端到端。计算机及其网络的变革，带来了现代社会的快速发展。</p>
@@ -456,7 +462,7 @@
 <p>总的来说，云计算服务能够给企业开发者、个人开发者更轻易得到的计算机服务。目前云计算提供的服务类型主要有两种：公有云和私有云。</p>
 <h3 id="公有云"><a href="#公有云" class="headerlink" title="公有云"></a>公有云</h3><p>公共云是最基础的服务，多个客户可共享一个服务提供商的系统资源，他们毋须架设任何设备及配备管理人员，便可享有专业的IT服务，这对于一般创业者、中小企来说，无疑是一个降低成本的好方法。</p>
 <p>公共云又可根据提供的服务封装程度不同细分为3个类别，分别是<strong>基础设施</strong>、<strong>平台</strong>及<strong>软件</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/system_design/cloud_computer.jpg" alt="云计算"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/system_design/cloud_computing.jpg" alt="云计算"></p>
 <h4 id="IAAS"><a href="#IAAS" class="headerlink" title="IAAS"></a>IAAS</h4><p><strong>Infrastructure as a Service，基础设施即服务</strong>，云计算的最底层服务。指把IT基础设施作为一种服务通过网络对外提供，主要提供存储，网络和虚拟化等服务。</p>
 <p>IAAS的好处之一在于提供商能够提供物理IT基础架构和维护，用户只需要相信服务提供商提供的服务即可，可直接研发、部署、维护自己的产品而不需要自行购买服务器和维护。另外，IaaS具有高度的灵活性和高度的可扩展性，用户可随时切换和扩容服务。</p>
 <p>IAAS最典型的例子就是阿里云、腾讯云、华为云提供的云服务器，我们可以直接在云服务器上安装自己的服务环境并部署自己的应用。</p>
@@ -584,7 +590,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-16T16:32:25+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-16T16:38:41+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新：2021年9月17日</p>
@@ -614,7 +620,10 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2021/09/16/cloud-known/&title=“云” 与 “开发” - Sustart&pics=https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/system_design/R-C.jpg&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://zy68.top/2021/09/16/cloud-known/&title=“云” 与 “开发” - Sustart&pics=https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/system_design/R-C.jpg&summary=
+前言：回顾一下最近的学习，除了扎入CS的基础，也看了网站架构、了解了微服务实践的 Spring Cloud。同时，也关注了下云原生的 Kubernetes 和 Docker，当然还有实习的大数据生态。在感受这些有趣的东西的同时，也不禁要思考自己到底喜欢什么？自己到底应该想走什么方向，那么所有的这些东西又代表了什么？与未来发展的方向又有什么关系？越了解，发现这个坑越深，也越有趣，随手梳理记录一下，扫一下互联网的盲点。
+
+"
           
           >
           
@@ -626,7 +635,10 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2021/09/16/cloud-known/&title=“云” 与 “开发” - Sustart&pics=https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/system_design/R-C.jpg&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://zy68.top/2021/09/16/cloud-known/&title=“云” 与 “开发” - Sustart&pics=https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/system_design/R-C.jpg&summary=
+前言：回顾一下最近的学习，除了扎入CS的基础，也看了网站架构、了解了微服务实践的 Spring Cloud。同时，也关注了下云原生的 Kubernetes 和 Docker，当然还有实习的大数据生态。在感受这些有趣的东西的同时，也不禁要思考自己到底喜欢什么？自己到底应该想走什么方向，那么所有的这些东西又代表了什么？与未来发展的方向又有什么关系？越了解，发现这个坑越深，也越有趣，随手梳理记录一下，扫一下互联网的盲点。
+
+"
           
           >
           
@@ -638,7 +650,10 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2021/09/16/cloud-known/&title=“云” 与 “开发” - Sustart&pics=https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/system_design/R-C.jpg&summary="
+          href="http://service.weibo.com/share/share.php?url=https://zy68.top/2021/09/16/cloud-known/&title=“云” 与 “开发” - Sustart&pics=https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/system_design/R-C.jpg&summary=
+前言：回顾一下最近的学习，除了扎入CS的基础，也看了网站架构、了解了微服务实践的 Spring Cloud。同时，也关注了下云原生的 Kubernetes 和 Docker，当然还有实习的大数据生态。在感受这些有趣的东西的同时，也不禁要思考自己到底喜欢什么？自己到底应该想走什么方向，那么所有的这些东西又代表了什么？与未来发展的方向又有什么关系？越了解，发现这个坑越深，也越有趣，随手梳理记录一下，扫一下互联网的盲点。
+
+"
           
           >
           
