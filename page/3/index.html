@@ -357,6 +357,126 @@
         
           
   <h2 class="title">
+    <a href="/2020/06/09/Linux%E6%9B%B4%E6%8D%A2%E4%B8%8B%E8%BD%BD%E6%BA%90%E9%95%9C%E5%83%8F/">
+      Linux更换下载源镜像
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="/about/" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/MrGo123/asset/headPortrait/mybloghp.jpg">
+    <p>Sustart</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Linux/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>Linux</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布：2020年6月9日</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：136字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>更换Ubuntu的下载源镜像，回归正常速度！！<br>这里推<a href="https://developer.aliyun.com/mirror/" target="_blank" rel="noopener">阿里云的镜像</a></p>
+<ol>
+<li>用<code>lsb_release -a</code> 查看自己的Linux版本信息。</li>
+<li>用<code>cp /etc/apt/sources.list /etc/apt/sources.list.back</code> 备份 sources.list 文件。<del>要是不保存也行</del></li>
+<li>到镜像网里找到自己对应的Linux系统和版本。<del>那里有教</del>，复制对应的配置信息。</li>
+<li>sudo权限编辑上述的文件——sources.list，把里面的内容全替换为复制下来的信息。</li>
+<li>更新原有配置：<code>sudo apt-get update</code>，sudo依旧。</li>
+<li>搞定。</li>
+</ol>
+      
+    </div>
+    
+      
+        <div class="button readmore">
+          <a href="/2020/06/09/Linux%E6%9B%B4%E6%8D%A2%E4%B8%8B%E8%BD%BD%E6%BA%90%E9%95%9C%E5%83%8F/">
+            阅读全文 <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
     <a href="/2020/06/03/A-Rebuild-Record/">
       重装系统+环境恢复简记
     </a>
@@ -1390,123 +1510,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/05/19/Tomcat/">
-      Tomcat
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a href="/about/" rel="nofollow">
-    <img src="https://cdn.jsdelivr.net/gh/MrGo123/asset/headPortrait/mybloghp.jpg">
-    <p>Sustart</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/JavaWeb/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>JavaWeb</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布：2020年5月19日</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：740字</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：2分钟</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Tomcat简单的说就是一个运行JAVA的网络服务器，底层是Socket的一个程序，它也是JSP和Serlvet的一个容器。</p>
-<h2 id="一、Tomcat三个功能："><a href="#一、Tomcat三个功能：" class="headerlink" title="一、Tomcat三个功能："></a>一、Tomcat三个功能：</h2><ol>
-<li>Web服务器</li>
-<li>jsp容器</li>
-<li>Servlet容器。</li>
-</ol>
-      
-    </div>
-    
-      
-        <div class="button readmore">
-          <a href="/2020/05/19/Tomcat/">
-            阅读全文 <i class="fas fa-chevron-right"></i>
-          </a>
-        </div>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1637,6 +1640,11 @@
             ><div class='name'>C/C++</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/Cloud-Native/" href="/categories/Cloud-Native/"
+            id="categoriesCloud-Native"
+            ><div class='name'>Cloud Native</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/ComputerBasic/" href="/categories/ComputerBasic/"
             id="categoriesComputerBasic"
             ><div class='name'>ComputerBasic</div><div class='badge'>(6)</div></a></li>
@@ -1743,7 +1751,7 @@
 
 
     <div class='content'>
-      <a href="/tags/C/" style="font-size: 16px; color: #8b8b8b">C</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C++</a> <a href="/tags/C-C/" style="font-size: 14px; color: #999">C/C++</a> <a href="/tags/CI-CD/" style="font-size: 14px; color: #999">CI/CD</a> <a href="/tags/CSBasic/" style="font-size: 16px; color: #8b8b8b">CSBasic</a> <a href="/tags/Database/" style="font-size: 14px; color: #999">Database</a> <a href="/tags/English/" style="font-size: 14px; color: #999">English</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/HTML/" style="font-size: 14px; color: #999">HTML</a> <a href="/tags/Linux/" style="font-size: 20px; color: #707070">Linux</a> <a href="/tags/MySQL/" style="font-size: 18px; color: #7e7e7e">MySQL</a> <a href="/tags/SQL/" style="font-size: 14px; color: #999">SQL</a> <a href="/tags/Spring/" style="font-size: 18px; color: #7e7e7e">Spring</a> <a href="/tags/Springboot/" style="font-size: 14px; color: #999">Springboot</a> <a href="/tags/UML/" style="font-size: 14px; color: #999">UML</a> <a href="/tags/Ubuntu/" style="font-size: 14px; color: #999">Ubuntu</a> <a href="/tags/algorithm/" style="font-size: 18px; color: #7e7e7e">algorithm</a> <a href="/tags/annual-summary/" style="font-size: 14px; color: #999">annual summary</a> <a href="/tags/blog/" style="font-size: 16px; color: #8b8b8b">blog</a> <a href="/tags/cors/" style="font-size: 14px; color: #999">cors</a> <a href="/tags/database/" style="font-size: 14px; color: #999">database</a> <a href="/tags/divide-and-conquer/" style="font-size: 14px; color: #999">divide and conquer</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/github/" style="font-size: 18px; color: #7e7e7e">github</a> <a href="/tags/greedy/" style="font-size: 14px; color: #999">greedy</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/java/" style="font-size: 24px; color: #555">java</a> <a href="/tags/javaSE/" style="font-size: 22px; color: #636363">javaSE</a> <a href="/tags/javaWeb/" style="font-size: 14px; color: #999">javaWeb</a> <a href="/tags/markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="/tags/maven/" style="font-size: 14px; color: #999">maven</a> <a href="/tags/network/" style="font-size: 14px; color: #999">network</a> <a href="/tags/rebuild/" style="font-size: 14px; color: #999">rebuild</a> <a href="/tags/shell/" style="font-size: 14px; color: #999">shell</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">网络</a>
+      <a href="/tags/C/" style="font-size: 16px; color: #8b8b8b">C</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C++</a> <a href="/tags/C-C/" style="font-size: 14px; color: #999">C/C++</a> <a href="/tags/CI-CD/" style="font-size: 14px; color: #999">CI/CD</a> <a href="/tags/CSBasic/" style="font-size: 16px; color: #8b8b8b">CSBasic</a> <a href="/tags/Cloud-Computing/" style="font-size: 14px; color: #999">Cloud Computing</a> <a href="/tags/Cloud-Native/" style="font-size: 14px; color: #999">Cloud Native</a> <a href="/tags/Database/" style="font-size: 14px; color: #999">Database</a> <a href="/tags/English/" style="font-size: 14px; color: #999">English</a> <a href="/tags/Git/" style="font-size: 14px; color: #999">Git</a> <a href="/tags/Github/" style="font-size: 14px; color: #999">Github</a> <a href="/tags/HTML/" style="font-size: 14px; color: #999">HTML</a> <a href="/tags/Linux/" style="font-size: 20px; color: #707070">Linux</a> <a href="/tags/MySQL/" style="font-size: 18px; color: #7e7e7e">MySQL</a> <a href="/tags/SQL/" style="font-size: 14px; color: #999">SQL</a> <a href="/tags/Spring/" style="font-size: 18px; color: #7e7e7e">Spring</a> <a href="/tags/Springboot/" style="font-size: 14px; color: #999">Springboot</a> <a href="/tags/UML/" style="font-size: 14px; color: #999">UML</a> <a href="/tags/Ubuntu/" style="font-size: 14px; color: #999">Ubuntu</a> <a href="/tags/algorithm/" style="font-size: 18px; color: #7e7e7e">algorithm</a> <a href="/tags/annual-summary/" style="font-size: 14px; color: #999">annual summary</a> <a href="/tags/blog/" style="font-size: 16px; color: #8b8b8b">blog</a> <a href="/tags/cors/" style="font-size: 14px; color: #999">cors</a> <a href="/tags/database/" style="font-size: 14px; color: #999">database</a> <a href="/tags/divide-and-conquer/" style="font-size: 14px; color: #999">divide and conquer</a> <a href="/tags/git/" style="font-size: 14px; color: #999">git</a> <a href="/tags/github/" style="font-size: 18px; color: #7e7e7e">github</a> <a href="/tags/greedy/" style="font-size: 14px; color: #999">greedy</a> <a href="/tags/http/" style="font-size: 14px; color: #999">http</a> <a href="/tags/java/" style="font-size: 24px; color: #555">java</a> <a href="/tags/javaSE/" style="font-size: 22px; color: #636363">javaSE</a> <a href="/tags/javaWeb/" style="font-size: 14px; color: #999">javaWeb</a> <a href="/tags/markdown/" style="font-size: 14px; color: #999">markdown</a> <a href="/tags/maven/" style="font-size: 14px; color: #999">maven</a> <a href="/tags/network/" style="font-size: 14px; color: #999">network</a> <a href="/tags/rebuild/" style="font-size: 14px; color: #999">rebuild</a> <a href="/tags/shell/" style="font-size: 14px; color: #999">shell</a> <a href="/tags/tool/" style="font-size: 14px; color: #999">tool</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 14px; color: #999">网络</a>
     </div>
   </section>
 
