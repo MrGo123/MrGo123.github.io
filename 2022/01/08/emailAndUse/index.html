@@ -548,8 +548,8 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;简单来说，<strong>Spring 封装了一个 **`</strong>JavaMailService 接口<strong>`</strong>及其丰富了的具体实现 <strong>`</strong>JavaMailServiceImpl类<strong>`</strong>。通过<strong>`</strong>JavaMailServiceImpl类<strong>`</strong>的 <strong>`</strong>send() <strong>`</strong>方法能够执行发送邮件的功能。其中，简单邮件可以通过 <strong>`</strong>SimpleMailMessage <strong>`</strong>来发送邮件，而复杂的邮件（如添加附件）可以借助<strong>`</strong> MimeMessageHelper <strong>`</strong>来构建<strong>`</strong> MimeMessage <strong>`</strong>发送邮件。**</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;此外，Spring Boot Mail 还支持发送** HTML邮件、图片、模板邮件**，具体可简单<a href="https://juejin.cn/post/6844903986546343950#heading-5" target="_blank" rel="noopener">参考</a>。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>简单来说，Spring 封装了一个<code>JavaMailService 接口</code>及其丰富了的具体实现 <code>JavaMailServiceImpl类</code>。通过<code>JavaMailServiceImpl类</code>的<code>send()</code>方法能够执行发送邮件的功能。其中，简单邮件可以通过<code>SimpleMailMessage</code>来发送邮件，而复杂的邮件（如添加附件）可以借助<code>MimeMessageHelper</code>来构建<code>MimeMessage</code>发送邮件。</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;此外，Spring Boot Mail 还支持发送<strong>HTML邮件、图片、模板邮件</strong>，具体可简单<a href="https://juejin.cn/post/6844903986546343950#heading-5" target="_blank" rel="noopener">参考</a>。</p>
 <details gray><summary> <p>简单看一眼源码</p> </summary>
               <div class='content'>
               <p><strong>JavaMailService接口</strong></p><p><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/spring/javamailservice.png" alt="email"></p><p><strong>JavaMailServiceImpl类</strong></p><p><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/spring/javamailserviceImpl1.png" alt="email"><br><img src="https://cdn.jsdelivr.net/gh/MrGo123/asset@master/sourceinpost/spring/javamailserviceImpl2.png" alt="email"></p>
@@ -701,7 +701,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-01-08T06:19:08+00:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-01-08T06:31:15+00:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新：2022年1月8日</p>
