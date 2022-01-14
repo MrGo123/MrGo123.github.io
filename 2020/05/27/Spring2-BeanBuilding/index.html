@@ -20,7 +20,7 @@
   <meta content="Sustart" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1642066505092" as="style">
+  <link rel="preload" href="/css/style.css?time=1642170749128" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1662,8 +1662,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1642066505092" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1642066505092"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1642170749128" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1642170749128"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -3339,8 +3339,8 @@ Bean什么是Bean？？Bean是一套约定或规范。具体的说Bean：1、所
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642066505092')
-      volantis.js('/js/message.js?time=1642066505092', () => {
+      volantis.css('/css/message.css?time=1642170749127')
+      volantis.js('/js/message.js?time=1642170749128', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3385,8 +3385,8 @@ Bean什么是Bean？？Bean是一套约定或规范。具体的说Bean：1、所
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642066505092')
-      volantis.js('/js/message.js?time=1642066505092', () => {
+      volantis.css('/css/message.css?time=1642170749127')
+      volantis.js('/js/message.js?time=1642170749128', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3445,8 +3445,8 @@ Bean什么是Bean？？Bean是一套约定或规范。具体的说Bean：1、所
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642066505092')
-      volantis.js('/js/message.js?time=1642066505092', () => {
+      volantis.css('/css/message.css?time=1642170749127')
+      volantis.js('/js/message.js?time=1642170749128', () => {
         hideMessage(done);
       });
     } else {
@@ -3649,7 +3649,7 @@ Bean什么是Bean？？Bean是一套约定或规范。具体的说Bean：1、所
 
 
 
-<script src="/js/app.js?time=1642066505092.js"></script>
+<script src="/js/app.js?time=1642170749128.js"></script>
 
 
 <!-- optional -->
@@ -3662,7 +3662,7 @@ Bean什么是Bean？？Bean是一套约定或规范。具体的说Bean：1、所
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1642066505092");
+    return volantis.js("/js/search/hexo.js?time=1642170749128");
   }
 
   function loadSearchService() {
@@ -3940,6 +3940,27 @@ Bean什么是Bean？？Bean是一套约定或规范。具体的说Bean：1、所
 </script>
 
 
+
+
+  
+
+
+<!-- baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  setTimeout(function() {
+    volantis.js("https://hm.baidu.com/hm.js?ca097b528fcbb84ed0853d4b4d7e5127")
+  }, 1000);
+})();
+// 关于百度统计对 SPA 页面的处理：
+// 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+// 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]);},'baidu_analytics')
+</script>
+
+
+		
 
 
 

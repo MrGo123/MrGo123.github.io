@@ -20,7 +20,7 @@
   <meta content="Sustart" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1642066505061" as="style">
+  <link rel="preload" href="/css/style.css?time=1642170749095" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1661,8 +1661,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1642066505061" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1642066505061"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1642170749095" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1642170749095"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -3358,8 +3358,8 @@ UML模型的三部分构成：
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642066505061')
-      volantis.js('/js/message.js?time=1642066505061', () => {
+      volantis.css('/css/message.css?time=1642170749095')
+      volantis.js('/js/message.js?time=1642170749095', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3404,8 +3404,8 @@ UML模型的三部分构成：
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642066505061')
-      volantis.js('/js/message.js?time=1642066505061', () => {
+      volantis.css('/css/message.css?time=1642170749095')
+      volantis.js('/js/message.js?time=1642170749095', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3464,8 +3464,8 @@ UML模型的三部分构成：
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1642066505061')
-      volantis.js('/js/message.js?time=1642066505061', () => {
+      volantis.css('/css/message.css?time=1642170749095')
+      volantis.js('/js/message.js?time=1642170749095', () => {
         hideMessage(done);
       });
     } else {
@@ -3668,7 +3668,7 @@ UML模型的三部分构成：
 
 
 
-<script src="/js/app.js?time=1642066505061.js"></script>
+<script src="/js/app.js?time=1642170749095.js"></script>
 
 
 <!-- optional -->
@@ -3681,7 +3681,7 @@ UML模型的三部分构成：
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1642066505061");
+    return volantis.js("/js/search/hexo.js?time=1642170749095");
   }
 
   function loadSearchService() {
@@ -3959,6 +3959,27 @@ UML模型的三部分构成：
 </script>
 
 
+
+
+  
+
+
+<!-- baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  setTimeout(function() {
+    volantis.js("https://hm.baidu.com/hm.js?ca097b528fcbb84ed0853d4b4d7e5127")
+  }, 1000);
+})();
+// 关于百度统计对 SPA 页面的处理：
+// 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+// 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+volantis.pjax.push(()=>{_hmt.push(['_trackPageview', document.location.pathname]);},'baidu_analytics')
+</script>
+
+
+		
 
 
 
