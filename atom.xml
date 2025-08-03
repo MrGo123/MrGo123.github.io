@@ -3,11 +3,11 @@
   <title>Sustart</title>
   
   <subtitle> </subtitle>
-  <link href="https://zy68.top/atom.xml" rel="self"/>
+  <link href="https://sustart.top/atom.xml" rel="self"/>
   
-  <link href="https://zy68.top/"/>
+  <link href="https://sustart.top/"/>
   <updated>2022-01-08T05:15:14.000Z</updated>
-  <id>https://zy68.top/</id>
+  <id>https://sustart.top/</id>
   
   <author>
     <name>Sustart He</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>电子邮件服务及其在Spring中的应用</title>
-    <link href="https://zy68.top/2022/01/08/emailAndUse/"/>
-    <id>https://zy68.top/2022/01/08/emailAndUse/</id>
+    <link href="https://sustart.top/2022/01/08/emailAndUse/"/>
+    <id>https://sustart.top/2022/01/08/emailAndUse/</id>
     <published>2022-01-08T05:15:14.000Z</published>
     <updated>2022-01-08T05:15:14.000Z</updated>
     
@@ -33,14 +33,14 @@
     
     
     
-    <category term="Spring" scheme="https://zy68.top/categories/Spring/"/>
+    <category term="Spring" scheme="https://sustart.top/categories/Spring/"/>
     
     
-    <category term="SpringBoot" scheme="https://zy68.top/tags/SpringBoot/"/>
+    <category term="SpringBoot" scheme="https://sustart.top/tags/SpringBoot/"/>
     
-    <category term="Email" scheme="https://zy68.top/tags/Email/"/>
+    <category term="Email" scheme="https://sustart.top/tags/Email/"/>
     
-    <category term="ComputerNetworks" scheme="https://zy68.top/tags/ComputerNetworks/"/>
+    <category term="ComputerNetworks" scheme="https://sustart.top/tags/ComputerNetworks/"/>
     
   </entry>
   
