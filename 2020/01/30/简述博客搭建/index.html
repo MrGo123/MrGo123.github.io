@@ -20,7 +20,7 @@
   <meta content="Sustart" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1754197588231" as="style">
+  <link rel="preload" href="/css/style.css?time=1754321424986" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1661,8 +1661,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1754197588231" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1754197588231"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1754321424986" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1754321424986"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2150,13 +2150,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover" 
-                href="/message/" title="留言"
+                href="/friends/" title="关注"
                   
                   
                   
-                    active-action="action-message"
+                    active-action="action-friends"
                   >
-                  <i class='fas fa-comment-alt fa-fw'></i>留言
+                  <i class='fas fa-link fa-fw'></i>关注
                 </a>
                 
               </li>
@@ -2210,23 +2210,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
           
                     
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                href="/friends/" title="关注列表"
-                  
-                  
-                  
-                    active-action="action-friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>关注列表
-                </a>
-                
-              </li>
-            
-          
-                    
                   </ul>
                 
               </li>
@@ -2274,6 +2257,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                     active-action="action-timeline"
                   >
                   <i class='fas fa-edit fa-fw'></i>小站事记
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                href="/message/" title="留言"
+                  
+                  
+                  
+                    active-action="action-message"
+                  >
+                  <i class='fas fa-comment-alt fa-fw'></i>留言
                 </a>
                 
               </li>
@@ -2359,13 +2359,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover" 
-                href="/message/" title="留言"
+                href="/friends/" title="关注"
                   
                   
                   
-                    active-action="action-message"
+                    active-action="action-friends"
                   >
-                  <i class='fas fa-comment-alt fa-fw'></i>留言
+                  <i class='fas fa-link fa-fw'></i>关注
                 </a>
                 
               </li>
@@ -2419,23 +2419,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
           
                     
-                      
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" 
-                href="/friends/" title="关注列表"
-                  
-                  
-                  
-                    active-action="action-friends"
-                  >
-                  <i class='fas fa-link fa-fw'></i>关注列表
-                </a>
-                
-              </li>
-            
-          
-                    
                   </ul>
                 
               </li>
@@ -2483,6 +2466,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                     active-action="action-timeline"
                   >
                   <i class='fas fa-edit fa-fw'></i>小站事记
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                href="/message/" title="留言"
+                  
+                  
+                  
+                    active-action="action-message"
+                  >
+                  <i class='fas fa-comment-alt fa-fw'></i>留言
                 </a>
                 
               </li>
@@ -3298,8 +3298,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1754197588231')
-      volantis.js('/js/message.js?time=1754197588231', () => {
+      volantis.css('/css/message.css?time=1754321424986')
+      volantis.js('/js/message.js?time=1754321424986', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3344,8 +3344,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1754197588231')
-      volantis.js('/js/message.js?time=1754197588231', () => {
+      volantis.css('/css/message.css?time=1754321424986')
+      volantis.js('/js/message.js?time=1754321424986', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3404,8 +3404,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1754197588231')
-      volantis.js('/js/message.js?time=1754197588231', () => {
+      volantis.css('/css/message.css?time=1754321424986')
+      volantis.js('/js/message.js?time=1754321424986', () => {
         hideMessage(done);
       });
     } else {
@@ -3608,7 +3608,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1754197588231.js"></script>
+<script src="/js/app.js?time=1754321424986.js"></script>
 
 
 <!-- optional -->
@@ -3621,7 +3621,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1754197588231");
+    return volantis.js("/js/search/hexo.js?time=1754321424986");
   }
 
   function loadSearchService() {
